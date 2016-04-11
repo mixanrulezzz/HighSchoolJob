@@ -29,10 +29,10 @@ namespace kursov_rabota
                 SQLiteConnection.CreateFile("C:/Games/mySQLiteLab.sqlite");
             }
 
-            CreateTable.Bagage(DataFile);
+            CreateTable.Product(DataFile);
             CreateTable.Client(DataFile);
-            CreateTable.Creator(DataFile);
-            CreateTable.BagageCreator(DataFile);
+            CreateTable.Provider(DataFile);
+            CreateTable.ProductProvider(DataFile);
             CreateTable.ByingHistory(DataFile);
 
         }
