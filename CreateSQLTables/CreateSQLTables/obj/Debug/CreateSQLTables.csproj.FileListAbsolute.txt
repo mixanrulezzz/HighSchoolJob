@@ -1,0 +1,6 @@
+C:\Project C#\CreateSQLTables\CreateSQLTables\bin\Debug\CreateSQLTables.dll
+C:\Project C#\CreateSQLTables\CreateSQLTables\bin\Debug\CreateSQLTables.pdb
+C:\Project C#\CreateSQLTables\CreateSQLTables\bin\Debug\System.Data.SQLite.dll
+C:\Project C#\CreateSQLTables\CreateSQLTables\obj\Debug\CreateSQLTables.csprojResolveAssemblyReference.cache
+C:\Project C#\CreateSQLTables\CreateSQLTables\obj\Debug\CreateSQLTables.dll
+C:\Project C#\CreateSQLTables\CreateSQLTables\obj\Debug\CreateSQLTables.pdb

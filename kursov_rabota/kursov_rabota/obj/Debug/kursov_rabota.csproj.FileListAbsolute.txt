@@ -1,0 +1,2 @@
+C:\Project C#\kursov_rabota\kursov_rabota\bin\Debug\kursov_rabota.exe.config
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\kursov_rabota.exe.config
