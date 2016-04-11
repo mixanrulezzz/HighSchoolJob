@@ -11,3 +11,6 @@ C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.Prop
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.csproj.GenerateResource.Cache
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.exe
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.pdb
+D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\kursov_rabota.exe.config
+D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.exe
+D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.pdb
