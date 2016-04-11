@@ -11,3 +11,14 @@ C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.Prop
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.csproj.GenerateResource.Cache
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.exe
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.pdb
+D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\kursov_rabota.exe.config
+D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.exe
+D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.pdb
+D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\kursov_rabota.exe
+D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\kursov_rabota.pdb
+D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\CreateSQLTables.dll
+D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\CreateSQLTables.pdb
+D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.csprojResolveAssemblyReference.cache
+D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.StartScreen.resources
+D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.Properties.Resources.resources
+D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.csproj.GenerateResource.Cache

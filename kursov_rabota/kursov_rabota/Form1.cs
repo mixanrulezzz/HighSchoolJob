@@ -24,9 +24,9 @@ namespace kursov_rabota
 
         private void StartScreen_Load(object sender, EventArgs e)
         {
-            if (!File.Exists("C:/Games/mySQLiteLab.sqlite"))
+            if (!File.Exists("mySQLiteLab.sqlite"))
             {
-                SQLiteConnection.CreateFile("C:/Games/mySQLiteLab.sqlite");
+                SQLiteConnection.CreateFile("mySQLiteLab.sqlite");
             }
 
             CreateTable.Product(DataFile);
