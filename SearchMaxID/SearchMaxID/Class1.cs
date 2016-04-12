@@ -9,11 +9,22 @@ namespace SearchMaxID
 {
     static public class SearchMaxID
     {
-        static int Product(SQLiteConnection File)
+        static int FindMaxID(SQLiteConnection File, string flag)
         {
             int maxID = 0;
             SQLiteCommand findMaxIndex = new SQLiteCommand(File);
-            findMaxIndex.CommandText = "select max(prodid) from Product";
+            switch (flag)
+            {
+                case "prod": findMaxIndex.CommandText = "select max(prodid) from Product";
+                    break;
+                case "cl": findMaxIndex.CommandText = "select max(clid) from Client";
+                    break;
+                case "prov": findMaxIndex.CommandText = "select max(provid) from Provider";
+                    break;
+                case "bh": findMaxIndex.CommandText = "select max(bhid) from ByingHistory";
+                    break;
+                default: break;
+            }
             SQLiteDataReader selectMax = findMaxIndex.ExecuteReader();
             if (selectMax.Read())
             {
@@ -24,7 +35,5 @@ namespace SearchMaxID
             }
             return maxID;
         }
-
-        
     }
 }
