@@ -22,3 +22,5 @@ D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.cspr
 D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.StartScreen.resources
 D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.Properties.Resources.resources
 D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.csproj.GenerateResource.Cache
+D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\SearchMaxID.dll
+D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\SearchMaxID.pdb

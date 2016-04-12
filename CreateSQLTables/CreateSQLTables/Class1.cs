@@ -15,7 +15,7 @@ namespace CreateSQLTables
             try
             {
                 SQLiteCommand create = new SQLiteCommand(File);
-                create.CommandText = "create table Product(prodid INTEGER NOT NULL, prodName VARCHAR(50) NOT NULL, Price INTEGER NOT NULL, PhotoLink varvhar(100) NOT NULL, CONSTRAINT ProdPK PRIMARY KEY (prodid));";
+                create.CommandText = "create table Product(prodid INTEGER NOT NULL, prodName VARCHAR(50) NOT NULL, Price INTEGER NOT NULL, PhotoLink varchar(100) NOT NULL, CONSTRAINT ProdPK PRIMARY KEY (prodid));";
                 File.Open();
                 create.ExecuteNonQuery();
             }

@@ -42,6 +42,8 @@ namespace kursov_rabota
 
             MaxProductID = SearchMaxID.SearchMaxID.FindMaxID(DataFile, "prod");
             MaxClientID = SearchMaxID.SearchMaxID.FindMaxID(DataFile, "cl");
+            MaxProviderID = SearchMaxID.SearchMaxID.FindMaxID(DataFile, "prov");
+            MaxByingHistoryID = SearchMaxID.SearchMaxID.FindMaxID(DataFile, "bh");
         }
     }
 }
