@@ -34,7 +34,6 @@ namespace kursov_rabota
             CreateTable.Provider(DataFile);
             CreateTable.ProductProvider(DataFile);
             CreateTable.ByingHistory(DataFile);
-
         }
     }
 }
