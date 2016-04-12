@@ -36,6 +36,9 @@
     <Reference Include="CreateSQLTables">
       <HintPath>..\..\CreateSQLTables\CreateSQLTables\bin\Debug\CreateSQLTables.dll</HintPath>
     </Reference>
+    <Reference Include="SearchMaxID">
+      <HintPath>..\..\SearchMaxID\SearchMaxID\bin\Debug\SearchMaxID.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite">

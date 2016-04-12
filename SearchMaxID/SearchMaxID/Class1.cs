@@ -9,7 +9,7 @@ namespace SearchMaxID
 {
     static public class SearchMaxID
     {
-        static int FindMaxID(SQLiteConnection File, string flag)
+        static public int FindMaxID(SQLiteConnection File, string flag)
         {
             int maxID = 0;
             SQLiteCommand findMaxIndex = new SQLiteCommand(File);

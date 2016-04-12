@@ -10,12 +10,17 @@ using System.Windows.Forms;
 using System.IO;
 using System.Data.SQLite;
 using CreateSQLTables;
+using SearchMaxID;
 
 namespace kursov_rabota
 {
     public partial class StartScreen : Form
     {
         private SQLiteConnection DataFile = new SQLiteConnection("Data Source=C:/Games/mySQLiteLab.sqlite;Version=3");
+        private int MaxProductID;
+        private int MaxClientID;
+        private int MaxProviderID;
+        private int MaxByingHistoryID;
 
         public StartScreen()
         {
@@ -34,6 +39,9 @@ namespace kursov_rabota
             CreateTable.Provider(DataFile);
             CreateTable.ProductProvider(DataFile);
             CreateTable.ByingHistory(DataFile);
+
+            MaxProductID = SearchMaxID.SearchMaxID.FindMaxID(DataFile, "prod");
+            MaxClientID = SearchMaxID.SearchMaxID.FindMaxID(DataFile, "cl");
         }
     }
 }
