@@ -25,3 +25,4 @@ C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\SearchMaxID.dll
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\SearchMaxID.pdb
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\CreateSQLTables.dll
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\CreateSQLTables.pdb
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\System.Data.SQLite.dll
