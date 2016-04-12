@@ -3,3 +3,4 @@ C:\GitRep\HighSchoolJob\SearchMaxID\SearchMaxID\bin\Debug\SearchMaxID.pdb
 C:\GitRep\HighSchoolJob\SearchMaxID\SearchMaxID\obj\Debug\SearchMaxID.csprojResolveAssemblyReference.cache
 C:\GitRep\HighSchoolJob\SearchMaxID\SearchMaxID\obj\Debug\SearchMaxID.dll
 C:\GitRep\HighSchoolJob\SearchMaxID\SearchMaxID\obj\Debug\SearchMaxID.pdb
+C:\GitRep\HighSchoolJob\SearchMaxID\SearchMaxID\bin\Debug\System.Data.SQLite.dll
