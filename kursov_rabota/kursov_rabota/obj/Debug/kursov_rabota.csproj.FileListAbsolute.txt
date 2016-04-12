@@ -2,9 +2,6 @@ C:\Project C#\kursov_rabota\kursov_rabota\bin\Debug\kursov_rabota.exe.config
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\kursov_rabota.exe.config
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\kursov_rabota.exe
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\kursov_rabota.pdb
-C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\CreateSQLTables.dll
-C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\System.Data.SQLite.dll
-C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\CreateSQLTables.pdb
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.csprojResolveAssemblyReference.cache
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.StartScreen.resources
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.Properties.Resources.resources
@@ -24,3 +21,7 @@ D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.Prop
 D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.csproj.GenerateResource.Cache
 D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\SearchMaxID.dll
 D:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\SearchMaxID.pdb
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\SearchMaxID.dll
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\SearchMaxID.pdb
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\CreateSQLTables.dll
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\CreateSQLTables.pdb

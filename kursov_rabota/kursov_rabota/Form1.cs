@@ -34,10 +34,12 @@ namespace kursov_rabota
                 SQLiteConnection.CreateFile("mySQLiteLab.sqlite");
             }
 
-            CreateTable.Product(DataFile);
+            DataFile.Open();
+
+            CreateTable.Shipment(DataFile);
             CreateTable.Client(DataFile);
             CreateTable.Provider(DataFile);
-            CreateTable.ProductProvider(DataFile);
+            CreateTable.ShipmentProvider(DataFile);
             CreateTable.ByingHistory(DataFile);
 
             MaxProductID = SearchMaxID.SearchMaxID.FindMaxID(DataFile, "prod");
