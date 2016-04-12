@@ -24,5 +24,9 @@ ExportedObj/
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
+<<<<<<< HEAD
 
 kursov_rabota/.vs/kursov_rabota/v14/.suo
+=======
+*.suo
+>>>>>>> origin/master
