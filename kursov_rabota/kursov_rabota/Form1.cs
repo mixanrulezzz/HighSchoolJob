@@ -50,8 +50,8 @@ namespace kursov_rabota
 
         private void create_Click(object sender, EventArgs e)
         {
-            CreateScreen CreateScr = new CreateScreen();
-            CreateScr.ShowDialog(this);
+            HalfWayScreen HalfWayScr = new HalfWayScreen();
+            HalfWayScr.ShowDialog(this);
         }
     }
 }

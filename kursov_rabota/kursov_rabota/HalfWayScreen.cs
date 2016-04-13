@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace kursov_rabota
 {
-    public partial class CreateScreen : Form
+    public partial class HalfWayScreen : Form
     {
-        public CreateScreen()
+        public HalfWayScreen()
         {
             InitializeComponent();
         }
 
         private void CreateScreen_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ChooseButton_Click(object sender, EventArgs e)
         {
 
         }
