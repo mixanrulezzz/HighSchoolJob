@@ -47,5 +47,11 @@ namespace kursov_rabota
             MaxProviderID = SearchMaxID.SearchMaxID.FindMaxID(DataFile, "prov");
             MaxByingHistoryID = SearchMaxID.SearchMaxID.FindMaxID(DataFile, "bh");
         }
+
+        private void create_Click(object sender, EventArgs e)
+        {
+            CreateScreen CreateScr = new CreateScreen();
+            CreateScr.ShowDialog(this);
+        }
     }
 }

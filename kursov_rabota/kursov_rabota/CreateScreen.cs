@@ -16,5 +16,10 @@ namespace kursov_rabota
         {
             InitializeComponent();
         }
+
+        private void CreateScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

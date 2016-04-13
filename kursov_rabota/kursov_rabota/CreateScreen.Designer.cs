@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ChooseButton = new System.Windows.Forms.Button();
+            this.ChooseCreateButton = new System.Windows.Forms.Button();
             this.ShipmentRadioButton = new System.Windows.Forms.RadioButton();
             this.ClientRadioButton = new System.Windows.Forms.RadioButton();
             this.ProviderRadioButton = new System.Windows.Forms.RadioButton();
@@ -37,14 +37,14 @@
             this.HelpLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // ChooseButton
+            // ChooseCreateButton
             // 
-            this.ChooseButton.Location = new System.Drawing.Point(150, 227);
-            this.ChooseButton.Name = "ChooseButton";
-            this.ChooseButton.Size = new System.Drawing.Size(75, 23);
-            this.ChooseButton.TabIndex = 0;
-            this.ChooseButton.Text = "Выбрать";
-            this.ChooseButton.UseVisualStyleBackColor = true;
+            this.ChooseCreateButton.Location = new System.Drawing.Point(150, 227);
+            this.ChooseCreateButton.Name = "ChooseCreateButton";
+            this.ChooseCreateButton.Size = new System.Drawing.Size(75, 23);
+            this.ChooseCreateButton.TabIndex = 0;
+            this.ChooseCreateButton.Text = "Выбрать";
+            this.ChooseCreateButton.UseVisualStyleBackColor = true;
             // 
             // ShipmentRadioButton
             // 
@@ -121,10 +121,11 @@
             this.Controls.Add(this.ProviderRadioButton);
             this.Controls.Add(this.ClientRadioButton);
             this.Controls.Add(this.ShipmentRadioButton);
-            this.Controls.Add(this.ChooseButton);
+            this.Controls.Add(this.ChooseCreateButton);
             this.Name = "CreateScreen";
             this.ShowInTaskbar = false;
             this.Text = "CreateScreen";
+            this.Load += new System.EventHandler(this.CreateScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -132,7 +133,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button ChooseButton;
+        private System.Windows.Forms.Button ChooseCreateButton;
         private System.Windows.Forms.RadioButton ShipmentRadioButton;
         private System.Windows.Forms.RadioButton ClientRadioButton;
         private System.Windows.Forms.RadioButton ProviderRadioButton;
