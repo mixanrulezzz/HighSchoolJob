@@ -13,6 +13,7 @@ namespace kursov_rabota
     public partial class HalfWayScreen : Form
     {
         public string helpLabelText = "";
+        public string ChoosingRegime = "";
 
         public HalfWayScreen()
         {
