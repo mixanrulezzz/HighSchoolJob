@@ -127,6 +127,7 @@
             this.ShowInTaskbar = false;
             this.Text = "CreateScreen";
             this.Load += new System.EventHandler(this.CreateScreen_Load);
+            this.VisibleChanged += new System.EventHandler(this.HalfWayScreen_VisibleChanged);
             this.ResumeLayout(false);
             this.PerformLayout();
 

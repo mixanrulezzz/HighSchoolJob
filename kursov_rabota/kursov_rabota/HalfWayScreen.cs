@@ -12,6 +12,8 @@ namespace kursov_rabota
 {
     public partial class HalfWayScreen : Form
     {
+        public string helpLabelText = "";
+
         public HalfWayScreen()
         {
             InitializeComponent();
@@ -19,12 +21,17 @@ namespace kursov_rabota
 
         private void CreateScreen_Load(object sender, EventArgs e)
         {
-
+            HelpLabel.Text = "";
         }
 
         private void ChooseButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void HalfWayScreen_VisibleChanged(object sender, EventArgs e)
+        {
+            HelpLabel.Text = helpLabelText;
         }
     }
 }
