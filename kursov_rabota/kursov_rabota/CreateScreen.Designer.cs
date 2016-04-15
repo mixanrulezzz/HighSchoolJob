@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 277);
             this.Name = "CreateScreen";
-            this.Text = "CreateScreen";
+            this.Text = "Экран создания";
             this.Load += new System.EventHandler(this.CreateScreen_Load);
             this.ResumeLayout(false);
 

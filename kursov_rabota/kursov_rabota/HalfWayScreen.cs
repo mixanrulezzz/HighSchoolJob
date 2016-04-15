@@ -26,7 +26,7 @@ namespace kursov_rabota
 
         private void ChooseButton_Click(object sender, EventArgs e)
         {
-            Form NextScreen;
+            Form NextScreen = new Form();
             switch (ChoosingRegime)
             {
                 case "Create": NextScreen = new CreateScreen(); 
@@ -34,6 +34,7 @@ namespace kursov_rabota
                 default: break;
             }
             this.Visible = false;
+            NextScreen.ShowDialog();
         }
 
         private void HalfWayScreen_VisibleChanged(object sender, EventArgs e)

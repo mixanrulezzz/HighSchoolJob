@@ -27,3 +27,4 @@ C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\CreateSQLTables.dl
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\CreateSQLTables.pdb
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\System.Data.SQLite.dll
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.HalfWayScreen.resources
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.CreateScreen.resources
