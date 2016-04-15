@@ -125,7 +125,7 @@
             this.Controls.Add(this.ChooseButton);
             this.Name = "HalfWayScreen";
             this.ShowInTaskbar = false;
-            this.Text = "CreateScreen";
+            this.Text = "Выбор таблицы";
             this.Load += new System.EventHandler(this.CreateScreen_Load);
             this.VisibleChanged += new System.EventHandler(this.HalfWayScreen_VisibleChanged);
             this.ResumeLayout(false);

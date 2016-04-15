@@ -51,7 +51,6 @@ namespace kursov_rabota
         private void create_Click(object sender, EventArgs e)
         {
             HalfWayScreen HalfWayScr = new HalfWayScreen();
-            HalfWayScr.helpLabelText = "Выберите таблицу, в которую вы хотите добавить новое значение:";
             HalfWayScr.ChoosingRegime = "Create";
             HalfWayScr.ShowDialog(this);
         }

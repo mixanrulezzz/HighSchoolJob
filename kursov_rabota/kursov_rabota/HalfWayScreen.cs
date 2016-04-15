@@ -12,7 +12,6 @@ namespace kursov_rabota
 {
     public partial class HalfWayScreen : Form
     {
-        public string helpLabelText = "";
         public string ChoosingRegime = "";
 
         public HalfWayScreen()
@@ -27,12 +26,24 @@ namespace kursov_rabota
 
         private void ChooseButton_Click(object sender, EventArgs e)
         {
-
+            Form NextScreen;
+            switch (ChoosingRegime)
+            {
+                case "Create": NextScreen = new CreateScreen(); 
+                    break;
+                default: break;
+            }
+            this.Visible = false;
         }
 
         private void HalfWayScreen_VisibleChanged(object sender, EventArgs e)
         {
-            HelpLabel.Text = helpLabelText;
+            switch (ChoosingRegime)
+            {
+                case "Create": HelpLabel.Text = "Выберите таблицу, в которую вы хотите добавить новое значение:";
+                    break;
+                default: break;
+            }
         }
     }
 }
