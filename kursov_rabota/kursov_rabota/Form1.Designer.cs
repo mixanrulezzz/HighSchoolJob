@@ -62,6 +62,7 @@
             this.create.TabIndex = 2;
             this.create.Text = "Добавление";
             this.create.UseVisualStyleBackColor = true;
+            this.create.Click += new System.EventHandler(this.create_Click);
             // 
             // change
             // 
