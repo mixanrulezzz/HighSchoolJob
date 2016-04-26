@@ -29,7 +29,6 @@ C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\CreateSQLTables.pd
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\ShipmentLibrary.dll
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\ShipmentLibrary.pdb
 =======
-C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\System.Data.SQLite.dll
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.HalfWayScreen.resources
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.CreateScreen.resources
 >>>>>>> origin/master
