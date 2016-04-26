@@ -15,7 +15,7 @@ namespace SearchMaxID
             SQLiteCommand findMaxIndex = new SQLiteCommand(File);
             switch (flag)
             {
-                case "prod": findMaxIndex.CommandText = "select max(prodid) from Product";
+                case "prod": findMaxIndex.CommandText = "select max(shid) from Shipment";
                     break;
                 case "cl": findMaxIndex.CommandText = "select max(clid) from Client";
                     break;

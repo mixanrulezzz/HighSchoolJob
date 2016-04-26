@@ -16,7 +16,7 @@ namespace kursov_rabota
 {
     public partial class StartScreen : Form
     {
-        private SQLiteConnection DataFile = new SQLiteConnection("Data Source=C:/Games/mySQLiteLab.sqlite;Version=3");
+        private SQLiteConnection DataFile = new SQLiteConnection("Data Source=mySQLiteLab.sqlite;Version=3");
         private int MaxProductID;
         private int MaxClientID;
         private int MaxProviderID;
