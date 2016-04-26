@@ -11,6 +11,7 @@ using System.IO;
 using System.Data.SQLite;
 using CreateSQLTables;
 using SearchMaxID;
+using ShipmentLibrary;
 
 namespace kursov_rabota
 {

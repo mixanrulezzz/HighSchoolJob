@@ -8,10 +8,10 @@ namespace ShipmentLibrary
 {
     public class Shipment
     {
-        public int shID;
-        public string shName;
-        public int Price;
-        public string PhotoLink;
+        public int shID { get; private set; }
+        public string shName { get; set; }
+        public int Price { get; set; }
+        public string PhotoLink { get; set; }
 
         public Shipment()
         { }
