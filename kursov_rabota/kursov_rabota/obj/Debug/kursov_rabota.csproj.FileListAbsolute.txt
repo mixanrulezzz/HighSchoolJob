@@ -32,3 +32,5 @@ C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\ShipmentLibrary.pd
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.HalfWayScreen.resources
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Debug\kursov_rabota.CreateScreen.resources
 >>>>>>> origin/master
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\ClientLibrary.dll
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\ClientLibrary.pdb
