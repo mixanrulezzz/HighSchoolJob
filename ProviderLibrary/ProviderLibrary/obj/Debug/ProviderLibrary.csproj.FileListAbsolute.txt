@@ -1,0 +1,5 @@
+C:\GitRep\HighSchoolJob\ProviderLibrary\ProviderLibrary\bin\Debug\ProviderLibrary.dll
+C:\GitRep\HighSchoolJob\ProviderLibrary\ProviderLibrary\bin\Debug\ProviderLibrary.pdb
+C:\GitRep\HighSchoolJob\ProviderLibrary\ProviderLibrary\obj\Debug\ProviderLibrary.csprojResolveAssemblyReference.cache
+C:\GitRep\HighSchoolJob\ProviderLibrary\ProviderLibrary\obj\Debug\ProviderLibrary.dll
+C:\GitRep\HighSchoolJob\ProviderLibrary\ProviderLibrary\obj\Debug\ProviderLibrary.pdb
