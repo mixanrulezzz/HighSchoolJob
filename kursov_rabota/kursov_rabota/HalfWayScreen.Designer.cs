@@ -126,6 +126,7 @@
             this.Name = "HalfWayScreen";
             this.ShowInTaskbar = false;
             this.Text = "Выбор таблицы";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HalfWayScreen_FormClosing);
             this.Load += new System.EventHandler(this.CreateScreen_Load);
             this.VisibleChanged += new System.EventHandler(this.HalfWayScreen_VisibleChanged);
             this.ResumeLayout(false);

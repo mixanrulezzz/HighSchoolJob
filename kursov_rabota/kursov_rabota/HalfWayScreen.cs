@@ -47,5 +47,10 @@ namespace kursov_rabota
                 default: break;
             }
         }
+
+        private void HalfWayScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Program.StScreen.Visible = true;
+        }
     }
 }
