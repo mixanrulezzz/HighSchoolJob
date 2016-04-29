@@ -32,7 +32,7 @@ namespace ShipmentLibrary
 
     public class ShipmentList
     {
-        List<Shipment> Shipments;
+        private List<Shipment> Shipments;
 
         public ShipmentList()
         {
@@ -71,6 +71,17 @@ namespace ShipmentLibrary
             try { Shipments.RemoveAt(ShipmentIndex); }
             catch { return false; }
             return true;
+        }
+
+        public Shipment this[int i]
+        {
+            get { return Shipments[i]; }
+            set { Shipments[i] = value; }
+        }
+
+        public int Count
+        {
+            get { return Shipments.Count; }
         }
     }
 }

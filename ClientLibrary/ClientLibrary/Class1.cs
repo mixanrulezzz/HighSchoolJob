@@ -30,7 +30,7 @@ namespace ClientLibrary
 
     public class ClientList
     {
-        public List<Client> Clients;
+        private List<Client> Clients;
 
         public ClientList()
         {
@@ -69,6 +69,17 @@ namespace ClientLibrary
             catch (Exception)
             { return false; }
             return true;
+        }
+
+        public Client this[int i]
+        {
+            get { return Clients[i]; }
+            set { Clients[i] = value; }
+        }
+
+        public int Count
+        {
+            get { return Clients.Count; }
         }
     }
 }
