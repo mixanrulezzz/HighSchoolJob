@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(386, 277);
             this.Name = "CreateScreen";
             this.Text = "Экран создания";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateScreen_FormClosing);
             this.Load += new System.EventHandler(this.CreateScreen_Load);
             this.ResumeLayout(false);
 

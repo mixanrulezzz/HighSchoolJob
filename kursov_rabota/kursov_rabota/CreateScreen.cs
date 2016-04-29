@@ -23,5 +23,10 @@ namespace kursov_rabota
         {
             
         }
+
+        private void CreateScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Program.StScreen.Visible = true;
+        }
     }
 }

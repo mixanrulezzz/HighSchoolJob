@@ -8,6 +8,7 @@ namespace kursov_rabota
 {
     static class Program
     {
+        public static StartScreen StScreen;
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
@@ -16,7 +17,8 @@ namespace kursov_rabota
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartScreen());
+            StScreen = new StartScreen();
+            Application.Run(StScreen);
         }
     }
 }

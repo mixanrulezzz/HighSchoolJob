@@ -54,7 +54,8 @@ namespace kursov_rabota
         {
             HalfWayScreen HalfWayScr = new HalfWayScreen();
             HalfWayScr.ChoosingRegime = "Create";
-            HalfWayScr.ShowDialog(this);
+            this.Visible = false;
+            HalfWayScr.ShowDialog(this);            
         }
     }
 }

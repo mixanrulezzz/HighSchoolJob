@@ -35,6 +35,7 @@ namespace kursov_rabota
             }
             this.Visible = false;
             NextScreen.ShowDialog();
+            this.Close();
         }
 
         private void HalfWayScreen_VisibleChanged(object sender, EventArgs e)
