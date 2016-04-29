@@ -42,6 +42,9 @@
     <Reference Include="ProviderLibrary">
       <HintPath>..\..\ProviderLibrary\ProviderLibrary\bin\Debug\ProviderLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="ProviderShipmentLibrary">
+      <HintPath>..\..\ProviderShipmentLibrary\ProviderShipmentLibrary\bin\Debug\ProviderShipmentLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="SearchMaxID, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\SearchMaxID\SearchMaxID\bin\Debug\SearchMaxID.dll</HintPath>

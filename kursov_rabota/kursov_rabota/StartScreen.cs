@@ -14,6 +14,7 @@ using SearchMaxID;
 using ShipmentLibrary;
 using ClientLibrary;
 using ProviderLibrary;
+using ProviderShipmentLibrary;
 
 namespace kursov_rabota
 {

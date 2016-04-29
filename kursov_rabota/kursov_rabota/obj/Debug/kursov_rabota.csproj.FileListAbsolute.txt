@@ -36,3 +36,5 @@ C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\ClientLibrary.dll
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\ClientLibrary.pdb
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\ProviderLibrary.dll
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\ProviderLibrary.pdb
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\ProviderShipmentLibrary.dll
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Debug\ProviderShipmentLibrary.pdb
