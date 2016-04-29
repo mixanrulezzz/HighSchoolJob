@@ -1,0 +1,5 @@
+C:\GitRep\HighSchoolJob\ProviderShipmentLibrary\ProviderShipmentLibrary\bin\Debug\ProviderShipmentLibrary.dll
+C:\GitRep\HighSchoolJob\ProviderShipmentLibrary\ProviderShipmentLibrary\bin\Debug\ProviderShipmentLibrary.pdb
+C:\GitRep\HighSchoolJob\ProviderShipmentLibrary\ProviderShipmentLibrary\obj\Debug\ProviderShipmentLibrary.csprojResolveAssemblyReference.cache
+C:\GitRep\HighSchoolJob\ProviderShipmentLibrary\ProviderShipmentLibrary\obj\Debug\ProviderShipmentLibrary.dll
+C:\GitRep\HighSchoolJob\ProviderShipmentLibrary\ProviderShipmentLibrary\obj\Debug\ProviderShipmentLibrary.pdb
