@@ -43,6 +43,8 @@ namespace ShipmentLibrary
         {            
             if (newElement.Price < 0)
                 return 3;
+            if (newElement.shName.Length > 50)
+                return 1;
             Shipments.Add(newElement);
             return 0;
         }
@@ -51,6 +53,8 @@ namespace ShipmentLibrary
         {
             if (Price < 0)
                 return 3;
+            if (ShipmentName.Length > 50)
+                return 1;
             Shipments.Add(new Shipment(ShipmentID, ShipmentName, Price, PhotoLink));
             return 0;
         }

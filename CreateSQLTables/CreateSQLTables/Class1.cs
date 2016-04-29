@@ -26,7 +26,7 @@ namespace CreateSQLTables
             try
             {
                 SQLiteCommand create = new SQLiteCommand(File);
-                create.CommandText = "create table Client(clid INTEGER NOT NULL, clName VARCHAR(15) NOT NULL, CONSTRAINT ClientPK PRIMARY KEY (clid));";
+                create.CommandText = "create table Client(clid INTEGER NOT NULL, clFirstName VARCHAR(20) NOT NULL, clLastName VARCHAR(20), CONSTRAINT ClientPK PRIMARY KEY (clid));";
                 create.ExecuteNonQuery();
             }
             catch (Exception) { }
@@ -37,7 +37,7 @@ namespace CreateSQLTables
             try
             {
                 SQLiteCommand create = new SQLiteCommand(File);
-                create.CommandText = "create table Provider(provid INTEGER NOT NULL, provName VARCHAR(15) NOT NULL, CONSTRAINT ProvPK PRIMARY KEY (provid));";
+                create.CommandText = "create table Provider(provid INTEGER NOT NULL, provName VARCHAR(40) NOT NULL, CONSTRAINT ProvPK PRIMARY KEY (provid));";
                 create.ExecuteNonQuery();
             }
             catch (Exception) { }
