@@ -13,6 +13,7 @@ using CreateSQLTables;
 using SearchMaxID;
 using ShipmentLibrary;
 using ClientLibrary;
+using ProviderLibrary;
 
 namespace kursov_rabota
 {
