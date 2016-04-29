@@ -57,6 +57,15 @@ namespace ShipmentLibrary
 
         public bool Remove(Shipment DelShipment)
         {
+            try { Shipments.Remove(DelShipment); }
+            catch (Exception) { return false; }
+            return true;
+        }
+
+        public bool RemoveAt(int ShipmentIndex)
+        {
+            try { Shipments.RemoveAt(ShipmentIndex); }
+            catch { return false; }
             return true;
         }
     }
