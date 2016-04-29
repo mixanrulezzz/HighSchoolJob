@@ -49,6 +49,19 @@ namespace ClientLibrary
 
         public bool Remove(Client DelClient)
         {
+            try
+            { Clients.Remove(DelClient); }
+            catch (Exception)
+            { return false; }
+            return true;
+        }
+
+        public bool RemoveAt(int ClientIndex)
+        {
+            try
+            { Clients.RemoveAt(ClientIndex); }
+            catch (Exception)
+            { return false; }
             return true;
         }
     }
