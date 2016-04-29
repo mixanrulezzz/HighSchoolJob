@@ -55,7 +55,9 @@ namespace ShipmentLibrary
             return 0;
         }
 
-        public void Remove()
-        { }
+        public bool Remove(Shipment DelShipment)
+        {
+            return true;
+        }
     }
 }

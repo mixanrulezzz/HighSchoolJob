@@ -1,0 +1,5 @@
+C:\GitRep\HighSchoolJob\ClientLibrary\ClientLibrary\bin\Debug\ClientLibrary.dll
+C:\GitRep\HighSchoolJob\ClientLibrary\ClientLibrary\bin\Debug\ClientLibrary.pdb
+C:\GitRep\HighSchoolJob\ClientLibrary\ClientLibrary\obj\Debug\ClientLibrary.csprojResolveAssemblyReference.cache
+C:\GitRep\HighSchoolJob\ClientLibrary\ClientLibrary\obj\Debug\ClientLibrary.dll
+C:\GitRep\HighSchoolJob\ClientLibrary\ClientLibrary\obj\Debug\ClientLibrary.pdb
