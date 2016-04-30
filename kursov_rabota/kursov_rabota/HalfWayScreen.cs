@@ -13,6 +13,10 @@ namespace kursov_rabota
     public partial class HalfWayScreen : Form
     {
         public string ChoosingRegime = "";
+        public string ChoosinTable
+        {
+            get; private set;
+        }
 
         public HalfWayScreen()
         {
@@ -39,7 +43,9 @@ namespace kursov_rabota
                 default: break;
             }
             if (ShipmentRadioButton.Checked)
-            { }
+            {
+                
+            }
             this.Visible = false;
             NextScreen.ShowDialog();
             this.Close();
