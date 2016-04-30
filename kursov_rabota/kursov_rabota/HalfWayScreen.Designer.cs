@@ -33,7 +33,7 @@
             this.ClientRadioButton = new System.Windows.Forms.RadioButton();
             this.ProviderRadioButton = new System.Windows.Forms.RadioButton();
             this.ShipmentProviderRadioButton = new System.Windows.Forms.RadioButton();
-            this.ByingHistoryRadioButton = new System.Windows.Forms.RadioButton();
+            this.PurchaseHistoryRadioButton = new System.Windows.Forms.RadioButton();
             this.HelpLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -91,16 +91,16 @@
             this.ShipmentProviderRadioButton.Text = "Товар-Поставщик";
             this.ShipmentProviderRadioButton.UseVisualStyleBackColor = true;
             // 
-            // ByingHistoryRadioButton
+            // PurchaseHistoryRadioButton
             // 
-            this.ByingHistoryRadioButton.AutoSize = true;
-            this.ByingHistoryRadioButton.Location = new System.Drawing.Point(12, 123);
-            this.ByingHistoryRadioButton.Name = "ByingHistoryRadioButton";
-            this.ByingHistoryRadioButton.Size = new System.Drawing.Size(112, 17);
-            this.ByingHistoryRadioButton.TabIndex = 5;
-            this.ByingHistoryRadioButton.TabStop = true;
-            this.ByingHistoryRadioButton.Text = "История покупок";
-            this.ByingHistoryRadioButton.UseVisualStyleBackColor = true;
+            this.PurchaseHistoryRadioButton.AutoSize = true;
+            this.PurchaseHistoryRadioButton.Location = new System.Drawing.Point(12, 123);
+            this.PurchaseHistoryRadioButton.Name = "PurchaseHistoryRadioButton";
+            this.PurchaseHistoryRadioButton.Size = new System.Drawing.Size(112, 17);
+            this.PurchaseHistoryRadioButton.TabIndex = 5;
+            this.PurchaseHistoryRadioButton.TabStop = true;
+            this.PurchaseHistoryRadioButton.Text = "История покупок";
+            this.PurchaseHistoryRadioButton.UseVisualStyleBackColor = true;
             // 
             // HelpLabel
             // 
@@ -117,7 +117,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 262);
             this.Controls.Add(this.HelpLabel);
-            this.Controls.Add(this.ByingHistoryRadioButton);
+            this.Controls.Add(this.PurchaseHistoryRadioButton);
             this.Controls.Add(this.ShipmentProviderRadioButton);
             this.Controls.Add(this.ProviderRadioButton);
             this.Controls.Add(this.ClientRadioButton);
@@ -141,7 +141,7 @@
         private System.Windows.Forms.RadioButton ClientRadioButton;
         private System.Windows.Forms.RadioButton ProviderRadioButton;
         private System.Windows.Forms.RadioButton ShipmentProviderRadioButton;
-        private System.Windows.Forms.RadioButton ByingHistoryRadioButton;
+        private System.Windows.Forms.RadioButton PurchaseHistoryRadioButton;
         private System.Windows.Forms.Label HelpLabel;
     }
 }

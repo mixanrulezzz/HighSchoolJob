@@ -26,6 +26,11 @@ namespace kursov_rabota
 
         private void ChooseButton_Click(object sender, EventArgs e)
         {
+            if (ShipmentRadioButton.Checked == false && ClientRadioButton.Checked == false && ProviderRadioButton.Checked == false && ShipmentProviderRadioButton.Checked == false && PurchaseHistoryRadioButton.Checked == false)
+            {
+                MessageBox.Show("Ничего не выбрано!!!");
+                return;
+            }
             Form NextScreen = new Form();
             switch (ChoosingRegime)
             {
