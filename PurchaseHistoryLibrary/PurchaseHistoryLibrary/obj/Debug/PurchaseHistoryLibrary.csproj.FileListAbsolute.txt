@@ -1,0 +1,4 @@
+C:\GitRep\HighSchoolJob\PurchaseHistoryLibrary\PurchaseHistoryLibrary\bin\Debug\PurchaseHistoryLibrary.dll
+C:\GitRep\HighSchoolJob\PurchaseHistoryLibrary\PurchaseHistoryLibrary\bin\Debug\PurchaseHistoryLibrary.pdb
+C:\GitRep\HighSchoolJob\PurchaseHistoryLibrary\PurchaseHistoryLibrary\obj\Debug\PurchaseHistoryLibrary.dll
+C:\GitRep\HighSchoolJob\PurchaseHistoryLibrary\PurchaseHistoryLibrary\obj\Debug\PurchaseHistoryLibrary.pdb

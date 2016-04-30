@@ -37,11 +37,11 @@ namespace ClientLibrary
             Clients = new List<Client>();
         }
 
-        public int Add(Client NewClient)
+        public int Add(Client NewElement)
         {
-            if (NewClient.ClientFirstName.Length > 20 || NewClient.ClientLastName.Length > 20)
+            if (NewElement.ClientFirstName.Length > 20 || NewElement.ClientLastName.Length > 20)
                 return 1;
-            Clients.Add(NewClient);
+            Clients.Add(NewElement);
             return 0;
         }
 
@@ -53,10 +53,10 @@ namespace ClientLibrary
             return 0;
         }
 
-        public bool Remove(Client DelClient)
+        public bool Remove(Client DelElement)
         {
             try
-            { Clients.Remove(DelClient); }
+            { Clients.Remove(DelElement); }
             catch (Exception)
             { return false; }
             return true;

@@ -35,11 +35,11 @@ namespace ProviderLibrary
             Providers = new List<Provider>();
         }
 
-        public int Add(Provider NewProvider)
+        public int Add(Provider NewElement)
         {
-            if (NewProvider.ProviderName.Length > 40)
+            if (NewElement.ProviderName.Length > 40)
                 return 1;
-            Providers.Add(NewProvider);
+            Providers.Add(NewElement);
             return 0;
         }
 
@@ -51,9 +51,9 @@ namespace ProviderLibrary
             return 0;
         }
 
-        public bool Remove(Provider DelProvider)
+        public bool Remove(Provider DelElement)
         {
-            try { Providers.Remove(DelProvider); }
+            try { Providers.Remove(DelElement); }
             catch (Exception) { return false; }
             return true;
         }

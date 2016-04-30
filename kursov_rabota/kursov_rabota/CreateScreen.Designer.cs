@@ -28,13 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.PurchaseHistoryDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
+            // 
+            // PurchaseHistoryDate
+            // 
+            this.PurchaseHistoryDate.Location = new System.Drawing.Point(229, 245);
+            this.PurchaseHistoryDate.MaxDate = new System.DateTime(2016, 4, 30, 11, 5, 33, 0);
+            this.PurchaseHistoryDate.Name = "PurchaseHistoryDate";
+            this.PurchaseHistoryDate.Size = new System.Drawing.Size(145, 20);
+            this.PurchaseHistoryDate.TabIndex = 0;
+            this.PurchaseHistoryDate.Value = new System.DateTime(2016, 4, 30, 0, 0, 0, 0);
             // 
             // CreateScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(386, 277);
+            this.Controls.Add(this.PurchaseHistoryDate);
             this.Name = "CreateScreen";
             this.Text = "Экран создания";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateScreen_FormClosing);
@@ -44,5 +55,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.DateTimePicker PurchaseHistoryDate;
     }
 }

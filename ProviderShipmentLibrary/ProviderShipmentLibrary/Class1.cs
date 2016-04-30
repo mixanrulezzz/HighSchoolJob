@@ -35,14 +35,14 @@ namespace ProviderShipmentLibrary
             LinkListProviderShipment = new List<ProviderShipment>();
         }
 
-        public int Add(ProviderShipment NewProviderShipment)
+        public int Add(ProviderShipment NewElement)
         {
             foreach (ProviderShipment ps in LinkListProviderShipment)
             {
-                if (NewProviderShipment.ProviderID == ps.ProviderID && NewProviderShipment.ShipmentID == ps.ShipmentID)
+                if (NewElement.ProviderID == ps.ProviderID && NewElement.ShipmentID == ps.ShipmentID)
                     return 2;
             }
-            LinkListProviderShipment.Add(NewProviderShipment);
+            LinkListProviderShipment.Add(NewElement);
             return 0;
         }
 

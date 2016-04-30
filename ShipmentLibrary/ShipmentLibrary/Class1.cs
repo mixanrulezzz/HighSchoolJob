@@ -8,8 +8,8 @@ namespace ShipmentLibrary
 {
     public class Shipment
     {
-        public int shID { get; private set; }
-        public string shName { get; set; }
+        public int ShipmentID { get; private set; }
+        public string ShipmentName { get; set; }
         public int Price { get; set; }
         public string PhotoLink { get; set; }
 
@@ -18,15 +18,15 @@ namespace ShipmentLibrary
 
         public Shipment(int ShipmentID, string ShipmentName, int Price, string PhotoLink)
         {
-            shID = ShipmentID;
-            shName = ShipmentName;
+            this.ShipmentID = ShipmentID;
+            this.ShipmentName = ShipmentName;
             this.Price = Price;
             this.PhotoLink = PhotoLink;
         }
 
         public override string ToString()
         {
-            return shID.ToString() + " " + shName + " " + Price.ToString();
+            return ShipmentID.ToString() + " " + ShipmentName + " " + Price.ToString();
         }
     }
 
@@ -43,7 +43,7 @@ namespace ShipmentLibrary
         {            
             if (newElement.Price < 0)
                 return 3;
-            if (newElement.shName.Length > 50)
+            if (newElement.ShipmentName.Length > 50)
                 return 1;
             Shipments.Add(newElement);
             return 0;
@@ -59,9 +59,9 @@ namespace ShipmentLibrary
             return 0;
         }
 
-        public bool Remove(Shipment DelShipment)
+        public bool Remove(Shipment DelElement)
         {
-            try { Shipments.Remove(DelShipment); }
+            try { Shipments.Remove(DelElement); }
             catch (Exception) { return false; }
             return true;
         }

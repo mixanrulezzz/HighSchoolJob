@@ -21,7 +21,7 @@ namespace kursov_rabota
 
         private void CreateScreen_Load(object sender, EventArgs e)
         {
-            
+            PurchaseHistoryDate.MaxDate = DateTime.Now;
         }
 
         private void CreateScreen_FormClosing(object sender, FormClosingEventArgs e)
