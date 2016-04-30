@@ -21,7 +21,7 @@ namespace SearchMaxID
                     break;
                 case "prov": findMaxIndex.CommandText = "select max(provid) from Provider";
                     break;
-                case "bh": findMaxIndex.CommandText = "select max(bhid) from ByingHistory";
+                case "ph": findMaxIndex.CommandText = "select max(phid) from PurchaseHistory";
                     break;
                 default: break;
             }

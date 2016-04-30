@@ -44,12 +44,12 @@ namespace kursov_rabota
             CreateTable.Client(DataFile);
             CreateTable.Provider(DataFile);
             CreateTable.ShipmentProvider(DataFile);
-            CreateTable.ByingHistory(DataFile);
+            CreateTable.PurchaseHistory(DataFile);
 
             MaxProductID = SearchMaxID.SearchMaxID.FindMaxID(DataFile, "prod");
             MaxClientID = SearchMaxID.SearchMaxID.FindMaxID(DataFile, "cl");
             MaxProviderID = SearchMaxID.SearchMaxID.FindMaxID(DataFile, "prov");
-            MaxByingHistoryID = SearchMaxID.SearchMaxID.FindMaxID(DataFile, "bh");
+            MaxByingHistoryID = SearchMaxID.SearchMaxID.FindMaxID(DataFile, "ph");
         }
 
         private void create_Click(object sender, EventArgs e)

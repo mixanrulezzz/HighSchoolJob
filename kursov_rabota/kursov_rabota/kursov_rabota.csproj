@@ -36,7 +36,8 @@
     <Reference Include="ClientLibrary">
       <HintPath>..\..\ClientLibrary\ClientLibrary\bin\Debug\ClientLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="CreateSQLTables">
+    <Reference Include="CreateSQLTables, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\CreateSQLTables\CreateSQLTables\bin\Debug\CreateSQLTables.dll</HintPath>
     </Reference>
     <Reference Include="ProviderLibrary">
