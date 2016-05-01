@@ -65,6 +65,13 @@ namespace kursov_rabota
             label2.Visible = true;
             label2.Text = "Название товара";
             textBox1.Visible = true;
+            label3.Visible = true;
+            label3.Text = "Цена товара";
+            textBox2.Visible = true;
+            label4.Visible = true;
+            label4.Text = "Ссылка на фото";
+            textBox3.Visible = true;
+            PhotoPictureBox.Visible = true;
         }
     }
 }
