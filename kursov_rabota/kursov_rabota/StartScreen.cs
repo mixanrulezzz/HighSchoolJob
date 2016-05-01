@@ -15,16 +15,23 @@ using ShipmentLibrary;
 using ClientLibrary;
 using ProviderLibrary;
 using ProviderShipmentLibrary;
+using PurchaseHistoryLibrary;
+using ListsFilling;
 
 namespace kursov_rabota
 {
     public partial class StartScreen : Form
     {
-        private SQLiteConnection DataFile = new SQLiteConnection("Data Source=mySQLiteLab.sqlite;Version=3");
-        private int MaxProductID;
-        private int MaxClientID;
-        private int MaxProviderID;
-        private int MaxByingHistoryID;
+        public SQLiteConnection DataFile = new SQLiteConnection("Data Source=mySQLiteLab.sqlite;Version=3");
+        public int MaxProductID;
+        public int MaxClientID;
+        public int MaxProviderID;
+        public int MaxByingHistoryID;
+        public ShipmentList Shipments;
+        public ClientList Clients;
+        public ProviderList Providers;
+        public ProviderShipmentList ProvidersShipments;
+        public PurchaseHistoryList PurchaseHistoryL;
 
         public StartScreen()
         {
@@ -45,6 +52,12 @@ namespace kursov_rabota
             CreateTable.Provider(DataFile);
             CreateTable.ShipmentProvider(DataFile);
             CreateTable.PurchaseHistory(DataFile);
+
+            Shipments = ListsFilling.ListsFilling.Shipment(DataFile);
+            Providers = ListsFilling.ListsFilling.Provider(DataFile);
+            Clients = ListsFilling.ListsFilling.Client(DataFile);
+            ProvidersShipments = ListsFilling.ListsFilling.ProviderShipment(DataFile);
+            PurchaseHistoryL = ListsFilling.ListsFilling.PurchaseHistory(DataFile);
 
             MaxProductID = SearchMaxID.SearchMaxID.FindMaxID(DataFile, "prod");
             MaxClientID = SearchMaxID.SearchMaxID.FindMaxID(DataFile, "cl");

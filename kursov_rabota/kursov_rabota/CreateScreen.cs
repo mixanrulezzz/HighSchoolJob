@@ -54,6 +54,7 @@ namespace kursov_rabota
             textBox3.Visible = false;
             PurchaseHistoryDate.Visible = false;
             PhotoPictureBox.Visible = false;
+            
         }
 
         private void ShipmentVisible()

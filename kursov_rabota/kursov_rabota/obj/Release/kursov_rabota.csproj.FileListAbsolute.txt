@@ -22,3 +22,7 @@ C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\SearchMaxID.pdb
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\ShipmentLibrary.pdb
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Release\kursov_rabota.exe
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Release\kursov_rabota.pdb
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\PurchaseHistoryLibrary.dll
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\PurchaseHistoryLibrary.pdb
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\ListsFilling.dll
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\ListsFilling.pdb

@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A3B8D80C-9FBA-4E65-A8E3-CBC992CF3727}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{E82FE045-4977-41EB-A505-F08597D5D4D8}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>kursov_rabota</RootNamespace>
-    <AssemblyName>kursov_rabota</AssemblyName>
+    <RootNamespace>ListsFilling</RootNamespace>
+    <AssemblyName>ListsFilling</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -36,13 +33,6 @@
     <Reference Include="ClientLibrary">
       <HintPath>..\..\ClientLibrary\ClientLibrary\bin\Debug\ClientLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="CreateSQLTables, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CreateSQLTables\CreateSQLTables\bin\Debug\CreateSQLTables.dll</HintPath>
-    </Reference>
-    <Reference Include="ListsFilling">
-      <HintPath>..\..\ListsFilling\ListsFilling\bin\Debug\ListsFilling.dll</HintPath>
-    </Reference>
     <Reference Include="ProviderLibrary">
       <HintPath>..\..\ProviderLibrary\ProviderLibrary\bin\Debug\ProviderLibrary.dll</HintPath>
     </Reference>
@@ -51,10 +41,6 @@
     </Reference>
     <Reference Include="PurchaseHistoryLibrary">
       <HintPath>..\..\PurchaseHistoryLibrary\PurchaseHistoryLibrary\bin\Debug\PurchaseHistoryLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="SearchMaxID, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SearchMaxID\SearchMaxID\bin\Debug\SearchMaxID.dll</HintPath>
     </Reference>
     <Reference Include="ShipmentLibrary">
       <HintPath>..\..\ShipmentLibrary\ShipmentLibrary\bin\Debug\ShipmentLibrary.dll</HintPath>
@@ -68,66 +54,12 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateScreen.Designer.cs">
-      <DependentUpon>CreateScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="HalfWayScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HalfWayScreen.Designer.cs">
-      <DependentUpon>HalfWayScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="StartScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StartScreen.Designer.cs">
-      <DependentUpon>StartScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CreateScreen.resx">
-      <DependentUpon>CreateScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HalfWayScreen.resx">
-      <DependentUpon>HalfWayScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StartScreen.resx">
-      <DependentUpon>StartScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

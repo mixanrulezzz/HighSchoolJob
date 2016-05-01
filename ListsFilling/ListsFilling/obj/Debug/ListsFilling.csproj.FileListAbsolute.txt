@@ -1,0 +1,15 @@
+C:\GitRep\HighSchoolJob\ListsFilling\ListsFilling\bin\Debug\ListsFilling.dll
+C:\GitRep\HighSchoolJob\ListsFilling\ListsFilling\bin\Debug\ListsFilling.pdb
+C:\GitRep\HighSchoolJob\ListsFilling\ListsFilling\bin\Debug\ClientLibrary.dll
+C:\GitRep\HighSchoolJob\ListsFilling\ListsFilling\bin\Debug\ProviderLibrary.dll
+C:\GitRep\HighSchoolJob\ListsFilling\ListsFilling\bin\Debug\ProviderShipmentLibrary.dll
+C:\GitRep\HighSchoolJob\ListsFilling\ListsFilling\bin\Debug\PurchaseHistoryLibrary.dll
+C:\GitRep\HighSchoolJob\ListsFilling\ListsFilling\bin\Debug\ShipmentLibrary.dll
+C:\GitRep\HighSchoolJob\ListsFilling\ListsFilling\bin\Debug\System.Data.SQLite.dll
+C:\GitRep\HighSchoolJob\ListsFilling\ListsFilling\bin\Debug\ClientLibrary.pdb
+C:\GitRep\HighSchoolJob\ListsFilling\ListsFilling\bin\Debug\ProviderLibrary.pdb
+C:\GitRep\HighSchoolJob\ListsFilling\ListsFilling\bin\Debug\ProviderShipmentLibrary.pdb
+C:\GitRep\HighSchoolJob\ListsFilling\ListsFilling\bin\Debug\PurchaseHistoryLibrary.pdb
+C:\GitRep\HighSchoolJob\ListsFilling\ListsFilling\bin\Debug\ShipmentLibrary.pdb
+C:\GitRep\HighSchoolJob\ListsFilling\ListsFilling\obj\Debug\ListsFilling.dll
+C:\GitRep\HighSchoolJob\ListsFilling\ListsFilling\obj\Debug\ListsFilling.pdb
