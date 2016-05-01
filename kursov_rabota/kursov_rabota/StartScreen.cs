@@ -72,5 +72,10 @@ namespace kursov_rabota
             this.Visible = false;
             HalfWayScr.ShowDialog(this);            
         }
+
+        private void StartScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
     }
 }

@@ -104,6 +104,7 @@
             this.Controls.Add(this.backup);
             this.Name = "StartScreen";
             this.Text = "Программа";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.StartScreen_FormClosing);
             this.Load += new System.EventHandler(this.StartScreen_Load);
             this.ResumeLayout(false);
 
