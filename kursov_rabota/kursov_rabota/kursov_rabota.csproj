@@ -40,8 +40,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\CreateSQLTables\CreateSQLTables\bin\Debug\CreateSQLTables.dll</HintPath>
     </Reference>
-    <Reference Include="ListsFilling">
-      <HintPath>..\..\ListsFilling\ListsFilling\bin\Debug\ListsFilling.dll</HintPath>
+    <Reference Include="InputList">
+      <HintPath>..\..\InputList\InputList\bin\Debug\InputList.dll</HintPath>
     </Reference>
     <Reference Include="ProviderLibrary">
       <HintPath>..\..\ProviderLibrary\ProviderLibrary\bin\Debug\ProviderLibrary.dll</HintPath>

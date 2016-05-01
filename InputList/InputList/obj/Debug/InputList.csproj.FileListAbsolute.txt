@@ -1,0 +1,15 @@
+C:\GitRep\HighSchoolJob\InputList\InputList\bin\Debug\InputList.dll
+C:\GitRep\HighSchoolJob\InputList\InputList\bin\Debug\InputList.pdb
+C:\GitRep\HighSchoolJob\InputList\InputList\bin\Debug\ClientLibrary.dll
+C:\GitRep\HighSchoolJob\InputList\InputList\bin\Debug\ProviderLibrary.dll
+C:\GitRep\HighSchoolJob\InputList\InputList\bin\Debug\ProviderShipmentLibrary.dll
+C:\GitRep\HighSchoolJob\InputList\InputList\bin\Debug\PurchaseHistoryLibrary.dll
+C:\GitRep\HighSchoolJob\InputList\InputList\bin\Debug\ShipmentLibrary.dll
+C:\GitRep\HighSchoolJob\InputList\InputList\bin\Debug\System.Data.SQLite.dll
+C:\GitRep\HighSchoolJob\InputList\InputList\bin\Debug\ClientLibrary.pdb
+C:\GitRep\HighSchoolJob\InputList\InputList\bin\Debug\ProviderLibrary.pdb
+C:\GitRep\HighSchoolJob\InputList\InputList\bin\Debug\ProviderShipmentLibrary.pdb
+C:\GitRep\HighSchoolJob\InputList\InputList\bin\Debug\PurchaseHistoryLibrary.pdb
+C:\GitRep\HighSchoolJob\InputList\InputList\bin\Debug\ShipmentLibrary.pdb
+C:\GitRep\HighSchoolJob\InputList\InputList\obj\Debug\InputList.dll
+C:\GitRep\HighSchoolJob\InputList\InputList\obj\Debug\InputList.pdb

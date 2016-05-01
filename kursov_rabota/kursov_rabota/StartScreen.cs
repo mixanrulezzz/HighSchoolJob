@@ -16,7 +16,7 @@ using ClientLibrary;
 using ProviderLibrary;
 using ProviderShipmentLibrary;
 using PurchaseHistoryLibrary;
-using ListsFilling;
+using InputList;
 
 namespace kursov_rabota
 {
@@ -53,11 +53,11 @@ namespace kursov_rabota
             CreateTable.ShipmentProvider(DataFile);
             CreateTable.PurchaseHistory(DataFile);
 
-            Shipments = ListsFilling.ListsFilling.Shipment(DataFile);
-            Providers = ListsFilling.ListsFilling.Provider(DataFile);
-            Clients = ListsFilling.ListsFilling.Client(DataFile);
-            ProvidersShipments = ListsFilling.ListsFilling.ProviderShipment(DataFile);
-            PurchaseHistoryL = ListsFilling.ListsFilling.PurchaseHistory(DataFile);
+            Shipments = InputList.InputList.Shipment(DataFile);
+            Providers = InputList.InputList.Provider(DataFile);
+            Clients = InputList.InputList.Client(DataFile);
+            ProvidersShipments = InputList.InputList.ProviderShipment(DataFile);
+            PurchaseHistoryL = InputList.InputList.PurchaseHistory(DataFile);
 
             MaxProductID = SearchMaxID.SearchMaxID.FindMaxID(DataFile, "prod");
             MaxClientID = SearchMaxID.SearchMaxID.FindMaxID(DataFile, "cl");
