@@ -20,9 +20,11 @@ namespace kursov_rabota
         private void CreateScreen_Load(object sender, EventArgs e)
         {
             PurchaseHistoryDate.MaxDate = DateTime.Now;
+            HideAll();
             switch (HalfWayScreen.ChoosingTable)
             {
-                case "Shipment": break;
+                case "Shipment": ShipmentVisible();
+                    break;
                 case "Client": break;
                 case "Provider": break;
                 case "ProviderShipment": break;
@@ -34,6 +36,35 @@ namespace kursov_rabota
         private void CreateScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
             Program.StScreen.Visible = true;
+        }
+
+        private void HideAll()
+        {
+            FirstListBox.Visible = false;
+            SecondListBox.Visible = false;
+            CreateButton.Visible = false;
+            IDLabel.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
+            label4.Visible = false;
+            label5.Visible = false;
+            IDTextBox.Visible = false;
+            textBox1.Visible = false;
+            textBox2.Visible = false;
+            textBox3.Visible = false;
+            PurchaseHistoryDate.Visible = false;
+            PhotoPictureBox.Visible = false;
+        }
+
+        private void ShipmentVisible()
+        {
+            FirstListBox.Visible = true;
+            IDLabel.Visible = true;
+            IDLabel.Text = "ID товара";
+            IDTextBox.Visible = true;
+            label2.Visible = true;
+            label2.Text = "Название товара";
+            textBox1.Visible = true;
         }
     }
 }
