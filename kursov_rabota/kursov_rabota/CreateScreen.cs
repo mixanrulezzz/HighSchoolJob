@@ -12,8 +12,6 @@ namespace kursov_rabota
 {
     public partial class CreateScreen : Form
     {
-        public string ChoosingTable = "";
-
         public CreateScreen()
         {
             InitializeComponent();
@@ -22,6 +20,15 @@ namespace kursov_rabota
         private void CreateScreen_Load(object sender, EventArgs e)
         {
             PurchaseHistoryDate.MaxDate = DateTime.Now;
+            switch (HalfWayScreen.ChoosingTable)
+            {
+                case "Shipment": break;
+                case "Client": break;
+                case "Provider": break;
+                case "ProviderShipment": break;
+                case "PurchaseHistory": break;
+                default: break;
+            }
         }
 
         private void CreateScreen_FormClosing(object sender, FormClosingEventArgs e)
