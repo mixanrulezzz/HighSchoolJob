@@ -42,6 +42,9 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.CreateButton = new System.Windows.Forms.Button();
             this.PhotoPictureBox = new System.Windows.Forms.PictureBox();
+            this.FirstListBoxLabel = new System.Windows.Forms.Label();
+            this.SecondListBoxLabel = new System.Windows.Forms.Label();
+            this.BackButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PhotoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,17 +61,17 @@
             // FirstListBox
             // 
             this.FirstListBox.FormattingEnabled = true;
-            this.FirstListBox.Location = new System.Drawing.Point(377, 12);
+            this.FirstListBox.Location = new System.Drawing.Point(377, 25);
             this.FirstListBox.Name = "FirstListBox";
-            this.FirstListBox.Size = new System.Drawing.Size(120, 394);
+            this.FirstListBox.Size = new System.Drawing.Size(120, 381);
             this.FirstListBox.TabIndex = 0;
             // 
             // SecondListBox
             // 
             this.SecondListBox.FormattingEnabled = true;
-            this.SecondListBox.Location = new System.Drawing.Point(12, 12);
+            this.SecondListBox.Location = new System.Drawing.Point(12, 25);
             this.SecondListBox.Name = "SecondListBox";
-            this.SecondListBox.Size = new System.Drawing.Size(120, 394);
+            this.SecondListBox.Size = new System.Drawing.Size(120, 381);
             this.SecondListBox.TabIndex = 6;
             this.SecondListBox.Visible = false;
             // 
@@ -138,6 +141,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(233, 20);
             this.textBox2.TabIndex = 3;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // textBox3
             // 
@@ -145,6 +149,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(233, 20);
             this.textBox3.TabIndex = 4;
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // CreateButton
             // 
@@ -154,6 +159,7 @@
             this.CreateButton.TabIndex = 7;
             this.CreateButton.Text = "Создать";
             this.CreateButton.UseVisualStyleBackColor = true;
+            this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
             // 
             // PhotoPictureBox
             // 
@@ -163,11 +169,40 @@
             this.PhotoPictureBox.TabIndex = 13;
             this.PhotoPictureBox.TabStop = false;
             // 
+            // FirstListBoxLabel
+            // 
+            this.FirstListBoxLabel.AutoSize = true;
+            this.FirstListBoxLabel.Location = new System.Drawing.Point(377, 6);
+            this.FirstListBoxLabel.Name = "FirstListBoxLabel";
+            this.FirstListBoxLabel.Size = new System.Drawing.Size(0, 13);
+            this.FirstListBoxLabel.TabIndex = 14;
+            // 
+            // SecondListBoxLabel
+            // 
+            this.SecondListBoxLabel.AutoSize = true;
+            this.SecondListBoxLabel.Location = new System.Drawing.Point(12, 6);
+            this.SecondListBoxLabel.Name = "SecondListBoxLabel";
+            this.SecondListBoxLabel.Size = new System.Drawing.Size(0, 13);
+            this.SecondListBoxLabel.TabIndex = 15;
+            // 
+            // BackButton
+            // 
+            this.BackButton.Location = new System.Drawing.Point(141, 375);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(75, 23);
+            this.BackButton.TabIndex = 16;
+            this.BackButton.Text = "Назад";
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
             // CreateScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(509, 410);
+            this.Controls.Add(this.BackButton);
+            this.Controls.Add(this.SecondListBoxLabel);
+            this.Controls.Add(this.FirstListBoxLabel);
             this.Controls.Add(this.PhotoPictureBox);
             this.Controls.Add(this.CreateButton);
             this.Controls.Add(this.textBox3);
@@ -208,5 +243,8 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button CreateButton;
         private System.Windows.Forms.PictureBox PhotoPictureBox;
+        private System.Windows.Forms.Label FirstListBoxLabel;
+        private System.Windows.Forms.Label SecondListBoxLabel;
+        private System.Windows.Forms.Button BackButton;
     }
 }

@@ -35,6 +35,7 @@
             this.ShipmentProviderRadioButton = new System.Windows.Forms.RadioButton();
             this.PurchaseHistoryRadioButton = new System.Windows.Forms.RadioButton();
             this.HelpLabel = new System.Windows.Forms.Label();
+            this.BackButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ChooseButton
@@ -111,11 +112,22 @@
             this.HelpLabel.TabIndex = 6;
             this.HelpLabel.Text = "Выберите таблицу, в которую вы хотите добавить новое значение:";
             // 
+            // BackButton
+            // 
+            this.BackButton.Location = new System.Drawing.Point(12, 227);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(75, 23);
+            this.BackButton.TabIndex = 7;
+            this.BackButton.Text = "Назад";
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
             // HalfWayScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 262);
+            this.Controls.Add(this.BackButton);
             this.Controls.Add(this.HelpLabel);
             this.Controls.Add(this.PurchaseHistoryRadioButton);
             this.Controls.Add(this.ShipmentProviderRadioButton);
@@ -143,5 +155,6 @@
         private System.Windows.Forms.RadioButton ShipmentProviderRadioButton;
         private System.Windows.Forms.RadioButton PurchaseHistoryRadioButton;
         private System.Windows.Forms.Label HelpLabel;
+        private System.Windows.Forms.Button BackButton;
     }
 }

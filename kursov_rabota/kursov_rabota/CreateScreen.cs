@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShipmentLibrary;
+using ClientLibrary;
+using ProviderLibrary;
+using ProviderShipmentLibrary;
+using PurchaseHistoryLibrary;
 
 namespace kursov_rabota
 {
@@ -24,6 +29,9 @@ namespace kursov_rabota
             switch (HalfWayScreen.ChoosingTable)
             {
                 case "Shipment": ShipmentVisible();
+                    FirstListBox.SelectionMode = SelectionMode.None;
+                    IDTextBox.Text = "(Будет проставлен автоматически!)";
+                    RefreshFirstListBox();
                     break;
                 case "Client": break;
                 case "Provider": break;
@@ -35,7 +43,30 @@ namespace kursov_rabota
 
         private void CreateScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Program.StScreen.Visible = true;
+            if (e.CloseReason != CloseReason.UserClosing)
+            {
+                Program.StScreen.Visible = true;
+                Program.StScreen.HalfWayScr.Close();
+            }
+        }
+
+        private void RefreshFirstListBox()
+        {
+            FirstListBox.Items.Clear();
+            switch (HalfWayScreen.ChoosingTable)
+            {
+                case "Shipment": for (int i = 0; i < Program.StScreen.Shipments.Count; i++)
+                    {
+                        FirstListBox.Items.Add(Program.StScreen.Shipments[i]);
+                    }
+                    break;
+                default: break;
+            }
+        }
+
+        private void RefreshSecondListBox()
+        {
+
         }
 
         private void HideAll()
@@ -44,6 +75,8 @@ namespace kursov_rabota
             FirstListBox.SelectionMode = SelectionMode.One;
             SecondListBox.Visible = false;
             SecondListBox.SelectionMode = SelectionMode.One;
+            FirstListBoxLabel.Visible = false;
+            SecondListBoxLabel.Visible = false;
             CreateButton.Visible = false;
             IDLabel.Visible = false;
             label2.Visible = false;
@@ -62,20 +95,67 @@ namespace kursov_rabota
         private void ShipmentVisible()
         {
             FirstListBox.Visible = true;
-            FirstListBox.SelectionMode = SelectionMode.None;
+            FirstListBoxLabel.Visible = true;
+            FirstListBoxLabel.Text = "Список товаров:";
             IDLabel.Visible = true;
             IDLabel.Text = "ID товара";
             IDTextBox.Visible = true;
             label2.Visible = true;
             label2.Text = "Название товара";
             textBox1.Visible = true;
+            textBox1.MaxLength = 50;
             label3.Visible = true;
             label3.Text = "Цена товара";
             textBox2.Visible = true;
             label4.Visible = true;
             label4.Text = "Ссылка на фото";
             textBox3.Visible = true;
+            textBox3.MaxLength = 100;
             PhotoPictureBox.Visible = true;
+            CreateButton.Visible = true;
+        }
+
+        private void CreateButton_Click(object sender, EventArgs e)
+        {
+            switch (HalfWayScreen.ChoosingTable)
+            {
+                case "Shipment": if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "")
+                    {
+                        MessageBox.Show("Все поля обязательны к заполнению!!!");
+                        return;
+                    }
+                    Program.StScreen.MaxShipmentID++;
+                    Program.StScreen.Shipments.Add(Program.StScreen.MaxShipmentID, textBox1.Text, Convert.ToInt32(textBox2.Text), textBox3.Text);
+                    RefreshFirstListBox();
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    break;
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (HalfWayScreen.ChoosingTable == "Shipment")
+            {
+                if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
+                    e.Handled = true;
+            }
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (HalfWayScreen.ChoosingTable == "PurchaseHistory")
+            {
+                if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
+                    e.Handled = true;
+            }
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            Program.StScreen.HalfWayScr.Visible = true;
+            this.Close();
         }
     }
 }

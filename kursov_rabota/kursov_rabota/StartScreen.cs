@@ -33,6 +33,7 @@ namespace kursov_rabota
         public ProviderList Providers;
         public ProviderShipmentList ProvidersShipments;
         public PurchaseHistoryList PurchaseHistoryL;
+        public HalfWayScreen HalfWayScr;
 
         public StartScreen()
         {
@@ -63,7 +64,7 @@ namespace kursov_rabota
 
         private void create_Click(object sender, EventArgs e)
         {
-            HalfWayScreen HalfWayScr = new HalfWayScreen();
+            HalfWayScr = new HalfWayScreen();
             HalfWayScr.ChoosingRegime = "Create";
             this.Visible = false;
             HalfWayScr.ShowDialog(this);            

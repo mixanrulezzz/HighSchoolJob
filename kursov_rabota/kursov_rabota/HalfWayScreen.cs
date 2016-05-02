@@ -18,6 +18,11 @@ namespace kursov_rabota
             get; private set;
         }
 
+        public static void ChangeVisible()
+        {
+            
+        }
+
         public HalfWayScreen()
         {
             InitializeComponent();
@@ -64,7 +69,6 @@ namespace kursov_rabota
             }
             this.Visible = false;
             NextScreen.ShowDialog();
-            this.Close();
         }
 
         private void HalfWayScreen_VisibleChanged(object sender, EventArgs e)
@@ -80,6 +84,11 @@ namespace kursov_rabota
         private void HalfWayScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
             Program.StScreen.Visible = true;
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
