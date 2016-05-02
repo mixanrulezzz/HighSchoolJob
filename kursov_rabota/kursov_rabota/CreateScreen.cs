@@ -33,7 +33,11 @@ namespace kursov_rabota
                     IDTextBox.Text = "(Будет проставлен автоматически!)";
                     RefreshFirstListBox();
                     break;
-                case "Client": break;
+                case "Client": ClientVisible();
+                    FirstListBox.SelectionMode = SelectionMode.None;
+                    IDTextBox.Text = "(Будет проставлен автоматически!)";
+                    RefreshFirstListBox();
+                    break;
                 case "Provider": break;
                 case "ProviderShipment": break;
                 case "PurchaseHistory": break;
@@ -58,6 +62,11 @@ namespace kursov_rabota
                 case "Shipment": for (int i = 0; i < Program.StScreen.Shipments.Count; i++)
                     {
                         FirstListBox.Items.Add(Program.StScreen.Shipments[i]);
+                    }
+                    break;
+                case "Client": for (int i = 0; i < Program.StScreen.Clients.Count; i++)
+                    {
+                        FirstListBox.Items.Add(Program.StScreen.Clients[i]);
                     }
                     break;
                 default: break;
@@ -115,6 +124,25 @@ namespace kursov_rabota
             CreateButton.Visible = true;
         }
 
+        private void ClientVisible()
+        {
+            FirstListBox.Visible = true;
+            FirstListBoxLabel.Visible = true;
+            FirstListBoxLabel.Text = "Список клиентов:";
+            IDLabel.Visible = true;
+            IDLabel.Text = "ID клиента";
+            IDTextBox.Visible = true;
+            label2.Visible = true;
+            label2.Text = "Имя клиента";
+            textBox1.Visible = true;
+            textBox1.MaxLength = 20;
+            label3.Visible = true;
+            label3.Text = "Фамилия клиента";
+            textBox2.Visible = true;
+            textBox2.MaxLength = 20;
+            CreateButton.Visible = true;
+        }
+
         private void CreateButton_Click(object sender, EventArgs e)
         {
             switch (HalfWayScreen.ChoosingTable)
@@ -131,6 +159,18 @@ namespace kursov_rabota
                     textBox2.Text = "";
                     textBox3.Text = "";
                     break;
+                case "Client":if (textBox1.Text == "" || textBox2.Text == "")
+                    {
+                        MessageBox.Show("Все поля обязательны к заполнению!!!");
+                        return;
+                    }
+                    Program.StScreen.MaxClientID++;
+                    Program.StScreen.Clients.Add(Program.StScreen.MaxClientID, textBox1.Text, textBox2.Text);
+                    RefreshFirstListBox();
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    break;
+                default: break;
             }
         }
 
