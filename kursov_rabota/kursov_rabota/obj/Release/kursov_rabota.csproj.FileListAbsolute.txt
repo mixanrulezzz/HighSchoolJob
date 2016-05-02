@@ -26,3 +26,7 @@ C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\PurchaseHistoryL
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\PurchaseHistoryLibrary.pdb
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\InputList.dll
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\InputList.pdb
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\DeleteSQLTables.dll
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\OutputList.dll
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\DeleteSQLTables.pdb
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\OutputList.pdb

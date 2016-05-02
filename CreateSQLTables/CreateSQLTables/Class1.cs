@@ -10,6 +10,15 @@ namespace CreateSQLTables
 {
     public static class CreateTable
     {
+        public static void CreateAll(SQLiteConnection DataFile)
+        {
+            Shipment(DataFile);
+            Client(DataFile);
+            Provider(DataFile);
+            ProviderShipment(DataFile);
+            PurchaseHistory(DataFile);
+        }
+
         public static void Shipment(SQLiteConnection File)
         {
             try
@@ -43,12 +52,12 @@ namespace CreateSQLTables
             catch (Exception) { }
         }
 
-        public static void ShipmentProvider(SQLiteConnection File)
+        public static void ProviderShipment(SQLiteConnection File)
         {
             try
             {
                 SQLiteCommand create = new SQLiteCommand(File);
-                create.CommandText = "create table ShipmentProvider(shid INTEGER NOT NULL, provid INTEGER NOT NULL, CONSTRAINT ProdProvPK PRIMARY KEY (shid, provid), CONSTRAINT ShipmentFK FOREIGN KEY (shid) REFERENCES Shipment (shid) ON DELETE CASCADE, CONSTRAINT ProvFK FOREIGN KEY (provid) REFERENCES Provider (provid) ON DELETE CASCADE);";
+                create.CommandText = "create table ProviderShipment(shid INTEGER NOT NULL, provid INTEGER NOT NULL, CONSTRAINT ProdProvPK PRIMARY KEY (shid, provid), CONSTRAINT ShipmentFK FOREIGN KEY (shid) REFERENCES Shipment (shid) ON DELETE CASCADE, CONSTRAINT ProvFK FOREIGN KEY (provid) REFERENCES Provider (provid) ON DELETE CASCADE);";
                 create.ExecuteNonQuery();
             }
             catch (Exception) { }

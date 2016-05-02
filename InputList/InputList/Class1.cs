@@ -57,7 +57,7 @@ namespace InputList
         {
             ProviderShipmentList ProvShipList = new ProviderShipmentList();
             SQLiteCommand input = new SQLiteCommand(DataFile);
-            input.CommandText = "select * from ShipmentProvider";
+            input.CommandText = "select * from ProviderShipment";
             SQLiteDataReader sdr = input.ExecuteReader();
             while (sdr.Read())
             {

@@ -13,3 +13,4 @@ C:\GitRep\HighSchoolJob\OutputList\OutputList\bin\Debug\PurchaseHistoryLibrary.p
 C:\GitRep\HighSchoolJob\OutputList\OutputList\bin\Debug\ShipmentLibrary.pdb
 C:\GitRep\HighSchoolJob\OutputList\OutputList\obj\Debug\OutputList.dll
 C:\GitRep\HighSchoolJob\OutputList\OutputList\obj\Debug\OutputList.pdb
+C:\GitRep\HighSchoolJob\OutputList\OutputList\obj\Debug\OutputList.csprojResolveAssemblyReference.cache
