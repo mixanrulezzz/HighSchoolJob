@@ -40,8 +40,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\CreateSQLTables\CreateSQLTables\bin\Debug\CreateSQLTables.dll</HintPath>
     </Reference>
-    <Reference Include="DeleteSQLTables">
-      <HintPath>..\..\DeleteSQLTables\DeleteSQLTables\bin\Debug\DeleteSQLTables.dll</HintPath>
+    <Reference Include="DeleteFromSQLTables">
+      <HintPath>..\..\DeleteFromSQLTables\DeleteFromSQLTables\bin\Debug\DeleteFromSQLTables.dll</HintPath>
     </Reference>
     <Reference Include="InputList">
       <HintPath>..\..\InputList\InputList\bin\Debug\InputList.dll</HintPath>

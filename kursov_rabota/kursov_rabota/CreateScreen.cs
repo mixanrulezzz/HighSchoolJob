@@ -41,7 +41,9 @@ namespace kursov_rabota
         private void HideAll()
         {
             FirstListBox.Visible = false;
+            FirstListBox.SelectionMode = SelectionMode.One;
             SecondListBox.Visible = false;
+            SecondListBox.SelectionMode = SelectionMode.One;
             CreateButton.Visible = false;
             IDLabel.Visible = false;
             label2.Visible = false;
@@ -60,6 +62,7 @@ namespace kursov_rabota
         private void ShipmentVisible()
         {
             FirstListBox.Visible = true;
+            FirstListBox.SelectionMode = SelectionMode.None;
             IDLabel.Visible = true;
             IDLabel.Text = "ID товара";
             IDTextBox.Visible = true;

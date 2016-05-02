@@ -1,0 +1,5 @@
+C:\GitRep\HighSchoolJob\DeleteFromSQLTables\DeleteFromSQLTables\bin\Debug\DeleteFromSQLTables.dll
+C:\GitRep\HighSchoolJob\DeleteFromSQLTables\DeleteFromSQLTables\bin\Debug\DeleteFromSQLTables.pdb
+C:\GitRep\HighSchoolJob\DeleteFromSQLTables\DeleteFromSQLTables\bin\Debug\System.Data.SQLite.dll
+C:\GitRep\HighSchoolJob\DeleteFromSQLTables\DeleteFromSQLTables\obj\Debug\DeleteFromSQLTables.dll
+C:\GitRep\HighSchoolJob\DeleteFromSQLTables\DeleteFromSQLTables\obj\Debug\DeleteFromSQLTables.pdb

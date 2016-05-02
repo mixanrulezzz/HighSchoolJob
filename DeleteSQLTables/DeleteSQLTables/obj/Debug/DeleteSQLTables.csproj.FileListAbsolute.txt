@@ -1,5 +1,0 @@
-C:\GitRep\HighSchoolJob\DeleteSQLTables\DeleteSQLTables\bin\Debug\DeleteSQLTables.dll
-C:\GitRep\HighSchoolJob\DeleteSQLTables\DeleteSQLTables\bin\Debug\DeleteSQLTables.pdb
-C:\GitRep\HighSchoolJob\DeleteSQLTables\DeleteSQLTables\bin\Debug\System.Data.SQLite.dll
-C:\GitRep\HighSchoolJob\DeleteSQLTables\DeleteSQLTables\obj\Debug\DeleteSQLTables.dll
-C:\GitRep\HighSchoolJob\DeleteSQLTables\DeleteSQLTables\obj\Debug\DeleteSQLTables.pdb
