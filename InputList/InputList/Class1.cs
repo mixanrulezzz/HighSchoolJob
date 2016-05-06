@@ -74,9 +74,8 @@ namespace InputList
             SQLiteDataReader sdr = input.ExecuteReader();
             while (sdr.Read())
             {
-                string str = sdr.GetValue(4).ToString();
-                string[] mas = str.Split('/');
-                PurHisList.Add(Convert.ToInt32(sdr.GetValue(0)), Convert.ToInt32(sdr.GetValue(1)), Convert.ToInt32(sdr.GetValue(2)), Convert.ToInt32(sdr.GetValue(3)), Convert.ToInt32(mas[0]), Convert.ToInt32(mas[1]), Convert.ToInt32(mas[2]));
+                string[] str = sdr.GetValue(4).ToString().Split('-');
+                PurHisList.Add(Convert.ToInt32(sdr.GetValue(0)), Convert.ToInt32(sdr.GetValue(1)), Convert.ToInt32(sdr.GetValue(2)), Convert.ToInt32(sdr.GetValue(3)), Convert.ToInt32(str[2]), Convert.ToInt32(str[1]), Convert.ToInt32(str[0]));
             }
             return PurHisList;
         }

@@ -68,7 +68,15 @@ namespace OutputList
             SQLiteCommand insert = new SQLiteCommand(DataFile);
             for (int i = 0; i < PurHisList.Count; i++)
             {
-                insert.CommandText = "insert into PurchaseHistory values(" + PurHisList[i].PurchaseHistoryID.ToString() + ", " + PurHisList[i].ShipmentID.ToString() + ", " + PurHisList[i].ClientID.ToString() + ", " + PurHisList[i].Count.ToString() + ", TO_DATE('" + PurHisList[i].HistoryDate.Day.ToString() + "/" + PurHisList[i].HistoryDate.Month.ToString() + "/" + PurHisList[i].HistoryDate.Year.ToString() + "', 'DD/MM/YYYY'))";
+                insert.CommandText = "insert into PurchaseHistory values(" + PurHisList[i].PurchaseHistoryID.ToString() + ", " + PurHisList[i].ShipmentID.ToString() + ", " + PurHisList[i].ClientID.ToString() + ", " + PurHisList[i].Count.ToString() + ", '" + PurHisList[i].HistoryDate.Year.ToString() + "-";
+                if (PurHisList[i].HistoryDate.Month < 10)
+                    insert.CommandText += "0" + PurHisList[i].HistoryDate.Month.ToString() + "-";
+                else
+                    insert.CommandText += PurHisList[i].HistoryDate.Month.ToString() + "-";
+                if (PurHisList[i].HistoryDate.Day < 10)
+                    insert.CommandText += "0" + PurHisList[i].HistoryDate.Day.ToString() + "')";
+                else
+                    insert.CommandText += PurHisList[i].HistoryDate.Day.ToString() + "))";
                 insert.ExecuteNonQuery();
             }
         }

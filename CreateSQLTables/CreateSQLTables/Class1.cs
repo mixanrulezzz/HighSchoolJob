@@ -68,7 +68,7 @@ namespace CreateSQLTables
             try
             {
                 SQLiteCommand create = new SQLiteCommand(File);
-                create.CommandText = "create table PurchaseHistory(phid INTEGER NOT NULL, shid INTEGER NOT NULL, clid INTEGER NOT NULL, count INTEGER NOT NULL, HistoryDate DATE NOT NULL, CONSTRAINT phPK PRIMARY KEY (phid), CONSTRAINT ShipmentFK FOREIGN KEY (shid) REFERENCES Shipment (shid) ON DELETE CASCADE, CONSTRAINT ClientFK FOREIGN KEY (clid) REFERENCES Client (clid) ON DELETE CASCADE);";
+                create.CommandText = "create table PurchaseHistory(phid INTEGER NOT NULL, shid INTEGER NOT NULL, clid INTEGER NOT NULL, count INTEGER NOT NULL, HistoryDate varchar(10) NOT NULL, CONSTRAINT phPK PRIMARY KEY (phid), CONSTRAINT ShipmentFK FOREIGN KEY (shid) REFERENCES Shipment (shid) ON DELETE CASCADE, CONSTRAINT ClientFK FOREIGN KEY (clid) REFERENCES Client (clid) ON DELETE CASCADE);";
                 create.ExecuteNonQuery();
             }
             catch (Exception) { }

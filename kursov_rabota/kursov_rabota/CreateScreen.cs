@@ -27,6 +27,7 @@ namespace kursov_rabota
         private void CreateScreen_Load(object sender, EventArgs e)
         {
             PurchaseHistoryDate.MaxDate = DateTime.Now;
+            PurchaseHistoryDate.Value = DateTime.Now;
             HideAll();
             switch (HalfWayScreen.ChoosingTable)
             {
@@ -52,7 +53,14 @@ namespace kursov_rabota
                     textBox1.Text = "(Щелкните мышкой и выберите элемент в списке слева!)";
                     RefreshFirstListBox();
                     break;
-                case "PurchaseHistory": break;
+                case "PurchaseHistory": PurchaseHistoryVisible();
+                    FirstListBox.SelectionMode = SelectionMode.None;
+                    SecondListBox.SelectionMode = SelectionMode.One;
+                    IDTextBox.Text = "(Будет проставлен автоматически!)";
+                    textBox1.Text = "(Щелкните мышкой и выберите элемент в списке слева!)";
+                    textBox2.Text = "(Щелкните мышкой и выберите элемент в списке слева!)";
+                    RefreshFirstListBox();
+                    break;
                 default: break;
             }
         }
@@ -107,6 +115,12 @@ namespace kursov_rabota
                             }
                         }
                         FirstListBox.Items.Add(str);
+                    }
+                    break;
+                case "PurchaseHistory":
+                    for (int i = 0; i < Program.StScreen.PurchaseHistoryL.Count; i++)
+                    {
+                        FirstListBox.Items.Add(Program.StScreen.PurchaseHistoryL[i]);
                     }
                     break;
                 default: break;
@@ -241,7 +255,30 @@ namespace kursov_rabota
 
         private void PurchaseHistoryVisible()
         {
-
+            FirstListBox.Visible = true;
+            FirstListBoxLabel.Visible = true;
+            FirstListBoxLabel.Text = "История покупок:";
+            SecondListBox.Visible = true;
+            SecondListBoxLabel.Visible = true;
+            SecondListBoxLabel.Text = "";
+            IDLabel.Visible = true;
+            IDLabel.Text = "ID покупки";
+            IDTextBox.Visible = true;
+            label2.Visible = true;
+            label2.Text = "ID товара";
+            textBox1.Visible = true;
+            textBox1.ReadOnly = true;
+            label3.Visible = true;
+            label3.Text = "ID клиента";
+            textBox2.Visible = true;
+            textBox2.ReadOnly = true;
+            label4.Visible = true;
+            label4.Text = "Количество купленного товара";
+            textBox3.Visible = true;
+            label5.Visible = true;
+            label5.Text = "Дата покупки";
+            PurchaseHistoryDate.Visible = true;
+            CreateButton.Visible = true;
         }
 
         private void CreateButton_Click(object sender, EventArgs e)
@@ -296,6 +333,18 @@ namespace kursov_rabota
                     IDTextBox.Text = "(Щелкните мышкой и выберите элемент в списке слева!)";
                     textBox1.Text = "(Щелкните мышкой и выберите элемент в списке слева!)";
                     break;
+                case "PurchaseHistory":if (textBox1.Text[0] < '0' || textBox1.Text[0] > '9' || textBox2.Text[0] < '0' || textBox2.Text[0] > '9' || textBox3.Text == "")
+                    {
+                        MessageBox.Show("Все поля обязательны к заполнению!!!");
+                        return;
+                    }
+                    Program.StScreen.MaxPurchaseHistoryID++;
+                    Program.StScreen.PurchaseHistoryL.Add(Program.StScreen.MaxPurchaseHistoryID, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text), Convert.ToInt32(textBox3.Text), PurchaseHistoryDate.Value.Day, PurchaseHistoryDate.Value.Month, PurchaseHistoryDate.Value.Year);
+                    RefreshFirstListBox();
+                    RefreshSecondListBox("");
+                    textBox1.Text = "(Щелкните мышкой и выберите элемент в списке слева!)";
+                    textBox2.Text = "(Щелкните мышкой и выберите элемент в списке слева!)";
+                    break;
                 default: break;
             }
         }
@@ -342,22 +391,42 @@ namespace kursov_rabota
                 case "ProviderShipment": SelectedTextBox = 2;
                     RefreshSecondListBox("Provider");
                     break;
+                case "PurchaseHistory": SelectedTextBox = 2;
+                    RefreshSecondListBox("Shipment");
+                    break;
+                default: break;
+            }
+        }
+
+        private void textBox2_Click(object sender, EventArgs e)
+        {
+            switch (HalfWayScreen.ChoosingTable)
+            {
+                case "PurchaseHistory": SelectedTextBox = 3;
+                    RefreshSecondListBox("Client");
+                    break;
                 default: break;
             }
         }
 
         private void SecondListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string[] str = SecondListBox.SelectedItem.ToString().Split(' ');
-            switch (SelectedTextBox)
+            if (SecondListBox.SelectedItem != null)
             {
-                case 1: IDTextBox.Text = str[0];
-                    break;
-                case 2: textBox1.Text = str[0];
-                    break;
-                case 3: textBox2.Text = str[0];
-                    break;
-                default: break;
+                string[] str = SecondListBox.SelectedItem.ToString().Split(' ');
+                switch (SelectedTextBox)
+                {
+                    case 1:
+                        IDTextBox.Text = str[0];
+                        break;
+                    case 2:
+                        textBox1.Text = str[0];
+                        break;
+                    case 3:
+                        textBox2.Text = str[0];
+                        break;
+                    default: break;
+                }
             }
         }
     }

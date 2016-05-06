@@ -51,7 +51,6 @@
             // PurchaseHistoryDate
             // 
             this.PurchaseHistoryDate.Location = new System.Drawing.Point(138, 184);
-            this.PurchaseHistoryDate.MaxDate = new System.DateTime(2016, 4, 30, 11, 5, 33, 0);
             this.PurchaseHistoryDate.Name = "PurchaseHistoryDate";
             this.PurchaseHistoryDate.Size = new System.Drawing.Size(233, 20);
             this.PurchaseHistoryDate.TabIndex = 5;
@@ -144,6 +143,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(233, 20);
             this.textBox2.TabIndex = 3;
+            this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // textBox3

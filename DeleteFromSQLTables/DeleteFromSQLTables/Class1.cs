@@ -11,6 +11,7 @@ namespace DeleteFromSQLTables
     {
         public static void DeleteAll(SQLiteConnection DataFile)
         {
+            DeletePurchaseHistory(DataFile);
             DeleteProviderShipment(DataFile);
             DeleteProvider(DataFile);
             DeleteClient(DataFile);

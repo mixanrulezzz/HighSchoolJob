@@ -30,6 +30,7 @@ namespace PurchaseHistoryLibrary
             this.ShipmentID = ShipmentID;
             this.ClientID = ClientID;
             this.Count = Count;
+            HistoryDate = new Date();
             HistoryDate.Day = Day;
             HistoryDate.Month = Month;
             HistoryDate.Year = Year;
