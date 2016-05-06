@@ -17,6 +17,8 @@ namespace kursov_rabota
 {
     public partial class CreateScreen : Form
     {
+        private int SelectedTextBox = 0;
+
         public CreateScreen()
         {
             InitializeComponent();
@@ -43,7 +45,13 @@ namespace kursov_rabota
                     IDTextBox.Text = "(Будет проставлен автоматически!)";
                     RefreshFirstListBox();
                     break;
-                case "ProviderShipment": break;
+                case "ProviderShipment": ProviderShipmentVisible();
+                    FirstListBox.SelectionMode = SelectionMode.None;
+                    SecondListBox.SelectionMode = SelectionMode.One;
+                    IDTextBox.Text = "(Щелкните мышкой и выберите элемент в списке слева!)";
+                    textBox1.Text = "(Щелкните мышкой и выберите элемент в списке слева!)";
+                    RefreshFirstListBox();
+                    break;
                 case "PurchaseHistory": break;
                 default: break;
             }
@@ -78,13 +86,59 @@ namespace kursov_rabota
                         FirstListBox.Items.Add(Program.StScreen.Providers[i]);
                     }
                     break;
+                case "ProviderShipment": for (int i = 0; i < Program.StScreen.ProvidersShipments.Count; i++)
+                    {
+                        string str = "";
+                        for (int j = 0; j < Program.StScreen.Shipments.Count; j++)
+                        {
+                            if (Program.StScreen.Shipments[j].ShipmentID == Program.StScreen.ProvidersShipments[i].ShipmentID)
+                            {
+                                str += Program.StScreen.Shipments[j].ShipmentName;
+                                break;
+                            }
+                        }
+                        str += "-";
+                        for (int j = 0; j < Program.StScreen.Providers.Count; j++)
+                        {
+                            if (Program.StScreen.Providers[j].ProviderID == Program.StScreen.ProvidersShipments[i].ProviderID)
+                            {
+                                str += Program.StScreen.Providers[j].ProviderName;
+                                break;
+                            }
+                        }
+                        FirstListBox.Items.Add(str);
+                    }
+                    break;
                 default: break;
             }
         }
 
-        private void RefreshSecondListBox()
+        private void RefreshSecondListBox(string ChoosingTable)
         {
-
+            SecondListBox.Items.Clear();
+            switch (ChoosingTable)
+            {
+                case "Shipment": SecondListBoxLabel.Text = "Список товаров:";
+                    for (int i = 0; i < Program.StScreen.Shipments.Count; i++)
+                    {
+                        SecondListBox.Items.Add(Program.StScreen.Shipments[i]);
+                    }
+                    break;
+                case "Client": SecondListBoxLabel.Text = "Список клиентов:";
+                    for (int i = 0; i < Program.StScreen.Clients.Count; i++)
+                    {
+                        SecondListBox.Items.Add(Program.StScreen.Clients[i]);
+                    }
+                    break;
+                case "Provider": SecondListBoxLabel.Text = "Список поставщиков:";
+                    for (int i = 0; i < Program.StScreen.Providers.Count; i++)
+                    {
+                        SecondListBox.Items.Add(Program.StScreen.Providers[i]);
+                    }
+                    break;
+                default: SecondListBoxLabel.Text = "";
+                    break;
+            }
         }
 
         private void HideAll()
@@ -169,7 +223,20 @@ namespace kursov_rabota
 
         private void ProviderShipmentVisible()
         {
-
+            FirstListBox.Visible = true;
+            FirstListBoxLabel.Visible = true;
+            FirstListBoxLabel.Text = "Список товар-поставщик:";
+            SecondListBox.Visible = true;
+            SecondListBoxLabel.Visible = true;
+            SecondListBoxLabel.Text = "";
+            IDLabel.Visible = true;
+            IDLabel.Text = "ID товара";
+            IDTextBox.Visible = true;
+            label2.Visible = true;
+            label2.Text = "ID поставщика";
+            textBox1.Visible = true;
+            textBox1.ReadOnly = true;
+            CreateButton.Visible = true;
         }
 
         private void PurchaseHistoryVisible()
@@ -214,6 +281,21 @@ namespace kursov_rabota
                     RefreshFirstListBox();
                     textBox1.Text = "";
                     break;
+                case "ProviderShipment": if (IDTextBox.Text[0] < '0' || IDTextBox.Text[0] > '9' || textBox1.Text[0] < '0' || textBox1.Text[0] > '9')
+                    {
+                        MessageBox.Show("Все поля обязательны к заполнению!!!");
+                        return;
+                    }
+                    if (Program.StScreen.ProvidersShipments.Add(Convert.ToInt32(IDTextBox.Text), Convert.ToInt32(textBox1.Text)) == 2)
+                    {
+                        MessageBox.Show("Данный элемент уже существует!!!");
+                        return;
+                    }
+                    RefreshFirstListBox();
+                    RefreshSecondListBox("");
+                    IDTextBox.Text = "(Щелкните мышкой и выберите элемент в списке слева!)";
+                    textBox1.Text = "(Щелкните мышкой и выберите элемент в списке слева!)";
+                    break;
                 default: break;
             }
         }
@@ -240,6 +322,43 @@ namespace kursov_rabota
         {
             Program.StScreen.HalfWayScr.Visible = true;
             this.Close();
+        }
+
+        private void IDTextBox_Click(object sender, EventArgs e)
+        {            
+            switch (HalfWayScreen.ChoosingTable)
+            {
+                case "ProviderShipment": SelectedTextBox = 1;
+                    RefreshSecondListBox("Shipment");
+                    break;
+                default: break;
+            }
+        }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {            
+            switch (HalfWayScreen.ChoosingTable)
+            {
+                case "ProviderShipment": SelectedTextBox = 2;
+                    RefreshSecondListBox("Provider");
+                    break;
+                default: break;
+            }
+        }
+
+        private void SecondListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] str = SecondListBox.SelectedItem.ToString().Split(' ');
+            switch (SelectedTextBox)
+            {
+                case 1: IDTextBox.Text = str[0];
+                    break;
+                case 2: textBox1.Text = str[0];
+                    break;
+                case 3: textBox2.Text = str[0];
+                    break;
+                default: break;
+            }
         }
     }
 }

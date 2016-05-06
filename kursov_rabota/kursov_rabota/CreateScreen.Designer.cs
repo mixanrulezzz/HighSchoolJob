@@ -74,6 +74,7 @@
             this.SecondListBox.Size = new System.Drawing.Size(120, 381);
             this.SecondListBox.TabIndex = 6;
             this.SecondListBox.Visible = false;
+            this.SecondListBox.SelectedIndexChanged += new System.EventHandler(this.SecondListBox_SelectedIndexChanged);
             // 
             // IDLabel
             // 
@@ -127,6 +128,7 @@
             this.IDTextBox.ReadOnly = true;
             this.IDTextBox.Size = new System.Drawing.Size(233, 20);
             this.IDTextBox.TabIndex = 1;
+            this.IDTextBox.Click += new System.EventHandler(this.IDTextBox_Click);
             // 
             // textBox1
             // 
@@ -134,6 +136,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(233, 20);
             this.textBox1.TabIndex = 2;
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // textBox2
             // 
