@@ -14,7 +14,7 @@ namespace ProviderShipmentLibrary
         public ProviderShipment()
         { }
 
-        public ProviderShipment(int ProviderID, int ShipmentID)
+        public ProviderShipment(int ShipmentID, int ProviderID)
         {
             this.ProviderID = ProviderID;
             this.ShipmentID = ShipmentID;
@@ -46,14 +46,14 @@ namespace ProviderShipmentLibrary
             return 0;
         }
 
-        public int Add(int ProviderID, int ShipmentID)
+        public int Add(int ShipmentID, int ProviderID)
         {
             foreach (ProviderShipment ps in LinkListProviderShipment)
             {
                 if (ProviderID == ps.ProviderID && ShipmentID == ps.ShipmentID)
                     return 2;
             }
-            LinkListProviderShipment.Add(new ProviderShipment(ProviderID, ShipmentID));
+            LinkListProviderShipment.Add(new ProviderShipment(ShipmentID, ProviderID));
             return 0;
         }
 

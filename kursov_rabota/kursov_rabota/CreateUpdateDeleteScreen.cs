@@ -470,13 +470,11 @@ namespace kursov_rabota
                     RefreshFirstListBox();
                     break;
                 case "ProviderShipment": ProviderShipmentVisible();
-                    SecondListBox.Visible = false;
-                    SecondListBoxLabel.Visible = false;
+                    SecondListBox.SelectionMode = SelectionMode.None;
                     RefreshFirstListBox();
                     break;
                 case "PurchaseHistory": PurchaseHistoryVisible();
-                    SecondListBox.Visible = false;
-                    SecondListBoxLabel.Visible = false;
+                    SecondListBox.SelectionMode = SelectionMode.None;
                     RefreshFirstListBox();
                     break;
                 default: break;
@@ -578,7 +576,11 @@ namespace kursov_rabota
                 case "Shipment": break;
                 case "Client": break;
                 case "Provider": break;
-                case "ProviderShipment": break;
+                case "ProviderShipment": Program.StScreen.ProvidersShipments.RemoveAt(FirstListBox.SelectedIndex);
+                    RefreshFirstListBox();
+                    IDTextBox.Text = "";
+                    textBox1.Text = "";
+                    break;
                 case "PurchaseHistory": Program.StScreen.PurchaseHistoryL.RemoveAt(FirstListBox.SelectedIndex);
                     RefreshFirstListBox();
                     IDTextBox.Text = "";
