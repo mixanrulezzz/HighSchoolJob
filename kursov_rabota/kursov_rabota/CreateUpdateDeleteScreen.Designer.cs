@@ -1,6 +1,6 @@
 ﻿namespace kursov_rabota
 {
-    partial class CreateScreen
+    partial class CreateUpdateDeleteScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -40,7 +40,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.CreateButton = new System.Windows.Forms.Button();
+            this.MultifunctionalButton = new System.Windows.Forms.Button();
             this.PhotoPictureBox = new System.Windows.Forms.PictureBox();
             this.FirstListBoxLabel = new System.Windows.Forms.Label();
             this.SecondListBoxLabel = new System.Windows.Forms.Label();
@@ -64,6 +64,7 @@
             this.FirstListBox.Name = "FirstListBox";
             this.FirstListBox.Size = new System.Drawing.Size(120, 381);
             this.FirstListBox.TabIndex = 0;
+            this.FirstListBox.SelectedIndexChanged += new System.EventHandler(this.FirstListBox_SelectedIndexChanged);
             // 
             // SecondListBox
             // 
@@ -154,15 +155,15 @@
             this.textBox3.TabIndex = 4;
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
-            // CreateButton
+            // MultifunctionalButton
             // 
-            this.CreateButton.Location = new System.Drawing.Point(296, 375);
-            this.CreateButton.Name = "CreateButton";
-            this.CreateButton.Size = new System.Drawing.Size(75, 23);
-            this.CreateButton.TabIndex = 7;
-            this.CreateButton.Text = "Создать";
-            this.CreateButton.UseVisualStyleBackColor = true;
-            this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
+            this.MultifunctionalButton.Location = new System.Drawing.Point(296, 375);
+            this.MultifunctionalButton.Name = "MultifunctionalButton";
+            this.MultifunctionalButton.Size = new System.Drawing.Size(75, 23);
+            this.MultifunctionalButton.TabIndex = 7;
+            this.MultifunctionalButton.Text = "Создать";
+            this.MultifunctionalButton.UseVisualStyleBackColor = true;
+            this.MultifunctionalButton.Click += new System.EventHandler(this.MultifunctionalButton_Click);
             // 
             // PhotoPictureBox
             // 
@@ -198,7 +199,7 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // CreateScreen
+            // CreateUpdateDeleteScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -207,7 +208,7 @@
             this.Controls.Add(this.SecondListBoxLabel);
             this.Controls.Add(this.FirstListBoxLabel);
             this.Controls.Add(this.PhotoPictureBox);
-            this.Controls.Add(this.CreateButton);
+            this.Controls.Add(this.MultifunctionalButton);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -220,7 +221,7 @@
             this.Controls.Add(this.SecondListBox);
             this.Controls.Add(this.FirstListBox);
             this.Controls.Add(this.PurchaseHistoryDate);
-            this.Name = "CreateScreen";
+            this.Name = "CreateUpdateDeleteScreen";
             this.Text = "Экран создания";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateScreen_FormClosing);
             this.Load += new System.EventHandler(this.CreateScreen_Load);
@@ -244,7 +245,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button CreateButton;
+        private System.Windows.Forms.Button MultifunctionalButton;
         private System.Windows.Forms.PictureBox PhotoPictureBox;
         private System.Windows.Forms.Label FirstListBoxLabel;
         private System.Windows.Forms.Label SecondListBoxLabel;

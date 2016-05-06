@@ -65,9 +65,25 @@ namespace kursov_rabota
         private void create_Click(object sender, EventArgs e)
         {
             HalfWayScr = new HalfWayScreen();
-            HalfWayScr.ChoosingRegime = "Create";
+            HalfWayScreen.ChoosingRegime = "Create";
             this.Visible = false;
             HalfWayScr.ShowDialog(this);            
+        }
+
+        private void change_Click(object sender, EventArgs e)
+        {
+            HalfWayScr = new HalfWayScreen();
+            HalfWayScreen.ChoosingRegime = "Update";
+            this.Visible = false;
+            HalfWayScr.ShowDialog(this);
+        }
+
+        private void deleteLine_Click(object sender, EventArgs e)
+        {
+            HalfWayScr = new HalfWayScreen();
+            HalfWayScreen.ChoosingRegime = "Delete";
+            this.Visible = false;
+            HalfWayScr.ShowDialog(this);
         }
 
         private void StartScreen_FormClosing(object sender, FormClosingEventArgs e)

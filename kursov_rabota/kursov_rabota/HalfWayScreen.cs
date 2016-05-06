@@ -12,7 +12,7 @@ namespace kursov_rabota
 {
     public partial class HalfWayScreen : Form
     {
-        public string ChoosingRegime = "";
+        public static string ChoosingRegime = "";
         public static string ChoosingTable
         {
             get; private set;
@@ -40,13 +40,7 @@ namespace kursov_rabota
                 MessageBox.Show("Ничего не выбрано!!!");
                 return;
             }
-            Form NextScreen = new Form();
-            switch (ChoosingRegime)
-            {
-                case "Create": NextScreen = new CreateScreen(); 
-                    break;
-                default: break;
-            }
+            CreateUpdateDeleteScreen NextScreen = new CreateUpdateDeleteScreen();
             if (ShipmentRadioButton.Checked)
             {
                 ChoosingTable = "Shipment";
@@ -76,6 +70,10 @@ namespace kursov_rabota
             switch (ChoosingRegime)
             {
                 case "Create": HelpLabel.Text = "Выберите таблицу, в которую вы хотите добавить новое значение:";
+                    break;
+                case "Update": HelpLabel.Text = "Выберите таблицу, в которой вы хотите что-нибудь изменить: ";
+                    break;
+                case "Delete": HelpLabel.Text = "Выберите таблицу, из которой вы хотите что-нибудь удалить:";
                     break;
                 default: break;
             }

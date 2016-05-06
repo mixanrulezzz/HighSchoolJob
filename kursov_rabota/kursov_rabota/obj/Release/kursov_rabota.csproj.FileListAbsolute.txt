@@ -1,6 +1,5 @@
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\kursov_rabota.exe.config
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Release\kursov_rabota.csprojResolveAssemblyReference.cache
-C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Release\kursov_rabota.CreateScreen.resources
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Release\kursov_rabota.HalfWayScreen.resources
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Release\kursov_rabota.StartScreen.resources
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Release\kursov_rabota.Properties.Resources.resources
@@ -30,3 +29,4 @@ C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\OutputList.dll
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\OutputList.pdb
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\DeleteFromSQLTables.dll
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\DeleteFromSQLTables.pdb
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Release\kursov_rabota.CreateUpdateDeleteScreen.resources

@@ -72,6 +72,7 @@
             this.change.TabIndex = 3;
             this.change.Text = "Редактирование";
             this.change.UseVisualStyleBackColor = true;
+            this.change.Click += new System.EventHandler(this.change_Click);
             // 
             // deleteLine
             // 
@@ -81,6 +82,7 @@
             this.deleteLine.TabIndex = 4;
             this.deleteLine.Text = "Удаление";
             this.deleteLine.UseVisualStyleBackColor = true;
+            this.deleteLine.Click += new System.EventHandler(this.deleteLine_Click);
             // 
             // choose
             // 

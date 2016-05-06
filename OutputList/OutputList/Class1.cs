@@ -76,7 +76,7 @@ namespace OutputList
                 if (PurHisList[i].HistoryDate.Day < 10)
                     insert.CommandText += "0" + PurHisList[i].HistoryDate.Day.ToString() + "')";
                 else
-                    insert.CommandText += PurHisList[i].HistoryDate.Day.ToString() + "))";
+                    insert.CommandText += PurHisList[i].HistoryDate.Day.ToString() + "')";
                 insert.ExecuteNonQuery();
             }
         }
