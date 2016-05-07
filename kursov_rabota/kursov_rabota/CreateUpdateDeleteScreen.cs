@@ -147,8 +147,8 @@ namespace kursov_rabota
                         textBox1.Text = Program.StScreen.Providers[FirstListBox.SelectedIndex].ProviderName;
                         break;
                     case "ProviderShipment":
-                        IDTextBox.Text = Program.StScreen.ProvidersShipments[FirstListBox.SelectedIndex].ShipmentID.ToString();
-                        textBox1.Text = Program.StScreen.ProvidersShipments[FirstListBox.SelectedIndex].ProviderID.ToString();
+                        IDTextBox.Text = Program.StScreen.ProvidersShipments[FirstListBox.SelectedIndex].ProviderID.ToString();
+                        textBox1.Text = Program.StScreen.ProvidersShipments[FirstListBox.SelectedIndex].ShipmentID.ToString();
                         break;
                     case "PurchaseHistory":
                         IDTextBox.Text = Program.StScreen.PurchaseHistoryL[FirstListBox.SelectedIndex].PurchaseHistoryID.ToString();
@@ -597,7 +597,7 @@ namespace kursov_rabota
                         return;
                     }
                     Program.StScreen.Providers.UpdateAt(new Provider(Convert.ToInt32(IDTextBox.Text), textBox1.Text), FirstListBox.SelectedIndex);
-                    RefreshFirstListBox();
+                    RefreshFirstListBox(); 
                     break;
                 case "ProviderShipment":
                     if (FirstListBox.SelectedIndex == -1)
@@ -605,6 +605,13 @@ namespace kursov_rabota
                         MessageBox.Show("Для изсенения элемента его сначала нужно выбрать");
                         return;
                     }
+                    if (!Program.StScreen.ProvidersShipments.UpdateAt(new ProviderShipment(Convert.ToInt32(IDTextBox.Text), Convert.ToInt32(textBox1.Text)), FirstListBox.SelectedIndex))
+                    {
+                        MessageBox.Show("Такой элемент уже существует!!!");
+                        return;
+                    }
+                    RefreshFirstListBox();
+                    RefreshSecondListBox("");
                     break;
                 case "PurchaseHistory":
                     if (FirstListBox.SelectedIndex == -1)
@@ -612,6 +619,9 @@ namespace kursov_rabota
                         MessageBox.Show("Для изсенения элемента его сначала нужно выбрать");
                         return;
                     }
+                    Program.StScreen.PurchaseHistoryL.UpdateAt(new PurchaseHistory(Convert.ToInt32(IDTextBox.Text), Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text), Convert.ToInt32(textBox3.Text), PurchaseHistoryDate.Value.Day, PurchaseHistoryDate.Value.Month, PurchaseHistoryDate.Value.Year), FirstListBox.SelectedIndex);
+                    RefreshFirstListBox();
+                    RefreshSecondListBox("");
                     break;
                 default: break;
             }

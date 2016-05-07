@@ -59,6 +59,11 @@ namespace ProviderShipmentLibrary
 
         public bool UpdateAt(ProviderShipment UpdElement, int ElementIndex)
         {
+            foreach (ProviderShipment ps in LinkListProviderShipment)
+            {
+                if (UpdElement.ProviderID == ps.ProviderID && UpdElement.ShipmentID == ps.ShipmentID)
+                    return false;
+            }
             LinkListProviderShipment[ElementIndex] = UpdElement;
             return true;
         }
