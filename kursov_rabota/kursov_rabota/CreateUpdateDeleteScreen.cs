@@ -572,11 +572,43 @@ namespace kursov_rabota
         {
             switch (HalfWayScreen.ChoosingTable)
             {
-                case "Shipment": break;
-                case "Client": break;
-                case "Provider": break;
-                case "ProviderShipment": break;
-                case "PurchaseHistory": break;
+                case "Shipment":
+                    if (FirstListBox.SelectedIndex == -1)
+                    {
+                        MessageBox.Show("Для изсенения элемента его сначала нужно выбрать");
+                        return;
+                    }
+                    Program.StScreen.Shipments.UpdateAt(new Shipment(Convert.ToInt32(IDTextBox.Text), textBox1.Text, Convert.ToInt32(textBox2.Text), textBox3.Text), FirstListBox.SelectedIndex);
+                    RefreshFirstListBox();
+                    break;
+                case "Client":
+                    if (FirstListBox.SelectedIndex == -1)
+                    {
+                        MessageBox.Show("Для изсенения элемента его сначала нужно выбрать");
+                        return;
+                    }
+                    break;
+                case "Provider":
+                    if (FirstListBox.SelectedIndex == -1)
+                    {
+                        MessageBox.Show("Для изсенения элемента его сначала нужно выбрать");
+                        return;
+                    }
+                    break;
+                case "ProviderShipment":
+                    if (FirstListBox.SelectedIndex == -1)
+                    {
+                        MessageBox.Show("Для изсенения элемента его сначала нужно выбрать");
+                        return;
+                    }
+                    break;
+                case "PurchaseHistory":
+                    if (FirstListBox.SelectedIndex == -1)
+                    {
+                        MessageBox.Show("Для изсенения элемента его сначала нужно выбрать");
+                        return;
+                    }
+                    break;
                 default: break;
             }
         }
