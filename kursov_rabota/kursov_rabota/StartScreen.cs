@@ -67,7 +67,7 @@ namespace kursov_rabota
             HalfWayScr = new HalfWayScreen();
             HalfWayScreen.ChoosingRegime = "Create";
             this.Visible = false;
-            HalfWayScr.ShowDialog(this);            
+            HalfWayScr.Visible = true;            
         }
 
         private void change_Click(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace kursov_rabota
             HalfWayScr = new HalfWayScreen();
             HalfWayScreen.ChoosingRegime = "Update";
             this.Visible = false;
-            HalfWayScr.ShowDialog(this);
+            HalfWayScr.Visible = true;
         }
 
         private void deleteLine_Click(object sender, EventArgs e)
@@ -83,7 +83,7 @@ namespace kursov_rabota
             HalfWayScr = new HalfWayScreen();
             HalfWayScreen.ChoosingRegime = "Delete";
             this.Visible = false;
-            HalfWayScr.ShowDialog(this);
+            HalfWayScr.Visible = true;
         }
 
         private void StartScreen_FormClosing(object sender, FormClosingEventArgs e)

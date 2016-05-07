@@ -18,6 +18,7 @@ namespace kursov_rabota
     public partial class CreateUpdateDeleteScreen : Form
     {
         private int SelectedTextBox = 0;
+        private bool ClickBackButton = false;
 
         public CreateUpdateDeleteScreen()
         {
@@ -26,8 +27,8 @@ namespace kursov_rabota
 
         private void CreateScreen_Load(object sender, EventArgs e)
         {
-            PurchaseHistoryDate.MaxDate = DateTime.Now;
             PurchaseHistoryDate.Value = DateTime.Now;
+            PurchaseHistoryDate.MaxDate = DateTime.Now;
             HideAll();
             switch (HalfWayScreen.ChoosingRegime)
             {
@@ -42,7 +43,7 @@ namespace kursov_rabota
 
         private void CreateScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason != CloseReason.UserClosing)
+            if (!ClickBackButton)
             {
                 Program.StScreen.Visible = true;
                 Program.StScreen.HalfWayScr.Close();
@@ -84,6 +85,7 @@ namespace kursov_rabota
         private void BackButton_Click(object sender, EventArgs e)
         {
             Program.StScreen.HalfWayScr.Visible = true;
+            ClickBackButton = true;
             this.Close();
         }
 
@@ -574,8 +576,33 @@ namespace kursov_rabota
             switch (HalfWayScreen.ChoosingTable)
             {
                 case "Shipment": break;
-                case "Client": break;
-                case "Provider": break;
+                case "Client": for (int i = 0; i < Program.StScreen.PurchaseHistoryL.Count; i++)
+                    {
+                        if (Program.StScreen.Clients[FirstListBox.SelectedIndex].ClientID == Program.StScreen.PurchaseHistoryL[i].ClientID)
+                        {
+                            MessageBox.Show("Данный клиент используется в таблице 'История покупок'");
+                            return;
+                        }
+                    }
+                    Program.StScreen.Clients.RemoveAt(FirstListBox.SelectedIndex);
+                    RefreshFirstListBox();
+                    IDTextBox.Text = "";
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    break;
+                case "Provider": for (int i = 0; i < Program.StScreen.ProvidersShipments.Count; i++)
+                    {
+                        if (Program.StScreen.Providers[FirstListBox.SelectedIndex].ProviderID == Program.StScreen.ProvidersShipments[i].ProviderID)
+                        {
+                            MessageBox.Show("Данный поставщик используется в таблице 'Поставщик-Товар'");
+                            return;
+                        }
+                    }
+                    Program.StScreen.Providers.RemoveAt(FirstListBox.SelectedIndex);
+                    RefreshFirstListBox();
+                    IDTextBox.Text = "";
+                    textBox1.Text = "";
+                    break;
                 case "ProviderShipment": Program.StScreen.ProvidersShipments.RemoveAt(FirstListBox.SelectedIndex);
                     RefreshFirstListBox();
                     IDTextBox.Text = "";

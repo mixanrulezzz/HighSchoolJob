@@ -61,8 +61,8 @@ namespace kursov_rabota
             {
                 ChoosingTable = "PurchaseHistory";
             }
-            this.Visible = false;
-            NextScreen.ShowDialog();
+            NextScreen.Visible = true;
+            this.Visible = false;            
         }
 
         private void HalfWayScreen_VisibleChanged(object sender, EventArgs e)
