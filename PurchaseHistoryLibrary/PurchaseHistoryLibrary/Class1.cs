@@ -78,6 +78,12 @@ namespace PurchaseHistoryLibrary
             return 0;
         }
 
+        public bool UpdateAt(PurchaseHistory UpdElement, int ElementIndex)
+        {
+            ListOfHistory[ElementIndex] = UpdElement;
+            return true;
+        }
+
         public bool Remove(PurchaseHistory DelElement)
         {
             try { ListOfHistory.Remove(DelElement); }

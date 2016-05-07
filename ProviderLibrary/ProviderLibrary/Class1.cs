@@ -51,6 +51,12 @@ namespace ProviderLibrary
             return 0;
         }
 
+        public bool UpdateAt(Provider UpdElement, int ElementIndex)
+        {
+            Providers[ElementIndex] = UpdElement;
+            return true;
+        }
+
         public bool Remove(Provider DelElement)
         {
             try { Providers.Remove(DelElement); }

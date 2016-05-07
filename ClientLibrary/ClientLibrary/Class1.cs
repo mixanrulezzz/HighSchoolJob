@@ -53,6 +53,12 @@ namespace ClientLibrary
             return 0;
         }
 
+        public bool UpdateAt(Client UpdElement, int ElementIndex)
+        {
+            Clients[ElementIndex] = UpdElement;
+            return true;
+        }
+
         public bool Remove(Client DelElement)
         {
             try

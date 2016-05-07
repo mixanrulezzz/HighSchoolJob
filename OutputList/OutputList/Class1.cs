@@ -58,7 +58,7 @@ namespace OutputList
             SQLiteCommand insert = new SQLiteCommand(DataFile);
             for (int i = 0; i < ProvShipList.Count; i++)
             {
-                insert.CommandText = "insert into ProviderShipment values(" + ProvShipList[i].ShipmentID.ToString() + ", " + ProvShipList[i].ProviderID.ToString() + ")";
+                insert.CommandText = "insert into ProviderShipment values(" + ProvShipList[i].ProviderID.ToString() + ", " + ProvShipList[i].ShipmentID.ToString() + ")";
                 insert.ExecuteNonQuery();
             }
         }

@@ -59,6 +59,12 @@ namespace ShipmentLibrary
             return 0;
         }
 
+        public bool UpdateAt(Shipment UpdElement, int ElementIndex)
+        {
+            Shipments[ElementIndex] = UpdElement;
+            return true;
+        }
+
         public bool Remove(Shipment DelElement)
         {
             try { Shipments.Remove(DelElement); }

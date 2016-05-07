@@ -94,7 +94,7 @@ namespace kursov_rabota
             switch (HalfWayScreen.ChoosingTable)
             {
                 case "ProviderShipment": SelectedTextBox = 1;
-                    RefreshSecondListBox("Shipment");
+                    RefreshSecondListBox("Provider");
                     break;
                 default: break;
             }
@@ -105,7 +105,7 @@ namespace kursov_rabota
             switch (HalfWayScreen.ChoosingTable)
             {
                 case "ProviderShipment": SelectedTextBox = 2;
-                    RefreshSecondListBox("Provider");
+                    RefreshSecondListBox("Shipment");
                     break;
                 case "PurchaseHistory": SelectedTextBox = 2;
                     RefreshSecondListBox("Shipment");
@@ -211,20 +211,20 @@ namespace kursov_rabota
                     for (int i = 0; i < Program.StScreen.ProvidersShipments.Count; i++)
                     {
                         string str = "";
-                        for (int j = 0; j < Program.StScreen.Shipments.Count; j++)
-                        {
-                            if (Program.StScreen.Shipments[j].ShipmentID == Program.StScreen.ProvidersShipments[i].ShipmentID)
-                            {
-                                str += Program.StScreen.Shipments[j].ShipmentName;
-                                break;
-                            }
-                        }
-                        str += "-";
                         for (int j = 0; j < Program.StScreen.Providers.Count; j++)
                         {
                             if (Program.StScreen.Providers[j].ProviderID == Program.StScreen.ProvidersShipments[i].ProviderID)
                             {
                                 str += Program.StScreen.Providers[j].ProviderName;
+                                break;
+                            }
+                        }
+                        str += "-";
+                        for (int j = 0; j < Program.StScreen.Shipments.Count; j++)
+                        {
+                            if (Program.StScreen.Shipments[j].ShipmentID == Program.StScreen.ProvidersShipments[i].ShipmentID)
+                            {
+                                str += Program.StScreen.Shipments[j].ShipmentName;
                                 break;
                             }
                         }
@@ -362,10 +362,10 @@ namespace kursov_rabota
             SecondListBoxLabel.Visible = true;
             SecondListBoxLabel.Text = "";
             IDLabel.Visible = true;
-            IDLabel.Text = "ID товара";
+            IDLabel.Text = "ID поставщика";
             IDTextBox.Visible = true;
             label2.Visible = true;
-            label2.Text = "ID поставщика";
+            label2.Text = "ID товара";
             textBox1.Visible = true;
             textBox1.ReadOnly = true;
             MultifunctionalButton.Visible = true;
@@ -448,11 +448,21 @@ namespace kursov_rabota
             MultifunctionalButton.Text = "Обновить";
             switch (HalfWayScreen.ChoosingTable)
             {
-                case "Shipment": break;
-                case "Client": break;
-                case "Provider": break;
-                case "ProviderShipment": break;
-                case "PurchaseHistory": break;
+                case "Shipment": ShipmentVisible();
+                    RefreshFirstListBox();
+                    break;
+                case "Client": ClientVisible();
+                    RefreshFirstListBox();
+                    break;
+                case "Provider": ProviderVisible();
+                    RefreshFirstListBox();
+                    break;
+                case "ProviderShipment": ProviderShipmentVisible();
+                    RefreshFirstListBox();
+                    break;
+                case "PurchaseHistory": PurchaseHistoryVisible();
+                    RefreshFirstListBox();
+                    break;
                 default: break;
             }
         }
