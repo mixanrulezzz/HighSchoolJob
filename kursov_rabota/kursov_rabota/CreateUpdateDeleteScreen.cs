@@ -575,7 +575,30 @@ namespace kursov_rabota
         {
             switch (HalfWayScreen.ChoosingTable)
             {
-                case "Shipment": break;
+                case "Shipment":
+                    for (int i = 0; i < Program.StScreen.PurchaseHistoryL.Count; i++)
+                    {
+                        if (Program.StScreen.Shipments[FirstListBox.SelectedIndex].ShipmentID == Program.StScreen.PurchaseHistoryL[i].ShipmentID)
+                        {
+                            MessageBox.Show("Данный товар используется в таблице 'История покупок'");
+                            return;
+                        }
+                    }
+                    for (int i = 0; i < Program.StScreen.ProvidersShipments.Count; i++)
+                    {
+                        if (Program.StScreen.Shipments[FirstListBox.SelectedIndex].ShipmentID == Program.StScreen.ProvidersShipments[i].ShipmentID)
+                        {
+                            MessageBox.Show("Данный товар используется в таблице 'Поставщик-Товар'");
+                            return;
+                        }
+                    }
+                    Program.StScreen.Shipments.RemoveAt(FirstListBox.SelectedIndex);
+                    RefreshFirstListBox();
+                    IDTextBox.Text = "";
+                    textBox1.Text = "";
+                    textBox2.Text = "";
+                    textBox3.Text = "";
+                    break;
                 case "Client": for (int i = 0; i < Program.StScreen.PurchaseHistoryL.Count; i++)
                     {
                         if (Program.StScreen.Clients[FirstListBox.SelectedIndex].ClientID == Program.StScreen.PurchaseHistoryL[i].ClientID)
