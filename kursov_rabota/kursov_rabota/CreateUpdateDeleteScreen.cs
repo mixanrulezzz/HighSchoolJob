@@ -587,6 +587,8 @@ namespace kursov_rabota
                         MessageBox.Show("Для изсенения элемента его сначала нужно выбрать");
                         return;
                     }
+                    Program.StScreen.Clients.UpdateAt(new Client(Convert.ToInt32(IDTextBox.Text), textBox1.Text, textBox2.Text), FirstListBox.SelectedIndex);
+                    RefreshFirstListBox();
                     break;
                 case "Provider":
                     if (FirstListBox.SelectedIndex == -1)
@@ -594,6 +596,8 @@ namespace kursov_rabota
                         MessageBox.Show("Для изсенения элемента его сначала нужно выбрать");
                         return;
                     }
+                    Program.StScreen.Providers.UpdateAt(new Provider(Convert.ToInt32(IDTextBox.Text), textBox1.Text), FirstListBox.SelectedIndex);
+                    RefreshFirstListBox();
                     break;
                 case "ProviderShipment":
                     if (FirstListBox.SelectedIndex == -1)
