@@ -30,7 +30,7 @@ namespace ClientLibrary
 
     public class ClientList
     {
-        private List<Client> Clients;
+        public List<Client> Clients;
 
         public ClientList()
         {

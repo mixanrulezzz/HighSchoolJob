@@ -28,7 +28,7 @@ namespace ProviderShipmentLibrary
 
     public class ProviderShipmentList
     {
-        private List<ProviderShipment> LinkListProviderShipment;
+        public List<ProviderShipment> LinkListProviderShipment;
 
         public ProviderShipmentList()
         {

@@ -29,11 +29,6 @@ namespace XMLSerializator
                 {
                     inf = xmls.Deserialize(sr) as T;
                 }
-                if (inf == null)
-                {
-                    inf = null;
-                }
-
             }
             catch (InvalidOperationException)
             { Error = true; }

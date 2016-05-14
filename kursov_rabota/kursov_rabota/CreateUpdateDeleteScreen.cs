@@ -155,7 +155,7 @@ namespace kursov_rabota
                         textBox1.Text = Program.StScreen.PurchaseHistoryL[FirstListBox.SelectedIndex].ShipmentID.ToString();
                         textBox2.Text = Program.StScreen.PurchaseHistoryL[FirstListBox.SelectedIndex].ClientID.ToString();
                         textBox3.Text = Program.StScreen.PurchaseHistoryL[FirstListBox.SelectedIndex].Count.ToString();
-                        DateTime date = new DateTime(Program.StScreen.PurchaseHistoryL[FirstListBox.SelectedIndex].HistoryDate.Year, Program.StScreen.PurchaseHistoryL[FirstListBox.SelectedIndex].HistoryDate.Month, Program.StScreen.PurchaseHistoryL[FirstListBox.SelectedIndex].HistoryDate.Day);
+                        DateTime date = new DateTime(Program.StScreen.PurchaseHistoryL[FirstListBox.SelectedIndex].Year, Program.StScreen.PurchaseHistoryL[FirstListBox.SelectedIndex].Month, Program.StScreen.PurchaseHistoryL[FirstListBox.SelectedIndex].Day);
                         PurchaseHistoryDate.Value = date;
                         break;
                     default: break;

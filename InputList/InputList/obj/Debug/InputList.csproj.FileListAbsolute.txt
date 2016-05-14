@@ -14,3 +14,5 @@ C:\GitRep\HighSchoolJob\InputList\InputList\bin\Debug\ShipmentLibrary.pdb
 C:\GitRep\HighSchoolJob\InputList\InputList\obj\Debug\InputList.dll
 C:\GitRep\HighSchoolJob\InputList\InputList\obj\Debug\InputList.pdb
 C:\GitRep\HighSchoolJob\InputList\InputList\obj\Debug\InputList.csprojResolveAssemblyReference.cache
+C:\GitRep\HighSchoolJob\InputList\InputList\bin\Debug\XMLSerializator.dll
+C:\GitRep\HighSchoolJob\InputList\InputList\bin\Debug\XMLSerializator.pdb

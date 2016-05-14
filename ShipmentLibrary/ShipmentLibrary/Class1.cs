@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using XMLSerializator;
 
 namespace ShipmentLibrary
 {
     public class Shipment
     {
-        public int ShipmentID { get; private set; }
-        public string ShipmentName { get; set; }
-        public int Price { get; set; }
-        public string PhotoLink { get; set; }
+        public int ShipmentID;
+        public string ShipmentName;
+        public int Price;
+        public string PhotoLink;
 
         public Shipment()
         { }
@@ -32,7 +33,7 @@ namespace ShipmentLibrary
 
     public class ShipmentList
     {
-        private List<Shipment> Shipments;
+        public List<Shipment> Shipments;
 
         public ShipmentList()
         {

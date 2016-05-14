@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OutputList;
+using InputList;
 
 namespace kursov_rabota
 {
@@ -21,9 +22,9 @@ namespace kursov_rabota
         private void InBackup_Click(object sender, EventArgs e)
         {
             SaveFileDialog SFD = new SaveFileDialog();
-            SFD.Filter = "XML File|*.xml";
-            SFD.Title = "Save Backup";
-            SFD.FileName = "Backup " + DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString() + ":" + DateTime.Now.Second.ToString() + " " + DateTime.Now.Day.ToString() + "." + DateTime.Now.Month.ToString() + "." + DateTime.Now.Year.ToString();
+            SFD.Filter = "XML файл|*.xml";
+            SFD.Title = "Сохранить резервную копию";
+            SFD.FileName = "Backup" + DateTime.Now.Hour.ToString() + "-" + DateTime.Now.Minute.ToString() + "-" + DateTime.Now.Second.ToString() + DateTime.Now.Day.ToString() + "." + DateTime.Now.Month.ToString() + "." + DateTime.Now.Year.ToString();
             SFD.ShowDialog();
             string file = SFD.FileName;
             OutputList.OutputList.OutputIntoXML(file, Program.StScreen.Shipments, Program.StScreen.Clients, Program.StScreen.Providers, Program.StScreen.ProvidersShipments, Program.StScreen.PurchaseHistoryL);
@@ -32,7 +33,17 @@ namespace kursov_rabota
 
         private void OutBackup_Click(object sender, EventArgs e)
         {
-
+            OpenFileDialog OFD = new OpenFileDialog();
+            OFD.Filter = "XML файл|*.xml";
+            OFD.Title = "Открыть резервную копию";
+            OFD.ShowDialog();
+            string file = OFD.FileName;
+            Program.StScreen.Shipments = InputList.InputList.ShipmentFromXML(file);
+            Program.StScreen.Clients = InputList.InputList.ClientFromXML(file);
+            Program.StScreen.Providers = InputList.InputList.ProviderFromXML(file);
+            Program.StScreen.ProvidersShipments = InputList.InputList.ProviderShipmentFromXML(file);
+            Program.StScreen.PurchaseHistoryL = InputList.InputList.PurchaseHistoryFromXML(file);
+            MessageBox.Show("Списки успешно перезаписаны");
         }
 
         private void BackupScreen_FormClosing(object sender, FormClosingEventArgs e)

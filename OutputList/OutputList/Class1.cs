@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
 using ShipmentLibrary;
 using ClientLibrary;
 using ProviderLibrary;
@@ -70,15 +72,15 @@ namespace OutputList
             SQLiteCommand insert = new SQLiteCommand(DataFile);
             for (int i = 0; i < PurHisList.Count; i++)
             {
-                insert.CommandText = "insert into PurchaseHistory values(" + PurHisList[i].PurchaseHistoryID.ToString() + ", " + PurHisList[i].ShipmentID.ToString() + ", " + PurHisList[i].ClientID.ToString() + ", " + PurHisList[i].Count.ToString() + ", '" + PurHisList[i].HistoryDate.Year.ToString() + "-";
-                if (PurHisList[i].HistoryDate.Month < 10)
-                    insert.CommandText += "0" + PurHisList[i].HistoryDate.Month.ToString() + "-";
+                insert.CommandText = "insert into PurchaseHistory values(" + PurHisList[i].PurchaseHistoryID.ToString() + ", " + PurHisList[i].ShipmentID.ToString() + ", " + PurHisList[i].ClientID.ToString() + ", " + PurHisList[i].Count.ToString() + ", '" + PurHisList[i].Year.ToString() + "-";
+                if (PurHisList[i].Month < 10)
+                    insert.CommandText += "0" + PurHisList[i].Month.ToString() + "-";
                 else
-                    insert.CommandText += PurHisList[i].HistoryDate.Month.ToString() + "-";
-                if (PurHisList[i].HistoryDate.Day < 10)
-                    insert.CommandText += "0" + PurHisList[i].HistoryDate.Day.ToString() + "')";
+                    insert.CommandText += PurHisList[i].Month.ToString() + "-";
+                if (PurHisList[i].Day < 10)
+                    insert.CommandText += "0" + PurHisList[i].Day.ToString() + "')";
                 else
-                    insert.CommandText += PurHisList[i].HistoryDate.Day.ToString() + "')";
+                    insert.CommandText += PurHisList[i].Day.ToString() + "')";
                 insert.ExecuteNonQuery();
             }
         }
@@ -94,13 +96,28 @@ namespace OutputList
         /// <param name="PurHisList">Список Истории Покупок</param>
         public static void OutputIntoXML(string file, ShipmentList ShipList, ClientList ClList, ProviderList ProvList, ProviderShipmentList ProvShipList, PurchaseHistoryList PurHisList)
         {
-            FileStream NewFile = new FileStream(file, FileMode.Create);
+            StreamWriter NewFile = new StreamWriter(file);
+            XmlSerializer XMLSer = new XmlSerializer(typeof(ShipmentList));
+            XMLSer.Serialize(NewFile, ShipList);
+            NewFile.WriteLine();
+            XMLSer = new XmlSerializer(typeof(ClientList));
+            XMLSer.Serialize(NewFile, ClList);
+            NewFile.WriteLine();
+            XMLSer = new XmlSerializer(typeof(ProviderList));
+            XMLSer.Serialize(NewFile, ProvList);
+            NewFile.WriteLine();
+            XMLSer = new XmlSerializer(typeof(ProviderShipmentList));
+            XMLSer.Serialize(NewFile, ProvShipList);
+            NewFile.WriteLine();
+            XMLSer = new XmlSerializer(typeof(PurchaseHistoryList));
+            XMLSer.Serialize(NewFile, PurHisList);
+            NewFile.WriteLine();
+            //ShipmentIntoXML(file, ShipList);
+            //ClientIntoXML(file, ClList);
+            //ProviderIntoXML(file, ProvList);
+            //ProviderShipmentIntoXML(file, ProvShipList);
+            //PurchaseHistoryIntoXML(file, PurHisList);
             NewFile.Close();
-            ShipmentIntoXML(file, ShipList);
-            ClientIntoXML(file, ClList);
-            ProviderIntoXML(file, ProvList);
-            ProviderShipmentIntoXML(file, ProvShipList);
-            PurchaseHistoryIntoXML(file, PurHisList);
         }
 
         private static void ShipmentIntoXML(string file, ShipmentList ShipList)

@@ -3,3 +3,5 @@ C:\GitRep\HighSchoolJob\ShipmentLibrary\ShipmentLibrary\bin\Debug\ShipmentLibrar
 C:\GitRep\HighSchoolJob\ShipmentLibrary\ShipmentLibrary\obj\Debug\ShipmentLibrary.csprojResolveAssemblyReference.cache
 C:\GitRep\HighSchoolJob\ShipmentLibrary\ShipmentLibrary\obj\Debug\ShipmentLibrary.dll
 C:\GitRep\HighSchoolJob\ShipmentLibrary\ShipmentLibrary\obj\Debug\ShipmentLibrary.pdb
+C:\GitRep\HighSchoolJob\ShipmentLibrary\ShipmentLibrary\bin\Debug\XMLSerializator.dll
+C:\GitRep\HighSchoolJob\ShipmentLibrary\ShipmentLibrary\bin\Debug\XMLSerializator.pdb

@@ -28,7 +28,7 @@ namespace ProviderLibrary
 
     public class ProviderList
     {
-        private List<Provider> Providers;
+        public List<Provider> Providers;
 
         public ProviderList()
         {

@@ -9,6 +9,7 @@ using ProviderLibrary;
 using ProviderShipmentLibrary;
 using PurchaseHistoryLibrary;
 using System.Data.SQLite;
+using XMLSerializator;
 
 namespace InputList
 {
@@ -76,6 +77,56 @@ namespace InputList
             {
                 string[] str = sdr.GetValue(4).ToString().Split('-');
                 PurHisList.Add(Convert.ToInt32(sdr.GetValue(0)), Convert.ToInt32(sdr.GetValue(1)), Convert.ToInt32(sdr.GetValue(2)), Convert.ToInt32(sdr.GetValue(3)), Convert.ToInt32(str[2]), Convert.ToInt32(str[1]), Convert.ToInt32(str[0]));
+            }
+            return PurHisList;
+        }
+
+        public static ShipmentList ShipmentFromXML(string File)
+        {
+            ShipmentList ShipList = XMLSer<ShipmentList>.Deserializator(File);
+            if (ShipList == null)
+            {
+                ShipList = new ShipmentList();
+            }
+            return ShipList;
+        }
+
+        public static ClientList ClientFromXML(string File)
+        {
+            ClientList ClList = XMLSer<ClientList>.Deserializator(File);
+            if (ClList == null)
+            {
+                ClList = new ClientList();
+            }
+            return ClList;
+        }
+
+        public static ProviderList ProviderFromXML(string File)
+        {
+            ProviderList ProvList = XMLSer<ProviderList>.Deserializator(File);
+            if (ProvList == null)
+            {
+                ProvList = new ProviderList();
+            }
+            return ProvList;
+        }
+
+        public static ProviderShipmentList ProviderShipmentFromXML(string File)
+        {
+            ProviderShipmentList ProvShipList = XMLSer<ProviderShipmentList>.Deserializator(File);
+            if (ProvShipList == null)
+            {
+                ProvShipList = new ProviderShipmentList();
+            }
+            return ProvShipList;
+        }
+
+        public static PurchaseHistoryList PurchaseHistoryFromXML(string File)
+        {
+            PurchaseHistoryList PurHisList = XMLSer<PurchaseHistoryList>.Deserializator(File);
+            if (PurHisList == null)
+            {
+                PurHisList = new PurchaseHistoryList();
             }
             return PurHisList;
         }

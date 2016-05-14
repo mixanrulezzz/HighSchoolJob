@@ -6,20 +6,15 @@ using System.Threading.Tasks;
 
 namespace PurchaseHistoryLibrary
 {
-    public class Date
-    {
-        public int Day;
-        public int Month;
-        public int Year;
-    }
-
     public class PurchaseHistory
     {
         public int PurchaseHistoryID;
         public int ShipmentID;
         public int ClientID;
         public int Count;
-        public Date HistoryDate;
+        public int Day;
+        public int Month;
+        public int Year;
 
         public PurchaseHistory()
         { }
@@ -30,30 +25,20 @@ namespace PurchaseHistoryLibrary
             this.ShipmentID = ShipmentID;
             this.ClientID = ClientID;
             this.Count = Count;
-            HistoryDate = new Date();
-            HistoryDate.Day = Day;
-            HistoryDate.Month = Month;
-            HistoryDate.Year = Year;
-        }
-
-        public PurchaseHistory(int PurchaseHistoryID, int ShipmentID, int ClientID, int Count, Date HistoryDate)
-        {
-            this.PurchaseHistoryID = PurchaseHistoryID;
-            this.ShipmentID = ShipmentID;
-            this.ClientID = ClientID;
-            this.Count = Count;
-            this.HistoryDate = HistoryDate;
+            this.Day = Day;
+            this.Month = Month;
+            this.Year = Year;
         }
 
         public override string ToString()
         {
-            return PurchaseHistoryID.ToString() + " " + ShipmentID.ToString() + " " + ClientID.ToString() + " " + Count.ToString() + " " + HistoryDate.Day + "." + HistoryDate.Month + "." + HistoryDate.Year;
+            return PurchaseHistoryID.ToString() + " " + ShipmentID.ToString() + " " + ClientID.ToString() + " " + Count.ToString() + " " + Day + "." + Month + "." + Year;
         }
     }
 
     public class PurchaseHistoryList
     {
-        private List<PurchaseHistory> ListOfHistory;
+        public List<PurchaseHistory> ListOfHistory;
 
         public PurchaseHistoryList()
         {
@@ -69,12 +54,6 @@ namespace PurchaseHistoryLibrary
         public int Add(int PurchaseHistoryID, int ShipmentID, int ClientID, int Count, int Day, int Month, int Year)
         {
             ListOfHistory.Add(new PurchaseHistory(PurchaseHistoryID, ShipmentID, ClientID, Count, Day, Month, Year));
-            return 0;
-        }
-
-        public int Add(int PurchaseHistoryID, int ShipmentID, int ClientID, int Count, Date HistoryDate)
-        {
-            ListOfHistory.Add(new PurchaseHistory(PurchaseHistoryID, ShipmentID, ClientID, Count, HistoryDate));
             return 0;
         }
 
