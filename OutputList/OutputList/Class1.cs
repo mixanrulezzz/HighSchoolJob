@@ -9,6 +9,8 @@ using ProviderLibrary;
 using ProviderShipmentLibrary;
 using PurchaseHistoryLibrary;
 using System.Data.SQLite;
+using System.IO;
+using XMLSerializator;
 
 namespace OutputList
 {
@@ -23,7 +25,7 @@ namespace OutputList
             PurchaseHistoryIntoSQL(DataFile, PurHisList);
         }
 
-        public static void ShipmentsIntoSQL(SQLiteConnection DataFile, ShipmentList ShipList)
+        private static void ShipmentsIntoSQL(SQLiteConnection DataFile, ShipmentList ShipList)
         {
             SQLiteCommand insert = new SQLiteCommand(DataFile);
             for (int i = 0; i < ShipList.Count; i++)
@@ -33,7 +35,7 @@ namespace OutputList
             }
         }
 
-        public static void ClientsIntoSQL(SQLiteConnection DataFile, ClientList CList)
+        private static void ClientsIntoSQL(SQLiteConnection DataFile, ClientList CList)
         {
             SQLiteCommand insert = new SQLiteCommand(DataFile);
             for (int i = 0; i < CList.Count; i++)
@@ -43,7 +45,7 @@ namespace OutputList
             }
         }
 
-        public static void ProvidersIntoSQL(SQLiteConnection DataFile, ProviderList ProvList)
+        private static void ProvidersIntoSQL(SQLiteConnection DataFile, ProviderList ProvList)
         {
             SQLiteCommand insert = new SQLiteCommand(DataFile);
             for (int i = 0; i < ProvList.Count; i++)
@@ -53,7 +55,7 @@ namespace OutputList
             }
         }
 
-        public static void ProviderShipmentsIntoSQL(SQLiteConnection DataFile, ProviderShipmentList ProvShipList)
+        private static void ProviderShipmentsIntoSQL(SQLiteConnection DataFile, ProviderShipmentList ProvShipList)
         {
             SQLiteCommand insert = new SQLiteCommand(DataFile);
             for (int i = 0; i < ProvShipList.Count; i++)
@@ -63,7 +65,7 @@ namespace OutputList
             }
         }
 
-        public static void PurchaseHistoryIntoSQL(SQLiteConnection DataFile, PurchaseHistoryList PurHisList)
+        private static void PurchaseHistoryIntoSQL(SQLiteConnection DataFile, PurchaseHistoryList PurHisList)
         {
             SQLiteCommand insert = new SQLiteCommand(DataFile);
             for (int i = 0; i < PurHisList.Count; i++)
@@ -79,6 +81,51 @@ namespace OutputList
                     insert.CommandText += PurHisList[i].HistoryDate.Day.ToString() + "')";
                 insert.ExecuteNonQuery();
             }
+        }
+
+        /// <summary>
+        /// Создает резервную копию таблиц сущностей
+        /// </summary>
+        /// <param name="file">Путь к резервной копии</param>
+        /// <param name="ShipList">Список Товаров</param>
+        /// <param name="ClList">Список Клиентов</param>
+        /// <param name="ProvList">Список Поставщиков</param>
+        /// <param name="ProvShipList">Список связей Поставщик-Товар</param>
+        /// <param name="PurHisList">Список Истории Покупок</param>
+        public static void OutputIntoXML(string file, ShipmentList ShipList, ClientList ClList, ProviderList ProvList, ProviderShipmentList ProvShipList, PurchaseHistoryList PurHisList)
+        {
+            FileStream NewFile = new FileStream(file, FileMode.Create);
+            NewFile.Close();
+            ShipmentIntoXML(file, ShipList);
+            ClientIntoXML(file, ClList);
+            ProviderIntoXML(file, ProvList);
+            ProviderShipmentIntoXML(file, ProvShipList);
+            PurchaseHistoryIntoXML(file, PurHisList);
+        }
+
+        private static void ShipmentIntoXML(string file, ShipmentList ShipList)
+        {
+            XMLSer<ShipmentList>.Serializator(file, ShipList);
+        }
+
+        private static void ClientIntoXML(string file, ClientList ClList)
+        {
+            XMLSer<ClientList>.Serializator(file, ClList);
+        }
+
+        private static void ProviderIntoXML(string file, ProviderList ProvList)
+        {
+            XMLSer<ProviderList>.Serializator(file, ProvList);
+        }
+
+        private static void ProviderShipmentIntoXML(string file, ProviderShipmentList ProvShipList)
+        {
+            XMLSer<ProviderShipmentList>.Serializator(file, ProvShipList);
+        }
+
+        private static void PurchaseHistoryIntoXML(string file, PurchaseHistoryList PurHisList)
+        {
+            XMLSer<PurchaseHistoryList>.Serializator(file, PurHisList);
         }
     }
 }

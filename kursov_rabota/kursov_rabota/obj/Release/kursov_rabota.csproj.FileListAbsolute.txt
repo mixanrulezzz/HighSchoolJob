@@ -30,3 +30,6 @@ C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\OutputList.pdb
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\DeleteFromSQLTables.dll
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\DeleteFromSQLTables.pdb
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Release\kursov_rabota.CreateUpdateDeleteScreen.resources
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\XMLSerializator.dll
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\XMLSerializator.pdb
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Release\kursov_rabota.BackupScreen.resources

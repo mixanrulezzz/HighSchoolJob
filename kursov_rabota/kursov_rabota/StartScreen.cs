@@ -86,6 +86,23 @@ namespace kursov_rabota
             HalfWayScr.Visible = true;
         }
 
+        private void PakingListButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void report_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backup_Click(object sender, EventArgs e)
+        {
+            BackupScreen BS = new BackupScreen();
+            this.Visible = false;
+            BS.Visible = true;
+        }
+
         private void StartScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
             DeleteFromSQLTables.DeleteFromSQLTables.DeleteAll(DataFile);

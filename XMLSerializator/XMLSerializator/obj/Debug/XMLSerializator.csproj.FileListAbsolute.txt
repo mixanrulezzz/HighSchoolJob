@@ -1,0 +1,5 @@
+C:\GitRep\HighSchoolJob\XMLSerializator\XMLSerializator\bin\Debug\XMLSerializator.dll
+C:\GitRep\HighSchoolJob\XMLSerializator\XMLSerializator\bin\Debug\XMLSerializator.pdb
+C:\GitRep\HighSchoolJob\XMLSerializator\XMLSerializator\obj\Debug\XMLSerializator.dll
+C:\GitRep\HighSchoolJob\XMLSerializator\XMLSerializator\obj\Debug\XMLSerializator.pdb
+C:\GitRep\HighSchoolJob\XMLSerializator\XMLSerializator\obj\Debug\XMLSerializator.csprojResolveAssemblyReference.cache

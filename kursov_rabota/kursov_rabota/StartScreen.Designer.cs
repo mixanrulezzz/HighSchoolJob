@@ -33,17 +33,18 @@
             this.create = new System.Windows.Forms.Button();
             this.change = new System.Windows.Forms.Button();
             this.deleteLine = new System.Windows.Forms.Button();
-            this.choose = new System.Windows.Forms.Button();
+            this.PakingListButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // backup
             // 
-            this.backup.Location = new System.Drawing.Point(397, 262);
+            this.backup.Location = new System.Drawing.Point(364, 262);
             this.backup.Name = "backup";
-            this.backup.Size = new System.Drawing.Size(75, 23);
+            this.backup.Size = new System.Drawing.Size(108, 23);
             this.backup.TabIndex = 0;
-            this.backup.Text = "Бэкап";
+            this.backup.Text = "Резервная копия";
             this.backup.UseVisualStyleBackColor = true;
+            this.backup.Click += new System.EventHandler(this.backup_Click);
             // 
             // report
             // 
@@ -53,6 +54,7 @@
             this.report.TabIndex = 1;
             this.report.Text = "Получить отчет";
             this.report.UseVisualStyleBackColor = true;
+            this.report.Click += new System.EventHandler(this.report_Click);
             // 
             // create
             // 
@@ -84,21 +86,22 @@
             this.deleteLine.UseVisualStyleBackColor = true;
             this.deleteLine.Click += new System.EventHandler(this.deleteLine_Click);
             // 
-            // choose
+            // PakingListButton
             // 
-            this.choose.Location = new System.Drawing.Point(185, 170);
-            this.choose.Name = "choose";
-            this.choose.Size = new System.Drawing.Size(103, 23);
-            this.choose.TabIndex = 5;
-            this.choose.Text = "Выборка";
-            this.choose.UseVisualStyleBackColor = true;
+            this.PakingListButton.Location = new System.Drawing.Point(160, 187);
+            this.PakingListButton.Name = "PakingListButton";
+            this.PakingListButton.Size = new System.Drawing.Size(151, 23);
+            this.PakingListButton.TabIndex = 5;
+            this.PakingListButton.Text = "Товарная накладная и чек";
+            this.PakingListButton.UseVisualStyleBackColor = true;
+            this.PakingListButton.Click += new System.EventHandler(this.PakingListButton_Click);
             // 
             // StartScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 297);
-            this.Controls.Add(this.choose);
+            this.Controls.Add(this.PakingListButton);
             this.Controls.Add(this.deleteLine);
             this.Controls.Add(this.change);
             this.Controls.Add(this.create);
@@ -119,7 +122,7 @@
         private System.Windows.Forms.Button create;
         private System.Windows.Forms.Button change;
         private System.Windows.Forms.Button deleteLine;
-        private System.Windows.Forms.Button choose;
+        private System.Windows.Forms.Button PakingListButton;
     }
 }
 
