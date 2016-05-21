@@ -99,6 +99,12 @@
     <Compile Include="HalfWayScreen.Designer.cs">
       <DependentUpon>HalfWayScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="PackingListScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PackingListScreen.Designer.cs">
+      <DependentUpon>PackingListScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="StartScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HalfWayScreen.resx">
       <DependentUpon>HalfWayScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PackingListScreen.resx">
+      <DependentUpon>PackingListScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StartScreen.resx">
       <DependentUpon>StartScreen.cs</DependentUpon>
