@@ -33,7 +33,7 @@ namespace kursov_rabota
         public ProviderList Providers;
         public ProviderShipmentList ProvidersShipments;
         public PurchaseHistoryList PurchaseHistoryL;
-        public HalfWayScreen HalfWayScr;
+        public CreateUpdateDeleteScreen CrUpdDelScr;
 
         public StartScreen()
         {
@@ -62,28 +62,94 @@ namespace kursov_rabota
             MaxPurchaseHistoryID = SearchMaxID.SearchMaxID.FindMaxID(DataFile, "ph");
         }
 
-        private void create_Click(object sender, EventArgs e)
+        private void ShipmentCreateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HalfWayScr = new HalfWayScreen();
-            HalfWayScreen.ChoosingRegime = "Create";
-            this.Visible = false;
-            HalfWayScr.Visible = true;            
+            CrUpdDelScr = new CreateUpdateDeleteScreen(Regimes.Create, Tables.Shipment);
+            CrUpdDelScr.ShowDialog();
         }
 
-        private void change_Click(object sender, EventArgs e)
+        private void ClientCreateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HalfWayScr = new HalfWayScreen();
-            HalfWayScreen.ChoosingRegime = "Update";
-            this.Visible = false;
-            HalfWayScr.Visible = true;
+            CrUpdDelScr = new CreateUpdateDeleteScreen(Regimes.Create, Tables.Client);
+            CrUpdDelScr.ShowDialog();
         }
 
-        private void deleteLine_Click(object sender, EventArgs e)
+        private void ProviderCreateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HalfWayScr = new HalfWayScreen();
-            HalfWayScreen.ChoosingRegime = "Delete";
-            this.Visible = false;
-            HalfWayScr.Visible = true;
+            CrUpdDelScr = new CreateUpdateDeleteScreen(Regimes.Create, Tables.Provider);
+            CrUpdDelScr.ShowDialog();
+        }
+
+        private void ProviderShipmentCreateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrUpdDelScr = new CreateUpdateDeleteScreen(Regimes.Create, Tables.ProviderShipment);
+            CrUpdDelScr.ShowDialog();
+        }
+
+        private void PurchaseHistoryCreateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrUpdDelScr = new CreateUpdateDeleteScreen(Regimes.Create, Tables.PurchaseHistory);
+            CrUpdDelScr.ShowDialog();
+        }
+
+        private void ShipmentUpdateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrUpdDelScr = new CreateUpdateDeleteScreen(Regimes.Update, Tables.Shipment);
+            CrUpdDelScr.ShowDialog();
+        }
+
+        private void ClientUpdateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrUpdDelScr = new CreateUpdateDeleteScreen(Regimes.Update, Tables.Client);
+            CrUpdDelScr.ShowDialog();
+        }
+
+        private void ProviderUpdateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrUpdDelScr = new CreateUpdateDeleteScreen(Regimes.Update, Tables.Provider);
+            CrUpdDelScr.ShowDialog();
+        }
+
+        private void ProviderShipmentUpdateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrUpdDelScr = new CreateUpdateDeleteScreen(Regimes.Update, Tables.ProviderShipment);
+            CrUpdDelScr.ShowDialog();
+        }
+
+        private void PurchaseHistoryUpdateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrUpdDelScr = new CreateUpdateDeleteScreen(Regimes.Update, Tables.PurchaseHistory);
+            CrUpdDelScr.ShowDialog();
+        }
+
+        private void ShipmentDeleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrUpdDelScr = new CreateUpdateDeleteScreen(Regimes.Delete, Tables.Shipment);
+            CrUpdDelScr.ShowDialog();
+        }
+
+        private void ClientDeleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrUpdDelScr = new CreateUpdateDeleteScreen(Regimes.Delete, Tables.Client);
+            CrUpdDelScr.ShowDialog();
+        }
+
+        private void ProviderDeleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrUpdDelScr = new CreateUpdateDeleteScreen(Regimes.Delete, Tables.Provider);
+            CrUpdDelScr.ShowDialog();
+        }
+
+        private void ProviderShipmentDeleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrUpdDelScr = new CreateUpdateDeleteScreen(Regimes.Delete, Tables.ProviderShipment);
+            CrUpdDelScr.ShowDialog();
+        }
+
+        private void PurchaseHistoryDeleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CrUpdDelScr = new CreateUpdateDeleteScreen(Regimes.Delete, Tables.PurchaseHistory);
+            CrUpdDelScr.ShowDialog();
         }
 
         private void PakingListButton_Click(object sender, EventArgs e)
@@ -107,6 +173,6 @@ namespace kursov_rabota
         {
             DeleteFromSQLTables.DeleteFromSQLTables.DeleteAll(DataFile);
             OutputList.OutputList.OutputIntoSQL(DataFile, Shipments, Clients, Providers, ProvidersShipments, PurchaseHistoryL);
-        }
+        }        
     }
 }

@@ -30,9 +30,6 @@
         {
             this.backup = new System.Windows.Forms.Button();
             this.report = new System.Windows.Forms.Button();
-            this.create = new System.Windows.Forms.Button();
-            this.change = new System.Windows.Forms.Button();
-            this.deleteLine = new System.Windows.Forms.Button();
             this.PakingListButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.работаСБДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,12 +39,12 @@
             this.ProviderCreateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ProviderShipmentCreateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PurchaseHistoryCreateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ChangeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ShipmentChangeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ClientChangeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ProviderChangeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ProviderShipmentChangeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.PurchaseHistoryChangeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.UpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShipmentUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ClientUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ProviderUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ProviderShipmentUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PurchaseHistoryUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ShipmentDeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ClientDeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,36 +79,6 @@
             this.report.UseVisualStyleBackColor = true;
             this.report.Click += new System.EventHandler(this.report_Click);
             // 
-            // create
-            // 
-            this.create.Location = new System.Drawing.Point(185, 83);
-            this.create.Name = "create";
-            this.create.Size = new System.Drawing.Size(103, 23);
-            this.create.TabIndex = 2;
-            this.create.Text = "Добавление";
-            this.create.UseVisualStyleBackColor = true;
-            this.create.Click += new System.EventHandler(this.create_Click);
-            // 
-            // change
-            // 
-            this.change.Location = new System.Drawing.Point(185, 112);
-            this.change.Name = "change";
-            this.change.Size = new System.Drawing.Size(103, 23);
-            this.change.TabIndex = 3;
-            this.change.Text = "Редактирование";
-            this.change.UseVisualStyleBackColor = true;
-            this.change.Click += new System.EventHandler(this.change_Click);
-            // 
-            // deleteLine
-            // 
-            this.deleteLine.Location = new System.Drawing.Point(185, 141);
-            this.deleteLine.Name = "deleteLine";
-            this.deleteLine.Size = new System.Drawing.Size(103, 23);
-            this.deleteLine.TabIndex = 4;
-            this.deleteLine.Text = "Удаление";
-            this.deleteLine.UseVisualStyleBackColor = true;
-            this.deleteLine.Click += new System.EventHandler(this.deleteLine_Click);
-            // 
             // PakingListButton
             // 
             this.PakingListButton.Location = new System.Drawing.Point(160, 187);
@@ -139,7 +106,7 @@
             // 
             this.работаСБДToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CreateToolStripMenuItem,
-            this.ChangeToolStripMenuItem,
+            this.UpdateToolStripMenuItem,
             this.DeleteToolStripMenuItem});
             this.работаСБДToolStripMenuItem.Name = "работаСБДToolStripMenuItem";
             this.работаСБДToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
@@ -162,72 +129,82 @@
             this.ShipmentCreateToolStripMenuItem.Name = "ShipmentCreateToolStripMenuItem";
             this.ShipmentCreateToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.ShipmentCreateToolStripMenuItem.Text = "Товар";
+            this.ShipmentCreateToolStripMenuItem.Click += new System.EventHandler(this.ShipmentCreateToolStripMenuItem_Click);
             // 
             // ClientCreateToolStripMenuItem
             // 
             this.ClientCreateToolStripMenuItem.Name = "ClientCreateToolStripMenuItem";
             this.ClientCreateToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.ClientCreateToolStripMenuItem.Text = "Клиент";
+            this.ClientCreateToolStripMenuItem.Click += new System.EventHandler(this.ClientCreateToolStripMenuItem_Click);
             // 
             // ProviderCreateToolStripMenuItem
             // 
             this.ProviderCreateToolStripMenuItem.Name = "ProviderCreateToolStripMenuItem";
             this.ProviderCreateToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.ProviderCreateToolStripMenuItem.Text = "Поставщик";
+            this.ProviderCreateToolStripMenuItem.Click += new System.EventHandler(this.ProviderCreateToolStripMenuItem_Click);
             // 
             // ProviderShipmentCreateToolStripMenuItem
             // 
             this.ProviderShipmentCreateToolStripMenuItem.Name = "ProviderShipmentCreateToolStripMenuItem";
             this.ProviderShipmentCreateToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.ProviderShipmentCreateToolStripMenuItem.Text = "Поставщик-Товар";
+            this.ProviderShipmentCreateToolStripMenuItem.Click += new System.EventHandler(this.ProviderShipmentCreateToolStripMenuItem_Click);
             // 
             // PurchaseHistoryCreateToolStripMenuItem
             // 
             this.PurchaseHistoryCreateToolStripMenuItem.Name = "PurchaseHistoryCreateToolStripMenuItem";
             this.PurchaseHistoryCreateToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.PurchaseHistoryCreateToolStripMenuItem.Text = "История покупок";
+            this.PurchaseHistoryCreateToolStripMenuItem.Click += new System.EventHandler(this.PurchaseHistoryCreateToolStripMenuItem_Click);
             // 
-            // ChangeToolStripMenuItem
+            // UpdateToolStripMenuItem
             // 
-            this.ChangeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ShipmentChangeToolStripMenuItem,
-            this.ClientChangeToolStripMenuItem,
-            this.ProviderChangeToolStripMenuItem,
-            this.ProviderShipmentChangeToolStripMenuItem,
-            this.PurchaseHistoryChangeToolStripMenuItem});
-            this.ChangeToolStripMenuItem.Name = "ChangeToolStripMenuItem";
-            this.ChangeToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.ChangeToolStripMenuItem.Text = "Редактирование таблицы";
+            this.UpdateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ShipmentUpdateToolStripMenuItem,
+            this.ClientUpdateToolStripMenuItem,
+            this.ProviderUpdateToolStripMenuItem,
+            this.ProviderShipmentUpdateToolStripMenuItem,
+            this.PurchaseHistoryUpdateToolStripMenuItem});
+            this.UpdateToolStripMenuItem.Name = "UpdateToolStripMenuItem";
+            this.UpdateToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
+            this.UpdateToolStripMenuItem.Text = "Редактирование таблицы";
             // 
-            // ShipmentChangeToolStripMenuItem
+            // ShipmentUpdateToolStripMenuItem
             // 
-            this.ShipmentChangeToolStripMenuItem.Name = "ShipmentChangeToolStripMenuItem";
-            this.ShipmentChangeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.ShipmentChangeToolStripMenuItem.Text = "Товар";
+            this.ShipmentUpdateToolStripMenuItem.Name = "ShipmentUpdateToolStripMenuItem";
+            this.ShipmentUpdateToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.ShipmentUpdateToolStripMenuItem.Text = "Товар";
+            this.ShipmentUpdateToolStripMenuItem.Click += new System.EventHandler(this.ShipmentUpdateToolStripMenuItem_Click);
             // 
-            // ClientChangeToolStripMenuItem
+            // ClientUpdateToolStripMenuItem
             // 
-            this.ClientChangeToolStripMenuItem.Name = "ClientChangeToolStripMenuItem";
-            this.ClientChangeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.ClientChangeToolStripMenuItem.Text = "Клиент";
+            this.ClientUpdateToolStripMenuItem.Name = "ClientUpdateToolStripMenuItem";
+            this.ClientUpdateToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.ClientUpdateToolStripMenuItem.Text = "Клиент";
+            this.ClientUpdateToolStripMenuItem.Click += new System.EventHandler(this.ClientUpdateToolStripMenuItem_Click);
             // 
-            // ProviderChangeToolStripMenuItem
+            // ProviderUpdateToolStripMenuItem
             // 
-            this.ProviderChangeToolStripMenuItem.Name = "ProviderChangeToolStripMenuItem";
-            this.ProviderChangeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.ProviderChangeToolStripMenuItem.Text = "Поставщик";
+            this.ProviderUpdateToolStripMenuItem.Name = "ProviderUpdateToolStripMenuItem";
+            this.ProviderUpdateToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.ProviderUpdateToolStripMenuItem.Text = "Поставщик";
+            this.ProviderUpdateToolStripMenuItem.Click += new System.EventHandler(this.ProviderUpdateToolStripMenuItem_Click);
             // 
-            // ProviderShipmentChangeToolStripMenuItem
+            // ProviderShipmentUpdateToolStripMenuItem
             // 
-            this.ProviderShipmentChangeToolStripMenuItem.Name = "ProviderShipmentChangeToolStripMenuItem";
-            this.ProviderShipmentChangeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.ProviderShipmentChangeToolStripMenuItem.Text = "Поставщик-Товар";
+            this.ProviderShipmentUpdateToolStripMenuItem.Name = "ProviderShipmentUpdateToolStripMenuItem";
+            this.ProviderShipmentUpdateToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.ProviderShipmentUpdateToolStripMenuItem.Text = "Поставщик-Товар";
+            this.ProviderShipmentUpdateToolStripMenuItem.Click += new System.EventHandler(this.ProviderShipmentUpdateToolStripMenuItem_Click);
             // 
-            // PurchaseHistoryChangeToolStripMenuItem
+            // PurchaseHistoryUpdateToolStripMenuItem
             // 
-            this.PurchaseHistoryChangeToolStripMenuItem.Name = "PurchaseHistoryChangeToolStripMenuItem";
-            this.PurchaseHistoryChangeToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.PurchaseHistoryChangeToolStripMenuItem.Text = "История покупок";
+            this.PurchaseHistoryUpdateToolStripMenuItem.Name = "PurchaseHistoryUpdateToolStripMenuItem";
+            this.PurchaseHistoryUpdateToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.PurchaseHistoryUpdateToolStripMenuItem.Text = "История покупок";
+            this.PurchaseHistoryUpdateToolStripMenuItem.Click += new System.EventHandler(this.PurchaseHistoryUpdateToolStripMenuItem_Click);
             // 
             // DeleteToolStripMenuItem
             // 
@@ -246,30 +223,35 @@
             this.ShipmentDeleteToolStripMenuItem.Name = "ShipmentDeleteToolStripMenuItem";
             this.ShipmentDeleteToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.ShipmentDeleteToolStripMenuItem.Text = "Товар";
+            this.ShipmentDeleteToolStripMenuItem.Click += new System.EventHandler(this.ShipmentDeleteToolStripMenuItem_Click);
             // 
             // ClientDeleteToolStripMenuItem
             // 
             this.ClientDeleteToolStripMenuItem.Name = "ClientDeleteToolStripMenuItem";
             this.ClientDeleteToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.ClientDeleteToolStripMenuItem.Text = "Клиент";
+            this.ClientDeleteToolStripMenuItem.Click += new System.EventHandler(this.ClientDeleteToolStripMenuItem_Click);
             // 
             // ProviderDeleteToolStripMenuItem
             // 
             this.ProviderDeleteToolStripMenuItem.Name = "ProviderDeleteToolStripMenuItem";
             this.ProviderDeleteToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.ProviderDeleteToolStripMenuItem.Text = "Поставщик";
+            this.ProviderDeleteToolStripMenuItem.Click += new System.EventHandler(this.ProviderDeleteToolStripMenuItem_Click);
             // 
             // ProviderShipmentDeleteToolStripMenuItem
             // 
             this.ProviderShipmentDeleteToolStripMenuItem.Name = "ProviderShipmentDeleteToolStripMenuItem";
             this.ProviderShipmentDeleteToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.ProviderShipmentDeleteToolStripMenuItem.Text = "Поставщик-Товар";
+            this.ProviderShipmentDeleteToolStripMenuItem.Click += new System.EventHandler(this.ProviderShipmentDeleteToolStripMenuItem_Click);
             // 
             // PurchaseHistoryDeleteToolStripMenuItem
             // 
             this.PurchaseHistoryDeleteToolStripMenuItem.Name = "PurchaseHistoryDeleteToolStripMenuItem";
             this.PurchaseHistoryDeleteToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.PurchaseHistoryDeleteToolStripMenuItem.Text = "История покупок";
+            this.PurchaseHistoryDeleteToolStripMenuItem.Click += new System.EventHandler(this.PurchaseHistoryDeleteToolStripMenuItem_Click);
             // 
             // OptToolStripMenuItem
             // 
@@ -310,9 +292,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 297);
             this.Controls.Add(this.PakingListButton);
-            this.Controls.Add(this.deleteLine);
-            this.Controls.Add(this.change);
-            this.Controls.Add(this.create);
             this.Controls.Add(this.report);
             this.Controls.Add(this.backup);
             this.Controls.Add(this.menuStrip1);
@@ -332,9 +311,6 @@
 
         private System.Windows.Forms.Button backup;
         private System.Windows.Forms.Button report;
-        private System.Windows.Forms.Button create;
-        private System.Windows.Forms.Button change;
-        private System.Windows.Forms.Button deleteLine;
         private System.Windows.Forms.Button PakingListButton;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem работаСБДToolStripMenuItem;
@@ -344,12 +320,12 @@
         private System.Windows.Forms.ToolStripMenuItem ProviderCreateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ProviderShipmentCreateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem PurchaseHistoryCreateToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ChangeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ShipmentChangeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ClientChangeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ProviderChangeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ProviderShipmentChangeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem PurchaseHistoryChangeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem UpdateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ShipmentUpdateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ClientUpdateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ProviderUpdateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ProviderShipmentUpdateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem PurchaseHistoryUpdateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem DeleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ShipmentDeleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ClientDeleteToolStripMenuItem;

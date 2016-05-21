@@ -93,6 +93,7 @@
     <Compile Include="CreateUpdateDeleteScreen.Designer.cs">
       <DependentUpon>CreateUpdateDeleteScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Enums.cs" />
     <Compile Include="HalfWayScreen.cs">
       <SubType>Form</SubType>
     </Compile>
