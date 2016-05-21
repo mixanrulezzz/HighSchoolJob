@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ShipmentList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Shipments>
+    <Shipment>
+      <ShipmentID>1</ShipmentID>
+      <ShipmentName>Открытка</ShipmentName>
+      <Price>20</Price>
+      <PhotoLink>йеайпупй</PhotoLink>
+    </Shipment>
+    <Shipment>
+      <ShipmentID>2</ShipmentID>
+      <ShipmentName>Шкатулка</ShipmentName>
+      <Price>1500</Price>
+      <PhotoLink>эфрпгыфп</PhotoLink>
+    </Shipment>
+  </Shipments>
+</ShipmentList>
+<?xml version="1.0" encoding="utf-8"?>
+<ClientList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Clients>
+    <Client>
+      <ClientID>1</ClientID>
+      <ClientFirstName>Александр</ClientFirstName>
+      <ClientLastName>Поляков</ClientLastName>
+    </Client>
+  </Clients>
+</ClientList>
+<?xml version="1.0" encoding="utf-8"?>
+<ProviderList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Providers />
+</ProviderList>
+<?xml version="1.0" encoding="utf-8"?>
+<ProviderShipmentList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LinkListProviderShipment />
+</ProviderShipmentList>
+<?xml version="1.0" encoding="utf-8"?>
+<PurchaseHistoryList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ListOfHistory />
+</PurchaseHistoryList>

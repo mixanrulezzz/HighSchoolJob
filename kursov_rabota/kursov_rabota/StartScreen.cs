@@ -162,6 +162,39 @@ namespace kursov_rabota
 
         }
 
+        private void CreateBackupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SFD.Filter = "XML файл|*.xml";
+            SFD.Title = "Сохранить резервную копию";
+            SFD.FileName = "Backup" + DateTime.Now.Hour.ToString() + "-" + DateTime.Now.Minute.ToString() + "-" + DateTime.Now.Second.ToString() + DateTime.Now.Day.ToString() + "." + DateTime.Now.Month.ToString() + "." + DateTime.Now.Year.ToString();
+            SFD.ShowDialog();
+        }
+
+        private void SFD_FileOk(object sender, CancelEventArgs e)
+        {
+            string file = SFD.FileName;
+            OutputList.OutputList.OutputIntoXML(file, Shipments, Clients, Providers, ProvidersShipments, PurchaseHistoryL);
+            MessageBox.Show("Резевная копия создана успешно");
+        }
+
+        private void LoadBackupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OFD.Filter = "XML файл|*.xml";
+            OFD.Title = "Открыть резервную копию";
+            OFD.ShowDialog();           
+        }
+
+        private void OFD_FileOk(object sender, CancelEventArgs e)
+        {
+            string file = OFD.FileName;
+            Shipments = InputList.InputList.ShipmentFromXML(file);
+            Clients = InputList.InputList.ClientFromXML(file);
+            Providers = InputList.InputList.ProviderFromXML(file);
+            ProvidersShipments = InputList.InputList.ProviderShipmentFromXML(file);
+            PurchaseHistoryL = InputList.InputList.PurchaseHistoryFromXML(file);
+            MessageBox.Show("Списки успешно перезаписаны");
+        }
+
         private void backup_Click(object sender, EventArgs e)
         {
             BackupScreen BS = new BackupScreen();
@@ -173,6 +206,6 @@ namespace kursov_rabota
         {
             DeleteFromSQLTables.DeleteFromSQLTables.DeleteAll(DataFile);
             OutputList.OutputList.OutputIntoSQL(DataFile, Shipments, Clients, Providers, ProvidersShipments, PurchaseHistoryL);
-        }        
+        }
     }
 }

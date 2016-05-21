@@ -56,6 +56,10 @@
             this.CheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CreateBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LoadBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SFD = new System.Windows.Forms.SaveFileDialog();
+            this.OFD = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -282,9 +286,35 @@
             // 
             // BackupToolStripMenuItem
             // 
+            this.BackupToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CreateBackupToolStripMenuItem,
+            this.LoadBackupToolStripMenuItem});
             this.BackupToolStripMenuItem.Name = "BackupToolStripMenuItem";
             this.BackupToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
             this.BackupToolStripMenuItem.Text = "Резервная копия";
+            // 
+            // CreateBackupToolStripMenuItem
+            // 
+            this.CreateBackupToolStripMenuItem.Name = "CreateBackupToolStripMenuItem";
+            this.CreateBackupToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.CreateBackupToolStripMenuItem.Text = "Создать";
+            this.CreateBackupToolStripMenuItem.Click += new System.EventHandler(this.CreateBackupToolStripMenuItem_Click);
+            // 
+            // LoadBackupToolStripMenuItem
+            // 
+            this.LoadBackupToolStripMenuItem.Name = "LoadBackupToolStripMenuItem";
+            this.LoadBackupToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.LoadBackupToolStripMenuItem.Text = "Загрузить";
+            this.LoadBackupToolStripMenuItem.Click += new System.EventHandler(this.LoadBackupToolStripMenuItem_Click);
+            // 
+            // SFD
+            // 
+            this.SFD.FileOk += new System.ComponentModel.CancelEventHandler(this.SFD_FileOk);
+            // 
+            // OFD
+            // 
+            this.OFD.FileName = "openFileDialog1";
+            this.OFD.FileOk += new System.ComponentModel.CancelEventHandler(this.OFD_FileOk);
             // 
             // StartScreen
             // 
@@ -337,6 +367,10 @@
         private System.Windows.Forms.ToolStripMenuItem CheckToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem BackupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CreateBackupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem LoadBackupToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog SFD;
+        private System.Windows.Forms.OpenFileDialog OFD;
     }
 }
 
