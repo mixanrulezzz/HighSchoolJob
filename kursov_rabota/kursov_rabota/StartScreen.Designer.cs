@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.backup = new System.Windows.Forms.Button();
             this.report = new System.Windows.Forms.Button();
             this.PakingListButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -62,16 +61,6 @@
             this.OFD = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // backup
-            // 
-            this.backup.Location = new System.Drawing.Point(364, 262);
-            this.backup.Name = "backup";
-            this.backup.Size = new System.Drawing.Size(108, 23);
-            this.backup.TabIndex = 0;
-            this.backup.Text = "Резервная копия";
-            this.backup.UseVisualStyleBackColor = true;
-            this.backup.Click += new System.EventHandler(this.backup_Click);
             // 
             // report
             // 
@@ -323,7 +312,6 @@
             this.ClientSize = new System.Drawing.Size(484, 297);
             this.Controls.Add(this.PakingListButton);
             this.Controls.Add(this.report);
-            this.Controls.Add(this.backup);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "StartScreen";
@@ -338,8 +326,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button backup;
         private System.Windows.Forms.Button report;
         private System.Windows.Forms.Button PakingListButton;
         private System.Windows.Forms.MenuStrip menuStrip1;
