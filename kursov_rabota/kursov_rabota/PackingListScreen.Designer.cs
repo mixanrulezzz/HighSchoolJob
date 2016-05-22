@@ -32,6 +32,7 @@
             this.HelpLabel = new System.Windows.Forms.Label();
             this.ChooseButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
+            this.CreateButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Elements
@@ -53,9 +54,9 @@
             // 
             // ChooseButton
             // 
-            this.ChooseButton.Location = new System.Drawing.Point(12, 259);
+            this.ChooseButton.Location = new System.Drawing.Point(12, 256);
             this.ChooseButton.Name = "ChooseButton";
-            this.ChooseButton.Size = new System.Drawing.Size(75, 23);
+            this.ChooseButton.Size = new System.Drawing.Size(100, 23);
             this.ChooseButton.TabIndex = 2;
             this.ChooseButton.Text = "Выбрать";
             this.ChooseButton.UseVisualStyleBackColor = true;
@@ -63,18 +64,30 @@
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(93, 259);
+            this.AddButton.Location = new System.Drawing.Point(118, 256);
             this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(75, 23);
+            this.AddButton.Size = new System.Drawing.Size(111, 23);
             this.AddButton.TabIndex = 3;
             this.AddButton.Text = "Добавить";
             this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
+            // CreateButton
+            // 
+            this.CreateButton.Location = new System.Drawing.Point(235, 256);
+            this.CreateButton.Name = "CreateButton";
+            this.CreateButton.Size = new System.Drawing.Size(100, 23);
+            this.CreateButton.TabIndex = 4;
+            this.CreateButton.Text = "Создать";
+            this.CreateButton.UseVisualStyleBackColor = true;
+            this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
             // 
             // PackingListScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(347, 294);
+            this.Controls.Add(this.CreateButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.ChooseButton);
             this.Controls.Add(this.HelpLabel);
@@ -93,5 +106,6 @@
         private System.Windows.Forms.Label HelpLabel;
         private System.Windows.Forms.Button ChooseButton;
         private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Button CreateButton;
     }
 }

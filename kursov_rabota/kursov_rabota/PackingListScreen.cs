@@ -13,7 +13,8 @@ namespace kursov_rabota
     public partial class PackingListScreen : Form
     {
         private bool PackingList;
-        private Tables NowTable;
+        private List<int> PurchaseHistoryInElements;
+        private List<int> AddingPurchaseHistory;
 
         public PackingListScreen()
         {
@@ -24,11 +25,14 @@ namespace kursov_rabota
         {
             InitializeComponent();
             this.PackingList = PackingList;
+            PurchaseHistoryInElements = new List<int>();
+            AddingPurchaseHistory = new List<int>();
         }
 
         private void PackingListScreen_Load(object sender, EventArgs e)
         {
             AddButton.Visible = false;
+            CreateButton.Visible = false;
             ChooseButton.Visible = true;
             HelpLabel.Text = "На какого клиента вы хотите выписать ";
             if (PackingList)
@@ -36,7 +40,6 @@ namespace kursov_rabota
             else
                 HelpLabel.Text += "чек:";
             RefreshElements();
-            NowTable = Tables.Client;
         }
 
         private void ChooseButton_Click(object sender, EventArgs e)
@@ -62,14 +65,50 @@ namespace kursov_rabota
             }
             ChooseButton.Visible = false;
             AddButton.Visible = true;
+            CreateButton.Visible = true;
             HelpLabel.Text = "Выберите покупки:";
             int SelectedClient = Elements.SelectedIndex;
             Elements.Items.Clear();
             for (int i = 0; i < Program.StScreen.PurchaseHistoryL.Count; i++)
             {
-                if(Program.StScreen.PurchaseHistoryL[i].Count >= 5 && Program.StScreen.PurchaseHistoryL[i].ClientID == Program.StScreen.Clients[SelectedClient].ClientID)
+                if (Program.StScreen.PurchaseHistoryL[i].Count >= 5 && Program.StScreen.PurchaseHistoryL[i].ClientID == Program.StScreen.Clients[SelectedClient].ClientID)
+                {
                     Elements.Items.Add(Program.StScreen.PurchaseHistoryL[i]);
+                    PurchaseHistoryInElements.Add(i);
+                }
             }
+        }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            if (AddingPurchaseHistory.Count == 0)
+            {
+                AddingPurchaseHistory.Add(PurchaseHistoryInElements[Elements.SelectedIndex]);
+                return;
+            }
+            foreach (int i in AddingPurchaseHistory)
+            {
+                if (i == PurchaseHistoryInElements[Elements.SelectedIndex])
+                {
+                    MessageBox.Show("Вы уже выбирали данную покупку");
+                    return;
+                }
+            }
+            if (Program.StScreen.PurchaseHistoryL[AddingPurchaseHistory[AddingPurchaseHistory.Count - 1]].Day == Program.StScreen.PurchaseHistoryL[PurchaseHistoryInElements[Elements.SelectedIndex]].Day && Program.StScreen.PurchaseHistoryL[AddingPurchaseHistory[AddingPurchaseHistory.Count - 1]].Month == Program.StScreen.PurchaseHistoryL[PurchaseHistoryInElements[Elements.SelectedIndex]].Month && Program.StScreen.PurchaseHistoryL[AddingPurchaseHistory[AddingPurchaseHistory.Count - 1]].Year == Program.StScreen.PurchaseHistoryL[PurchaseHistoryInElements[Elements.SelectedIndex]].Year)
+            {
+                AddingPurchaseHistory.Add(PurchaseHistoryInElements[Elements.SelectedIndex]);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Все оптовые покупки должны быть сделаны в один день");
+                return;
+            }
+        }
+
+        private void CreateButton_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void RefreshElements()
