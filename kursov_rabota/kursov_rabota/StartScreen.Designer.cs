@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.report = new System.Windows.Forms.Button();
-            this.PakingListButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.работаСБДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CreateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,16 +70,6 @@
             this.report.Text = "Получить отчет";
             this.report.UseVisualStyleBackColor = true;
             this.report.Click += new System.EventHandler(this.report_Click);
-            // 
-            // PakingListButton
-            // 
-            this.PakingListButton.Location = new System.Drawing.Point(160, 187);
-            this.PakingListButton.Name = "PakingListButton";
-            this.PakingListButton.Size = new System.Drawing.Size(151, 23);
-            this.PakingListButton.TabIndex = 5;
-            this.PakingListButton.Text = "Товарная накладная и чек";
-            this.PakingListButton.UseVisualStyleBackColor = true;
-            this.PakingListButton.Click += new System.EventHandler(this.PakingListButton_Click);
             // 
             // menuStrip1
             // 
@@ -260,12 +249,14 @@
             this.PackingListToolStripMenuItem.Name = "PackingListToolStripMenuItem";
             this.PackingListToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.PackingListToolStripMenuItem.Text = "Товарная накладная";
+            this.PackingListToolStripMenuItem.Click += new System.EventHandler(this.PackingListToolStripMenuItem_Click);
             // 
             // CheckToolStripMenuItem
             // 
             this.CheckToolStripMenuItem.Name = "CheckToolStripMenuItem";
             this.CheckToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.CheckToolStripMenuItem.Text = "Чек";
+            this.CheckToolStripMenuItem.Click += new System.EventHandler(this.CheckToolStripMenuItem_Click);
             // 
             // ReportToolStripMenuItem
             // 
@@ -310,7 +301,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 297);
-            this.Controls.Add(this.PakingListButton);
             this.Controls.Add(this.report);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -327,7 +317,6 @@
 
         #endregion
         private System.Windows.Forms.Button report;
-        private System.Windows.Forms.Button PakingListButton;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem работаСБДToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CreateToolStripMenuItem;

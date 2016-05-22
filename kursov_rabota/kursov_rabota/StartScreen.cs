@@ -152,9 +152,16 @@ namespace kursov_rabota
             CrUpdDelScr.ShowDialog();
         }
 
-        private void PakingListButton_Click(object sender, EventArgs e)
+        private void PackingListToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            PackingListScreen PLS = new PackingListScreen(true);
+            PLS.ShowDialog();
+        }
 
+        private void CheckToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PackingListScreen PLS = new PackingListScreen(false);
+            PLS.ShowDialog();
         }
 
         private void report_Click(object sender, EventArgs e)
@@ -200,5 +207,7 @@ namespace kursov_rabota
             DeleteFromSQLTables.DeleteFromSQLTables.DeleteAll(DataFile);
             OutputList.OutputList.OutputIntoSQL(DataFile, Shipments, Clients, Providers, ProvidersShipments, PurchaseHistoryL);
         }
+
+
     }
 }
