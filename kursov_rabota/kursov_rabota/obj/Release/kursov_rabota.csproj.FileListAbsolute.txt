@@ -32,3 +32,5 @@ C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Release\kursov_rabota.Cr
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\XMLSerializator.dll
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\XMLSerializator.pdb
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Release\kursov_rabota.PackingListScreen.resources
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\BackupClass.dll
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\BackupClass.pdb

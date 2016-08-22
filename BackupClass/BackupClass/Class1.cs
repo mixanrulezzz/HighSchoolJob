@@ -27,5 +27,10 @@ namespace BackupClass
             this.ProviderShipment = ProviderShipment;
             this.PurchaseHistory = PurchaseHistory;
         }
+
+        public BackupClass()
+        {
+
+        }
     }
 }
