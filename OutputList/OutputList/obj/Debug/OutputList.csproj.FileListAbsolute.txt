@@ -16,3 +16,5 @@ C:\GitRep\HighSchoolJob\OutputList\OutputList\obj\Debug\OutputList.pdb
 C:\GitRep\HighSchoolJob\OutputList\OutputList\obj\Debug\OutputList.csprojResolveAssemblyReference.cache
 C:\GitRep\HighSchoolJob\OutputList\OutputList\bin\Debug\XMLSerializator.dll
 C:\GitRep\HighSchoolJob\OutputList\OutputList\bin\Debug\XMLSerializator.pdb
+C:\GitRep\HighSchoolJob\OutputList\OutputList\bin\Debug\BackupClass.dll
+C:\GitRep\HighSchoolJob\OutputList\OutputList\bin\Debug\BackupClass.pdb

@@ -18,6 +18,7 @@ using ProviderShipmentLibrary;
 using PurchaseHistoryLibrary;
 using InputList;
 using DeleteFromSQLTables;
+using BackupClass;
 
 namespace kursov_rabota
 {

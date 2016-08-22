@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BackupClass">
+      <HintPath>..\..\BackupClass\BackupClass\bin\Debug\BackupClass.dll</HintPath>
+    </Reference>
     <Reference Include="ClientLibrary">
       <HintPath>..\..\ClientLibrary\ClientLibrary\bin\Debug\ClientLibrary.dll</HintPath>
     </Reference>
