@@ -195,11 +195,14 @@ namespace kursov_rabota
         private void OFD_FileOk(object sender, CancelEventArgs e)
         {
             string file = OFD.FileName;
-            Shipments = InputList.InputList.ShipmentFromXML(file);
-            Clients = InputList.InputList.ClientFromXML(file);
-            Providers = InputList.InputList.ProviderFromXML(file);
-            ProvidersShipments = InputList.InputList.ProviderShipmentFromXML(file);
-            PurchaseHistoryL = InputList.InputList.PurchaseHistoryFromXML(file);
+            BackupClass.BackupClass Backup = InputList.InputList.Backup(file);
+            
+            Shipments = Backup.Shipments;
+            Clients = Backup.Clients;
+            Providers = Backup.Providers;
+            ProvidersShipments = Backup.ProviderShipment;
+            PurchaseHistoryL = Backup.PurchaseHistory;
+            
             MessageBox.Show("Списки успешно перезаписаны");
         }
 
