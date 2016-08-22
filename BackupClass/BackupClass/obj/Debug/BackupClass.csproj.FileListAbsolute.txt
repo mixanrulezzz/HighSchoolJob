@@ -1,0 +1,15 @@
+C:\GitRep\HighSchoolJob\BackupClass\BackupClass\bin\Debug\BackupClass.dll
+C:\GitRep\HighSchoolJob\BackupClass\BackupClass\bin\Debug\BackupClass.pdb
+C:\GitRep\HighSchoolJob\BackupClass\BackupClass\bin\Debug\ClientLibrary.dll
+C:\GitRep\HighSchoolJob\BackupClass\BackupClass\bin\Debug\ProviderLibrary.dll
+C:\GitRep\HighSchoolJob\BackupClass\BackupClass\bin\Debug\ProviderShipmentLibrary.dll
+C:\GitRep\HighSchoolJob\BackupClass\BackupClass\bin\Debug\PurchaseHistoryLibrary.dll
+C:\GitRep\HighSchoolJob\BackupClass\BackupClass\bin\Debug\ShipmentLibrary.dll
+C:\GitRep\HighSchoolJob\BackupClass\BackupClass\bin\Debug\ClientLibrary.pdb
+C:\GitRep\HighSchoolJob\BackupClass\BackupClass\bin\Debug\ProviderLibrary.pdb
+C:\GitRep\HighSchoolJob\BackupClass\BackupClass\bin\Debug\ProviderShipmentLibrary.pdb
+C:\GitRep\HighSchoolJob\BackupClass\BackupClass\bin\Debug\PurchaseHistoryLibrary.pdb
+C:\GitRep\HighSchoolJob\BackupClass\BackupClass\bin\Debug\ShipmentLibrary.pdb
+C:\GitRep\HighSchoolJob\BackupClass\BackupClass\obj\Debug\BackupClass.csprojResolveAssemblyReference.cache
+C:\GitRep\HighSchoolJob\BackupClass\BackupClass\obj\Debug\BackupClass.dll
+C:\GitRep\HighSchoolJob\BackupClass\BackupClass\obj\Debug\BackupClass.pdb
