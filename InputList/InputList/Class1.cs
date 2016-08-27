@@ -10,6 +10,7 @@ using ProviderShipmentLibrary;
 using PurchaseHistoryLibrary;
 using System.Data.SQLite;
 using XMLSerializator;
+using BackupClass;
 
 namespace InputList
 {
@@ -81,55 +82,15 @@ namespace InputList
             return PurHisList;
         }
 
-        public static ShipmentList ShipmentFromXML(string File)
+        public static BackupClass.BackupClass Backup(string File)
         {
-            ShipmentList ShipList = XMLSer<ShipmentList>.Deserializator(File);
-            if (ShipList == null)
+            BackupClass.BackupClass Back = XMLSer<BackupClass.BackupClass>.Deserializator(File);
+            if (Back == null)
             {
-                ShipList = new ShipmentList();
+                Back = new BackupClass.BackupClass();
             }
-            return ShipList;
-        }
-
-        public static ClientList ClientFromXML(string File)
-        {
-            ClientList ClList = XMLSer<ClientList>.Deserializator(File);
-            if (ClList == null)
-            {
-                ClList = new ClientList();
-            }
-            return ClList;
-        }
-
-        public static ProviderList ProviderFromXML(string File)
-        {
-            ProviderList ProvList = XMLSer<ProviderList>.Deserializator(File);
-            if (ProvList == null)
-            {
-                ProvList = new ProviderList();
-            }
-            return ProvList;
-        }
-
-        public static ProviderShipmentList ProviderShipmentFromXML(string File)
-        {
-            ProviderShipmentList ProvShipList = XMLSer<ProviderShipmentList>.Deserializator(File);
-            if (ProvShipList == null)
-            {
-                ProvShipList = new ProviderShipmentList();
-            }
-            return ProvShipList;
-        }
-
-        public static PurchaseHistoryList PurchaseHistoryFromXML(string File)
-        {
-            PurchaseHistoryList PurHisList = XMLSer<PurchaseHistoryList>.Deserializator(File);
-            if (PurHisList == null)
-            {
-                PurHisList = new PurchaseHistoryList();
-            }
-            return PurHisList;
-        }
+            return Back;
+        }        
     }
 }
 

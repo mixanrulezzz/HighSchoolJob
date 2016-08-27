@@ -28,47 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Elements = new System.Windows.Forms.ListBox();
+            this.HelpLabel = new System.Windows.Forms.Label();
             this.ChooseButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.CreateButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listBox1
+            // Elements
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 25);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(257, 225);
-            this.listBox1.TabIndex = 0;
+            this.Elements.FormattingEnabled = true;
+            this.Elements.Location = new System.Drawing.Point(12, 25);
+            this.Elements.Name = "Elements";
+            this.Elements.Size = new System.Drawing.Size(323, 225);
+            this.Elements.TabIndex = 0;
             // 
-            // label1
+            // HelpLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.HelpLabel.AutoSize = true;
+            this.HelpLabel.Location = new System.Drawing.Point(12, 9);
+            this.HelpLabel.Name = "HelpLabel";
+            this.HelpLabel.Size = new System.Drawing.Size(35, 13);
+            this.HelpLabel.TabIndex = 1;
+            this.HelpLabel.Text = "label1";
             // 
             // ChooseButton
             // 
-            this.ChooseButton.Location = new System.Drawing.Point(12, 259);
+            this.ChooseButton.Location = new System.Drawing.Point(12, 256);
             this.ChooseButton.Name = "ChooseButton";
-            this.ChooseButton.Size = new System.Drawing.Size(75, 23);
+            this.ChooseButton.Size = new System.Drawing.Size(100, 23);
             this.ChooseButton.TabIndex = 2;
             this.ChooseButton.Text = "Выбрать";
             this.ChooseButton.UseVisualStyleBackColor = true;
+            this.ChooseButton.Click += new System.EventHandler(this.ChooseButton_Click);
+            // 
+            // AddButton
+            // 
+            this.AddButton.Location = new System.Drawing.Point(118, 256);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(111, 23);
+            this.AddButton.TabIndex = 3;
+            this.AddButton.Text = "Добавить";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
+            // CreateButton
+            // 
+            this.CreateButton.Location = new System.Drawing.Point(235, 256);
+            this.CreateButton.Name = "CreateButton";
+            this.CreateButton.Size = new System.Drawing.Size(100, 23);
+            this.CreateButton.TabIndex = 4;
+            this.CreateButton.Text = "Создать";
+            this.CreateButton.UseVisualStyleBackColor = true;
+            this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
             // 
             // PackingListScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 294);
+            this.ClientSize = new System.Drawing.Size(347, 294);
+            this.Controls.Add(this.CreateButton);
+            this.Controls.Add(this.AddButton);
             this.Controls.Add(this.ChooseButton);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.HelpLabel);
+            this.Controls.Add(this.Elements);
             this.Name = "PackingListScreen";
             this.Text = "PackingListScreen";
+            this.Load += new System.EventHandler(this.PackingListScreen_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -76,8 +102,10 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox Elements;
+        private System.Windows.Forms.Label HelpLabel;
         private System.Windows.Forms.Button ChooseButton;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Button CreateButton;
     }
 }

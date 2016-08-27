@@ -15,14 +15,24 @@ using PurchaseHistoryLibrary;
 
 namespace kursov_rabota
 {
+
+
     public partial class CreateUpdateDeleteScreen : Form
     {
         private int SelectedTextBox = 0;
-        private bool ClickBackButton = false;
+        public Regimes ChoosingRegime;
+        public Tables ChoosingTable;
 
         public CreateUpdateDeleteScreen()
         {
             InitializeComponent();
+        }
+
+        public CreateUpdateDeleteScreen(Regimes ChoosingRegime, Tables ChoosingTable)
+        {
+            InitializeComponent();
+            this.ChoosingRegime = ChoosingRegime;
+            this.ChoosingTable = ChoosingTable;
         }
 
         private void CreateScreen_Load(object sender, EventArgs e)
@@ -30,35 +40,32 @@ namespace kursov_rabota
             PurchaseHistoryDate.Value = DateTime.Now;
             PurchaseHistoryDate.MaxDate = DateTime.Now;
             HideAll();
-            switch (HalfWayScreen.ChoosingRegime)
+            switch (ChoosingRegime)
             {
-                case "Create": CreateLoad();
+                case Regimes.Create: CreateLoad();
                     break;
-                case "Update": UpdateLoad();
+                case Regimes.Update: UpdateLoad();
                     break;
-                case "Delete": DeleteLoad();
+                case Regimes.Delete: DeleteLoad();
                     break;
             }
         }
 
         private void CreateScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!ClickBackButton)
-            {
-                Program.StScreen.Visible = true;
-                Program.StScreen.HalfWayScr.Close();
-            }
+            Program.StScreen.Visible = true;
         }
 
         private void MultifunctionalButton_Click(object sender, EventArgs e)
         {
-            switch (HalfWayScreen.ChoosingRegime)
+            switch (
+                ChoosingRegime)
             {
-                case "Create": CreateClick();
+                case Regimes.Create: CreateClick();
                     break;
-                case "Update": UpdateClick();
+                case Regimes.Update: UpdateClick();
                     break;
-                case "Delete": DeleteClick();
+                case Regimes.Delete: DeleteClick();
                     break;
                 default: break;
             }
@@ -66,7 +73,7 @@ namespace kursov_rabota
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (HalfWayScreen.ChoosingTable == "Shipment")
+            if (ChoosingTable == Tables.Shipment)
             {
                 if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
                     e.Handled = true;
@@ -75,7 +82,7 @@ namespace kursov_rabota
 
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (HalfWayScreen.ChoosingTable == "PurchaseHistory")
+            if (ChoosingTable == Tables.PurchaseHistory)
             {
                 if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
                     e.Handled = true;
@@ -84,17 +91,15 @@ namespace kursov_rabota
 
         private void BackButton_Click(object sender, EventArgs e)
         {
-            Program.StScreen.HalfWayScr.Visible = true;
-            ClickBackButton = true;
             this.Close();
         }
 
         private void IDTextBox_Click(object sender, EventArgs e)
         {            
-            switch (HalfWayScreen.ChoosingTable)
+            switch (ChoosingTable)
             {
-                case "ProviderShipment": SelectedTextBox = 1;
-                    RefreshSecondListBox("Provider");
+                case Tables.ProviderShipment: SelectedTextBox = 1;
+                    RefreshSecondListBox(Tables.Provider);
                     break;
                 default: break;
             }
@@ -102,13 +107,13 @@ namespace kursov_rabota
 
         private void textBox1_Click(object sender, EventArgs e)
         {            
-            switch (HalfWayScreen.ChoosingTable)
+            switch (ChoosingTable)
             {
-                case "ProviderShipment": SelectedTextBox = 2;
-                    RefreshSecondListBox("Shipment");
+                case Tables.ProviderShipment: SelectedTextBox = 2;
+                    RefreshSecondListBox(Tables.Shipment);
                     break;
-                case "PurchaseHistory": SelectedTextBox = 2;
-                    RefreshSecondListBox("Shipment");
+                case Tables.PurchaseHistory: SelectedTextBox = 2;
+                    RefreshSecondListBox(Tables.Shipment);
                     break;
                 default: break;
             }
@@ -116,10 +121,10 @@ namespace kursov_rabota
 
         private void textBox2_Click(object sender, EventArgs e)
         {
-            switch (HalfWayScreen.ChoosingTable)
+            switch (ChoosingTable)
             {
-                case "PurchaseHistory": SelectedTextBox = 3;
-                    RefreshSecondListBox("Client");
+                case Tables.PurchaseHistory: SelectedTextBox = 3;
+                    RefreshSecondListBox(Tables.Client);
                     break;
                 default: break;
             }
@@ -129,28 +134,28 @@ namespace kursov_rabota
         {
             if (FirstListBox.SelectedIndex != -1)
             {
-                switch (HalfWayScreen.ChoosingTable)
+                switch (ChoosingTable)
                 {
-                    case "Shipment":
+                    case Tables.Shipment:
                         IDTextBox.Text = Program.StScreen.Shipments[FirstListBox.SelectedIndex].ShipmentID.ToString();
                         textBox1.Text = Program.StScreen.Shipments[FirstListBox.SelectedIndex].ShipmentName;
                         textBox2.Text = Program.StScreen.Shipments[FirstListBox.SelectedIndex].Price.ToString();
                         textBox3.Text = Program.StScreen.Shipments[FirstListBox.SelectedIndex].PhotoLink;
                         break;
-                    case "Client":
+                    case Tables.Client:
                         IDTextBox.Text = Program.StScreen.Clients[FirstListBox.SelectedIndex].ClientID.ToString();
                         textBox1.Text = Program.StScreen.Clients[FirstListBox.SelectedIndex].ClientFirstName;
                         textBox2.Text = Program.StScreen.Clients[FirstListBox.SelectedIndex].ClientLastName;
                         break;
-                    case "Provider":
+                    case Tables.Provider:
                         IDTextBox.Text = Program.StScreen.Providers[FirstListBox.SelectedIndex].ProviderID.ToString();
                         textBox1.Text = Program.StScreen.Providers[FirstListBox.SelectedIndex].ProviderName;
                         break;
-                    case "ProviderShipment":
+                    case Tables.ProviderShipment:
                         IDTextBox.Text = Program.StScreen.ProvidersShipments[FirstListBox.SelectedIndex].ProviderID.ToString();
                         textBox1.Text = Program.StScreen.ProvidersShipments[FirstListBox.SelectedIndex].ShipmentID.ToString();
                         break;
-                    case "PurchaseHistory":
+                    case Tables.PurchaseHistory:
                         IDTextBox.Text = Program.StScreen.PurchaseHistoryL[FirstListBox.SelectedIndex].PurchaseHistoryID.ToString();
                         textBox1.Text = Program.StScreen.PurchaseHistoryL[FirstListBox.SelectedIndex].ShipmentID.ToString();
                         textBox2.Text = Program.StScreen.PurchaseHistoryL[FirstListBox.SelectedIndex].ClientID.ToString();
@@ -187,27 +192,27 @@ namespace kursov_rabota
         private void RefreshFirstListBox()
         {
             FirstListBox.Items.Clear();
-            switch (HalfWayScreen.ChoosingTable)
+            switch (ChoosingTable)
             {
-                case "Shipment":
+                case Tables.Shipment:
                     for (int i = 0; i < Program.StScreen.Shipments.Count; i++)
                     {
                         FirstListBox.Items.Add(Program.StScreen.Shipments[i]);
                     }
                     break;
-                case "Client":
+                case Tables.Client:
                     for (int i = 0; i < Program.StScreen.Clients.Count; i++)
                     {
                         FirstListBox.Items.Add(Program.StScreen.Clients[i]);
                     }
                     break;
-                case "Provider":
+                case Tables.Provider:
                     for (int i = 0; i < Program.StScreen.Providers.Count; i++)
                     {
                         FirstListBox.Items.Add(Program.StScreen.Providers[i]);
                     }
                     break;
-                case "ProviderShipment":
+                case Tables.ProviderShipment:
                     for (int i = 0; i < Program.StScreen.ProvidersShipments.Count; i++)
                     {
                         string str = "";
@@ -231,7 +236,7 @@ namespace kursov_rabota
                         FirstListBox.Items.Add(str);
                     }
                     break;
-                case "PurchaseHistory":
+                case Tables.PurchaseHistory:
                     for (int i = 0; i < Program.StScreen.PurchaseHistoryL.Count; i++)
                     {
                         FirstListBox.Items.Add(Program.StScreen.PurchaseHistoryL[i]);
@@ -241,26 +246,26 @@ namespace kursov_rabota
             }
         }
 
-        private void RefreshSecondListBox(string ChoosingTable)
+        private void RefreshSecondListBox(Tables ChoosingTable)
         {
             SecondListBox.Items.Clear();
             switch (ChoosingTable)
             {
-                case "Shipment":
+                case Tables.Shipment:
                     SecondListBoxLabel.Text = "Список товаров:";
                     for (int i = 0; i < Program.StScreen.Shipments.Count; i++)
                     {
                         SecondListBox.Items.Add(Program.StScreen.Shipments[i]);
                     }
                     break;
-                case "Client":
+                case Tables.Client:
                     SecondListBoxLabel.Text = "Список клиентов:";
                     for (int i = 0; i < Program.StScreen.Clients.Count; i++)
                     {
                         SecondListBox.Items.Add(Program.StScreen.Clients[i]);
                     }
                     break;
-                case "Provider":
+                case Tables.Provider:
                     SecondListBoxLabel.Text = "Список поставщиков:";
                     for (int i = 0; i < Program.StScreen.Providers.Count; i++)
                     {
@@ -402,27 +407,27 @@ namespace kursov_rabota
         private void CreateLoad()
         {
             MultifunctionalButton.Text = "Создать";
-            switch (HalfWayScreen.ChoosingTable)
+            switch (ChoosingTable)
             {
-                case "Shipment":
+                case Tables.Shipment:
                     ShipmentVisible();
                     FirstListBox.SelectionMode = SelectionMode.None;
                     IDTextBox.Text = "(Будет проставлен автоматически!)";
                     RefreshFirstListBox();
                     break;
-                case "Client":
+                case Tables.Client:
                     ClientVisible();
                     FirstListBox.SelectionMode = SelectionMode.None;
                     IDTextBox.Text = "(Будет проставлен автоматически!)";
                     RefreshFirstListBox();
                     break;
-                case "Provider":
+                case Tables.Provider:
                     ProviderVisible();
                     FirstListBox.SelectionMode = SelectionMode.None;
                     IDTextBox.Text = "(Будет проставлен автоматически!)";
                     RefreshFirstListBox();
                     break;
-                case "ProviderShipment":
+                case Tables.ProviderShipment:
                     ProviderShipmentVisible();
                     FirstListBox.SelectionMode = SelectionMode.None;
                     SecondListBox.SelectionMode = SelectionMode.One;
@@ -430,7 +435,7 @@ namespace kursov_rabota
                     textBox1.Text = "(Щелкните мышкой и выберите элемент в списке слева!)";
                     RefreshFirstListBox();
                     break;
-                case "PurchaseHistory":
+                case Tables.PurchaseHistory:
                     PurchaseHistoryVisible();
                     FirstListBox.SelectionMode = SelectionMode.None;
                     SecondListBox.SelectionMode = SelectionMode.One;
@@ -446,21 +451,21 @@ namespace kursov_rabota
         private void UpdateLoad()
         {
             MultifunctionalButton.Text = "Обновить";
-            switch (HalfWayScreen.ChoosingTable)
+            switch (ChoosingTable)
             {
-                case "Shipment": ShipmentVisible();
+                case Tables.Shipment: ShipmentVisible();
                     RefreshFirstListBox();
                     break;
-                case "Client": ClientVisible();
+                case Tables.Client: ClientVisible();
                     RefreshFirstListBox();
                     break;
-                case "Provider": ProviderVisible();
+                case Tables.Provider: ProviderVisible();
                     RefreshFirstListBox();
                     break;
-                case "ProviderShipment": ProviderShipmentVisible();
+                case Tables.ProviderShipment: ProviderShipmentVisible();
                     RefreshFirstListBox();
                     break;
-                case "PurchaseHistory": PurchaseHistoryVisible();
+                case Tables.PurchaseHistory: PurchaseHistoryVisible();
                     RefreshFirstListBox();
                     break;
                 default: break;
@@ -470,22 +475,22 @@ namespace kursov_rabota
         private void DeleteLoad()
         {
             MultifunctionalButton.Text = "Удалить";
-            switch (HalfWayScreen.ChoosingTable)
+            switch (ChoosingTable)
             {
-                case "Shipment": ShipmentVisible();
+                case Tables.Shipment: ShipmentVisible();
                     RefreshFirstListBox();
                     break;
-                case "Client": ClientVisible();
+                case Tables.Client: ClientVisible();
                     RefreshFirstListBox();
                     break;
-                case "Provider": ProviderVisible();
+                case Tables.Provider: ProviderVisible();
                     RefreshFirstListBox();
                     break;
-                case "ProviderShipment": ProviderShipmentVisible();
+                case Tables.ProviderShipment: ProviderShipmentVisible();
                     SecondListBox.SelectionMode = SelectionMode.None;
                     RefreshFirstListBox();
                     break;
-                case "PurchaseHistory": PurchaseHistoryVisible();
+                case Tables.PurchaseHistory: PurchaseHistoryVisible();
                     SecondListBox.SelectionMode = SelectionMode.None;
                     RefreshFirstListBox();
                     break;
@@ -495,9 +500,9 @@ namespace kursov_rabota
 
         private void CreateClick()
         {
-            switch (HalfWayScreen.ChoosingTable)
+            switch (ChoosingTable)
             {
-                case "Shipment":
+                case Tables.Shipment:
                     if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "")
                     {
                         MessageBox.Show("Все поля обязательны к заполнению!!!");
@@ -510,7 +515,7 @@ namespace kursov_rabota
                     textBox2.Text = "";
                     textBox3.Text = "";
                     break;
-                case "Client":
+                case Tables.Client:
                     if (textBox1.Text == "" || textBox2.Text == "")
                     {
                         MessageBox.Show("Все поля обязательны к заполнению!!!");
@@ -522,7 +527,7 @@ namespace kursov_rabota
                     textBox1.Text = "";
                     textBox2.Text = "";
                     break;
-                case "Provider":
+                case Tables.Provider:
                     if (textBox1.Text == "")
                     {
                         MessageBox.Show("Все поля обязательны к заполнению!!!");
@@ -533,7 +538,7 @@ namespace kursov_rabota
                     RefreshFirstListBox();
                     textBox1.Text = "";
                     break;
-                case "ProviderShipment":
+                case Tables.ProviderShipment:
                     if (IDTextBox.Text[0] < '0' || IDTextBox.Text[0] > '9' || textBox1.Text[0] < '0' || textBox1.Text[0] > '9')
                     {
                         MessageBox.Show("Все поля обязательны к заполнению!!!");
@@ -545,11 +550,11 @@ namespace kursov_rabota
                         return;
                     }
                     RefreshFirstListBox();
-                    RefreshSecondListBox("");
+                    RefreshSecondListBox(Tables.None);
                     IDTextBox.Text = "(Щелкните мышкой и выберите элемент в списке слева!)";
                     textBox1.Text = "(Щелкните мышкой и выберите элемент в списке слева!)";
                     break;
-                case "PurchaseHistory":
+                case Tables.PurchaseHistory:
                     if (textBox1.Text[0] < '0' || textBox1.Text[0] > '9' || textBox2.Text[0] < '0' || textBox2.Text[0] > '9' || textBox3.Text == "")
                     {
                         MessageBox.Show("Все поля обязательны к заполнению!!!");
@@ -558,7 +563,7 @@ namespace kursov_rabota
                     Program.StScreen.MaxPurchaseHistoryID++;
                     Program.StScreen.PurchaseHistoryL.Add(Program.StScreen.MaxPurchaseHistoryID, Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text), Convert.ToInt32(textBox3.Text), PurchaseHistoryDate.Value.Day, PurchaseHistoryDate.Value.Month, PurchaseHistoryDate.Value.Year);
                     RefreshFirstListBox();
-                    RefreshSecondListBox("");
+                    RefreshSecondListBox(Tables.None);
                     textBox1.Text = "(Щелкните мышкой и выберите элемент в списке слева!)";
                     textBox2.Text = "(Щелкните мышкой и выберите элемент в списке слева!)";
                     textBox3.Text = "";
@@ -570,39 +575,39 @@ namespace kursov_rabota
 
         private void UpdateClick()
         {
-            switch (HalfWayScreen.ChoosingTable)
+            switch (ChoosingTable)
             {
-                case "Shipment":
+                case Tables.Shipment:
                     if (FirstListBox.SelectedIndex == -1)
                     {
-                        MessageBox.Show("Для изсенения элемента его сначала нужно выбрать");
+                        MessageBox.Show("Для изменения элемента его сначала нужно выбрать");
                         return;
                     }
                     Program.StScreen.Shipments.UpdateAt(new Shipment(Convert.ToInt32(IDTextBox.Text), textBox1.Text, Convert.ToInt32(textBox2.Text), textBox3.Text), FirstListBox.SelectedIndex);
                     RefreshFirstListBox();
                     break;
-                case "Client":
+                case Tables.Client:
                     if (FirstListBox.SelectedIndex == -1)
                     {
-                        MessageBox.Show("Для изсенения элемента его сначала нужно выбрать");
+                        MessageBox.Show("Для изменения элемента его сначала нужно выбрать");
                         return;
                     }
                     Program.StScreen.Clients.UpdateAt(new Client(Convert.ToInt32(IDTextBox.Text), textBox1.Text, textBox2.Text), FirstListBox.SelectedIndex);
                     RefreshFirstListBox();
                     break;
-                case "Provider":
+                case Tables.Provider:
                     if (FirstListBox.SelectedIndex == -1)
                     {
-                        MessageBox.Show("Для изсенения элемента его сначала нужно выбрать");
+                        MessageBox.Show("Для изменения элемента его сначала нужно выбрать");
                         return;
                     }
                     Program.StScreen.Providers.UpdateAt(new Provider(Convert.ToInt32(IDTextBox.Text), textBox1.Text), FirstListBox.SelectedIndex);
                     RefreshFirstListBox(); 
                     break;
-                case "ProviderShipment":
+                case Tables.ProviderShipment:
                     if (FirstListBox.SelectedIndex == -1)
                     {
-                        MessageBox.Show("Для изсенения элемента его сначала нужно выбрать");
+                        MessageBox.Show("Для изменения элемента его сначала нужно выбрать");
                         return;
                     }
                     if (!Program.StScreen.ProvidersShipments.UpdateAt(new ProviderShipment(Convert.ToInt32(IDTextBox.Text), Convert.ToInt32(textBox1.Text)), FirstListBox.SelectedIndex))
@@ -611,17 +616,17 @@ namespace kursov_rabota
                         return;
                     }
                     RefreshFirstListBox();
-                    RefreshSecondListBox("");
+                    RefreshSecondListBox(Tables.None);
                     break;
-                case "PurchaseHistory":
+                case Tables.PurchaseHistory:
                     if (FirstListBox.SelectedIndex == -1)
                     {
-                        MessageBox.Show("Для изсенения элемента его сначала нужно выбрать");
+                        MessageBox.Show("Для изменения элемента его сначала нужно выбрать");
                         return;
                     }
                     Program.StScreen.PurchaseHistoryL.UpdateAt(new PurchaseHistory(Convert.ToInt32(IDTextBox.Text), Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text), Convert.ToInt32(textBox3.Text), PurchaseHistoryDate.Value.Day, PurchaseHistoryDate.Value.Month, PurchaseHistoryDate.Value.Year), FirstListBox.SelectedIndex);
                     RefreshFirstListBox();
-                    RefreshSecondListBox("");
+                    RefreshSecondListBox(Tables.None);
                     break;
                 default: break;
             }
@@ -629,9 +634,9 @@ namespace kursov_rabota
 
         private void DeleteClick()
         {
-            switch (HalfWayScreen.ChoosingTable)
+            switch (ChoosingTable)
             {
-                case "Shipment":
+                case Tables.Shipment:
                     for (int i = 0; i < Program.StScreen.PurchaseHistoryL.Count; i++)
                     {
                         if (Program.StScreen.Shipments[FirstListBox.SelectedIndex].ShipmentID == Program.StScreen.PurchaseHistoryL[i].ShipmentID)
@@ -655,7 +660,7 @@ namespace kursov_rabota
                     textBox2.Text = "";
                     textBox3.Text = "";
                     break;
-                case "Client": for (int i = 0; i < Program.StScreen.PurchaseHistoryL.Count; i++)
+                case Tables.Client: for (int i = 0; i < Program.StScreen.PurchaseHistoryL.Count; i++)
                     {
                         if (Program.StScreen.Clients[FirstListBox.SelectedIndex].ClientID == Program.StScreen.PurchaseHistoryL[i].ClientID)
                         {
@@ -669,7 +674,7 @@ namespace kursov_rabota
                     textBox1.Text = "";
                     textBox2.Text = "";
                     break;
-                case "Provider": for (int i = 0; i < Program.StScreen.ProvidersShipments.Count; i++)
+                case Tables.Provider: for (int i = 0; i < Program.StScreen.ProvidersShipments.Count; i++)
                     {
                         if (Program.StScreen.Providers[FirstListBox.SelectedIndex].ProviderID == Program.StScreen.ProvidersShipments[i].ProviderID)
                         {
@@ -682,12 +687,12 @@ namespace kursov_rabota
                     IDTextBox.Text = "";
                     textBox1.Text = "";
                     break;
-                case "ProviderShipment": Program.StScreen.ProvidersShipments.RemoveAt(FirstListBox.SelectedIndex);
+                case Tables.ProviderShipment: Program.StScreen.ProvidersShipments.RemoveAt(FirstListBox.SelectedIndex);
                     RefreshFirstListBox();
                     IDTextBox.Text = "";
                     textBox1.Text = "";
                     break;
-                case "PurchaseHistory": Program.StScreen.PurchaseHistoryL.RemoveAt(FirstListBox.SelectedIndex);
+                case Tables.PurchaseHistory: Program.StScreen.PurchaseHistoryL.RemoveAt(FirstListBox.SelectedIndex);
                     RefreshFirstListBox();
                     IDTextBox.Text = "";
                     textBox1.Text = "";

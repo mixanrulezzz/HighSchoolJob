@@ -13,6 +13,7 @@ using PurchaseHistoryLibrary;
 using System.Data.SQLite;
 using System.IO;
 using XMLSerializator;
+using BackupClass;
 
 namespace OutputList
 {
@@ -84,65 +85,14 @@ namespace OutputList
                 insert.ExecuteNonQuery();
             }
         }
-
-        /// <summary>
-        /// Создает резервную копию таблиц сущностей
-        /// </summary>
-        /// <param name="file">Путь к резервной копии</param>
-        /// <param name="ShipList">Список Товаров</param>
-        /// <param name="ClList">Список Клиентов</param>
-        /// <param name="ProvList">Список Поставщиков</param>
-        /// <param name="ProvShipList">Список связей Поставщик-Товар</param>
-        /// <param name="PurHisList">Список Истории Покупок</param>
+        
         public static void OutputIntoXML(string file, ShipmentList ShipList, ClientList ClList, ProviderList ProvList, ProviderShipmentList ProvShipList, PurchaseHistoryList PurHisList)
         {
+            BackupClass.BackupClass BC = new BackupClass.BackupClass(ClList, ProvList, ShipList, ProvShipList, PurHisList);
             StreamWriter NewFile = new StreamWriter(file);
-            XmlSerializer XMLSer = new XmlSerializer(typeof(ShipmentList));
-            XMLSer.Serialize(NewFile, ShipList);
-            NewFile.WriteLine();
-            XMLSer = new XmlSerializer(typeof(ClientList));
-            XMLSer.Serialize(NewFile, ClList);
-            NewFile.WriteLine();
-            XMLSer = new XmlSerializer(typeof(ProviderList));
-            XMLSer.Serialize(NewFile, ProvList);
-            NewFile.WriteLine();
-            XMLSer = new XmlSerializer(typeof(ProviderShipmentList));
-            XMLSer.Serialize(NewFile, ProvShipList);
-            NewFile.WriteLine();
-            XMLSer = new XmlSerializer(typeof(PurchaseHistoryList));
-            XMLSer.Serialize(NewFile, PurHisList);
-            NewFile.WriteLine();
-            //ShipmentIntoXML(file, ShipList);
-            //ClientIntoXML(file, ClList);
-            //ProviderIntoXML(file, ProvList);
-            //ProviderShipmentIntoXML(file, ProvShipList);
-            //PurchaseHistoryIntoXML(file, PurHisList);
+            XmlSerializer XMLSer = new XmlSerializer(typeof(BackupClass.BackupClass));
+            XMLSer.Serialize(NewFile, BC);            
             NewFile.Close();
-        }
-
-        private static void ShipmentIntoXML(string file, ShipmentList ShipList)
-        {
-            XMLSer<ShipmentList>.Serializator(file, ShipList);
-        }
-
-        private static void ClientIntoXML(string file, ClientList ClList)
-        {
-            XMLSer<ClientList>.Serializator(file, ClList);
-        }
-
-        private static void ProviderIntoXML(string file, ProviderList ProvList)
-        {
-            XMLSer<ProviderList>.Serializator(file, ProvList);
-        }
-
-        private static void ProviderShipmentIntoXML(string file, ProviderShipmentList ProvShipList)
-        {
-            XMLSer<ProviderShipmentList>.Serializator(file, ProvShipList);
-        }
-
-        private static void PurchaseHistoryIntoXML(string file, PurchaseHistoryList PurHisList)
-        {
-            XMLSer<PurchaseHistoryList>.Serializator(file, PurHisList);
-        }
+        }        
     }
 }

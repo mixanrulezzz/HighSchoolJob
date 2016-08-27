@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BackupClass">
+      <HintPath>..\..\BackupClass\BackupClass\bin\Debug\BackupClass.dll</HintPath>
+    </Reference>
     <Reference Include="ClientLibrary">
       <HintPath>..\..\ClientLibrary\ClientLibrary\bin\Debug\ClientLibrary.dll</HintPath>
     </Reference>
@@ -81,24 +84,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BackupScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BackupScreen.Designer.cs">
-      <DependentUpon>BackupScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="CreateUpdateDeleteScreen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreateUpdateDeleteScreen.Designer.cs">
       <DependentUpon>CreateUpdateDeleteScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="HalfWayScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HalfWayScreen.Designer.cs">
-      <DependentUpon>HalfWayScreen.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Enums.cs" />
     <Compile Include="PackingListScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,14 +105,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BackupScreen.resx">
-      <DependentUpon>BackupScreen.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CreateUpdateDeleteScreen.resx">
       <DependentUpon>CreateUpdateDeleteScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HalfWayScreen.resx">
-      <DependentUpon>HalfWayScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PackingListScreen.resx">
       <DependentUpon>PackingListScreen.cs</DependentUpon>
