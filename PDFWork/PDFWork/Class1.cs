@@ -7,17 +7,23 @@ using iTextSharp;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
+using PurchaseHistoryLibrary;
 
 namespace PDFWork
 {
     public static class PDF
     {
-        public static bool CreatePackingList(string file, string date)
+        public static void CreatePackingList(string file, PurchaseHistoryList Data)
         {
             var doc = new Document();
             PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(file, FileMode.Create));
             doc.Open();
-            return true;
+
+
+
+            doc.Close();
+            writer.Close();
+            return;
         }
 
         public static bool CreateCheck(string file, string date)
@@ -25,6 +31,11 @@ namespace PDFWork
             var doc = new Document();
             PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(file, FileMode.Create));
             doc.Open();
+
+
+
+            doc.Close();
+            writer.Close();
             return true;
         }
     }

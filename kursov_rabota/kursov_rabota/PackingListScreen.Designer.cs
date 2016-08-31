@@ -33,6 +33,7 @@
             this.ChooseButton = new System.Windows.Forms.Button();
             this.AddButton = new System.Windows.Forms.Button();
             this.CreateButton = new System.Windows.Forms.Button();
+            this.SFD = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
             // 
             // Elements
@@ -82,6 +83,10 @@
             this.CreateButton.UseVisualStyleBackColor = true;
             this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
             // 
+            // SFD
+            // 
+            this.SFD.FileOk += new System.ComponentModel.CancelEventHandler(this.SFD_FileOk);
+            // 
             // PackingListScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -107,5 +112,6 @@
         private System.Windows.Forms.Button ChooseButton;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button CreateButton;
+        private System.Windows.Forms.SaveFileDialog SFD;
     }
 }

@@ -52,6 +52,9 @@
     <Reference Include="OutputList">
       <HintPath>..\..\OutputList\OutputList\bin\Debug\OutputList.dll</HintPath>
     </Reference>
+    <Reference Include="PDFWork">
+      <HintPath>..\..\PDFWork\PDFWork\bin\Debug\PDFWork.dll</HintPath>
+    </Reference>
     <Reference Include="ProviderLibrary">
       <HintPath>..\..\ProviderLibrary\ProviderLibrary\bin\Debug\ProviderLibrary.dll</HintPath>
     </Reference>

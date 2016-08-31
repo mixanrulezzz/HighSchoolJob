@@ -34,3 +34,6 @@ C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\XMLSerializator.
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\obj\Release\kursov_rabota.PackingListScreen.resources
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\BackupClass.dll
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\BackupClass.pdb
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\PDFWork.dll
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\itextsharp.dll
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\PDFWork.pdb

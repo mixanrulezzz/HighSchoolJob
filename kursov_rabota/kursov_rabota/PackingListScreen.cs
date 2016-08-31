@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PurchaseHistoryLibrary;
+using PDFWork;
 
 namespace kursov_rabota
 {
@@ -108,7 +110,27 @@ namespace kursov_rabota
 
         private void CreateButton_Click(object sender, EventArgs e)
         {
+            if (AddingPurchaseHistory.Count == 0)
+            {
+                MessageBox.Show("Выберите хотя бы одну покупку!!!");
+                return;
+            }
+            SFD.Title = "Сохранить товарную нокладную";
+            SFD.Filter = "PDF файл|*.pdf";
+            SFD.FileName = "Товарная накладная";
+            SFD.ShowDialog();
+        }
 
+        private void SFD_FileOk(object sender, CancelEventArgs e)
+        {
+            string file = SFD.FileName;
+            PurchaseHistoryList Data = null;
+            foreach (int i in AddingPurchaseHistory)
+            {
+                Data.Add(Program.StScreen.PurchaseHistoryL[i]);
+            }
+            PDF.CreatePackingList(file, Data);
+            MessageBox.Show("Товарная накладная создана");
         }
 
         private void RefreshElements()
