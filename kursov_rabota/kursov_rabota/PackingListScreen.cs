@@ -124,13 +124,13 @@ namespace kursov_rabota
         private void SFD_FileOk(object sender, CancelEventArgs e)
         {
             string file = SFD.FileName;
-            PurchaseHistoryList Data = null;
-            foreach (int i in AddingPurchaseHistory)
+            PurchaseHistoryList Data = new PurchaseHistoryList();
+            foreach(int i in AddingPurchaseHistory)
             {
-                Data.Add(Program.StScreen.PurchaseHistoryL[i]);
-            }
+                Data.Add(Program.StScreen.PurchaseHistoryL.ListOfHistory[i]);
+            }            
             PDF.CreatePackingList(file, Data);
-            MessageBox.Show("Товарная накладная создана");
+            MessageBox.Show("Товарная накладная создана успешно");
         }
 
         private void RefreshElements()
