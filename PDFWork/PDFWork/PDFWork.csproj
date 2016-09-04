@@ -36,6 +36,9 @@
     <Reference Include="PurchaseHistoryLibrary">
       <HintPath>..\..\PurchaseHistoryLibrary\PurchaseHistoryLibrary\bin\Debug\PurchaseHistoryLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="ShipmentLibrary">
+      <HintPath>..\..\ShipmentLibrary\ShipmentLibrary\bin\Debug\ShipmentLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />

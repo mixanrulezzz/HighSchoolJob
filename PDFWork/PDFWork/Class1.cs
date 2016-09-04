@@ -9,23 +9,110 @@ using iTextSharp.text.pdf;
 using System.IO;
 using PurchaseHistoryLibrary;
 
+
 namespace PDFWork
 {
     public static class PDF
     {
-        public static void CreatePackingList(string file, PurchaseHistoryList Data)
+        public static void CreatePackingList(string file, List<int> Data, List<int> Prices, List<string> ShipmentNames)
         {
+            int sum = 0;
+
             var doc = new Document();
             PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(file, FileMode.Create));
-            string fg = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "Fradm.TTF");
+
+            string fg = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "Arial.TTF");
             BaseFont fgBaseFont = BaseFont.CreateFont(fg, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
-            Font fgFont = new Font(fgBaseFont, 12, Font.NORMAL, BaseColor.BLACK);
+            Font Font = new Font(fgBaseFont, 12, Font.BOLD, BaseColor.BLACK);
+            Font mainFont = new Font(fgBaseFont, 10, Font.NORMAL, BaseColor.BLACK);
+
             doc.Open();
+
             Paragraph p = new Paragraph();
-            Phrase phr = new Phrase("Товарная накладная №____", fgFont);
+            Phrase phr = new Phrase("Товарная накладная №____", Font);
             p.Alignment = 1;
             p.Add(phr);
             doc.Add(p);
+
+            p = new Paragraph();
+            phr = new Phrase(" ", Font);
+            p.Alignment = 1;
+            p.Add(phr);
+            doc.Add(p);
+
+            PdfPTable Table = new PdfPTable(7);
+
+            PdfPCell cell = new PdfPCell(new Phrase("№", mainFont));
+            cell.BorderWidth = 1;
+            Table.AddCell(cell);
+
+            cell = new PdfPCell(new Phrase("Название товара", mainFont));
+            cell.BorderWidth = 1;
+            cell.Colspan = 3;
+            Table.AddCell(cell);
+
+            cell = new PdfPCell(new Phrase("Количество", mainFont));
+            cell.BorderWidth = 1;
+            Table.AddCell(cell);
+
+            cell = new PdfPCell(new Phrase("Цена", mainFont));
+            cell.BorderWidth = 1;
+            Table.AddCell(cell);
+
+            cell = new PdfPCell(new Phrase("Стоимость", mainFont));
+            cell.BorderWidth = 1;
+            Table.AddCell(cell);
+
+            for(int i = 0; i < Data.Count; i++)
+            {
+                cell = new PdfPCell(new Phrase((i+1).ToString(), mainFont));
+                cell.BorderWidth = 1;
+                Table.AddCell(cell);
+
+                cell = new PdfPCell(new Phrase(ShipmentNames[i], mainFont));
+                cell.BorderWidth = 1;
+                cell.Colspan = 3;
+                Table.AddCell(cell);
+
+                cell = new PdfPCell(new Phrase(Data[i].ToString(), mainFont));
+                cell.BorderWidth = 1;
+                Table.AddCell(cell);
+
+                cell = new PdfPCell(new Phrase(Prices[i].ToString(), mainFont));
+                cell.BorderWidth = 1;
+                Table.AddCell(cell);
+
+                cell = new PdfPCell(new Phrase((Prices[i] * Data[i]).ToString(), mainFont));
+                cell.BorderWidth = 1;
+                Table.AddCell(cell);
+
+                sum += Prices[i] * Data[i];
+            }
+
+            cell = new PdfPCell(new Phrase("Сумма:", mainFont));
+            cell.BorderWidthBottom = 0;
+            cell.BorderWidthLeft = 0;
+            cell.Colspan = 6;
+            Table.AddCell(cell);
+
+            cell = new PdfPCell(new Phrase(sum.ToString(), mainFont));
+            cell.BorderWidth = 1;
+            Table.AddCell(cell);
+
+            doc.Add(Table);
+
+            p = new Paragraph();
+            phr = new Phrase(" ", Font);
+            p.Alignment = 1;
+            p.Add(phr);
+            doc.Add(p);
+
+            p = new Paragraph();
+            phr = new Phrase("Подпись   _______________", Font);
+            p.Alignment = 2;
+            p.Add(phr);
+            doc.Add(p);
+            
             doc.Close();
             writer.Close();
             return;

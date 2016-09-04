@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ShipmentLibrary;
 using PurchaseHistoryLibrary;
 using PDFWork;
 
@@ -124,12 +125,22 @@ namespace kursov_rabota
         private void SFD_FileOk(object sender, CancelEventArgs e)
         {
             string file = SFD.FileName;
-            PurchaseHistoryList Data = new PurchaseHistoryList();
+            List<int> Counts = new List<int>();
+            List<int> Prices = new List<int>();
+            List<string> Names = new List<string>();
             foreach(int i in AddingPurchaseHistory)
             {
-                Data.Add(Program.StScreen.PurchaseHistoryL.ListOfHistory[i]);
+                Counts.Add(Program.StScreen.PurchaseHistoryL[i].Count);
+                foreach (Shipment s in Program.StScreen.Shipments.Shipments)
+                {
+                    if (s.ShipmentID == Program.StScreen.PurchaseHistoryL[i].ShipmentID)
+                    {
+                        Prices.Add(s.Price);
+                        Names.Add(s.ShipmentName);
+                    }
+                }
             }            
-            PDF.CreatePackingList(file, Data);
+            PDF.CreatePackingList(file, Counts, Prices, Names);
             MessageBox.Show("Товарная накладная создана успешно");
         }
 
