@@ -51,7 +51,6 @@
             this.PurchaseHistoryDeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PackingListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CheckToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CreateBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -238,8 +237,7 @@
             // OptToolStripMenuItem
             // 
             this.OptToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.PackingListToolStripMenuItem,
-            this.CheckToolStripMenuItem});
+            this.PackingListToolStripMenuItem});
             this.OptToolStripMenuItem.Name = "OptToolStripMenuItem";
             this.OptToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.OptToolStripMenuItem.Text = "Для оптовиков";
@@ -247,16 +245,9 @@
             // PackingListToolStripMenuItem
             // 
             this.PackingListToolStripMenuItem.Name = "PackingListToolStripMenuItem";
-            this.PackingListToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.PackingListToolStripMenuItem.Text = "Товарная накладная";
+            this.PackingListToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.PackingListToolStripMenuItem.Text = "Товарная накладная и чек";
             this.PackingListToolStripMenuItem.Click += new System.EventHandler(this.PackingListToolStripMenuItem_Click);
-            // 
-            // CheckToolStripMenuItem
-            // 
-            this.CheckToolStripMenuItem.Name = "CheckToolStripMenuItem";
-            this.CheckToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.CheckToolStripMenuItem.Text = "Чек";
-            this.CheckToolStripMenuItem.Click += new System.EventHandler(this.CheckToolStripMenuItem_Click);
             // 
             // ReportToolStripMenuItem
             // 
@@ -339,7 +330,6 @@
         private System.Windows.Forms.ToolStripMenuItem PurchaseHistoryDeleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem OptToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem PackingListToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem CheckToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem BackupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CreateBackupToolStripMenuItem;

@@ -35,7 +35,8 @@ namespace kursov_rabota
         private void PackingListScreen_Load(object sender, EventArgs e)
         {
             AddButton.Visible = false;
-            CreateButton.Visible = false;
+            CreatePackingListButton.Visible = false;
+            CreateCheckButton.Visible = false;
             ChooseButton.Visible = true;
             HelpLabel.Text = "На какого клиента вы хотите выписать ";
             if (PackingList)
@@ -68,7 +69,8 @@ namespace kursov_rabota
             }
             ChooseButton.Visible = false;
             AddButton.Visible = true;
-            CreateButton.Visible = true;
+            CreatePackingListButton.Visible = true;
+            CreateCheckButton.Visible = true;
             HelpLabel.Text = "Выберите покупки:";
             int SelectedClient = Elements.SelectedIndex;
             Elements.Items.Clear();
@@ -116,9 +118,24 @@ namespace kursov_rabota
                 MessageBox.Show("Выберите хотя бы одну покупку!!!");
                 return;
             }
+            PackingList = true;
             SFD.Title = "Сохранить товарную нокладную";
             SFD.Filter = "PDF файл|*.pdf";
             SFD.FileName = "Товарная накладная";
+            SFD.ShowDialog();
+        }
+
+        private void CreateCheckButton_Click(object sender, EventArgs e)
+        {
+            if (AddingPurchaseHistory.Count == 0)
+            {
+                MessageBox.Show("Выберите хотя бы одну покупку!!!");
+                return;
+            }
+            PackingList = false;
+            SFD.Title = "Сохранить товарный чек";
+            SFD.Filter = "PDF файл|*.pdf";
+            SFD.FileName = "Товарный чек";
             SFD.ShowDialog();
         }
 
@@ -139,9 +156,15 @@ namespace kursov_rabota
                         Names.Add(s.ShipmentName);
                     }
                 }
-            }            
-            PDF.CreatePackingList(file, Counts, Prices, Names);
-            MessageBox.Show("Товарная накладная создана успешно");
+            }
+            if (PackingList)
+                PDF.CreatePackingList(file, Counts, Prices, Names);
+            else
+                PDF.CreateCheck(file, Counts, Prices, Names);
+            if (PackingList)
+                MessageBox.Show("Товарная накладная сохранена успешно");
+            else
+                MessageBox.Show("Товарный чек сохранен успешно");
         }
 
         private void RefreshElements()
