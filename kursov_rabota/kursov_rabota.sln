@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kursov_rabota", "kursov_rab
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportLibrary", "ReportLibrary\ReportLibrary.csproj", "{872A101B-03FB-4413-873C-60CE36E1D460}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormatDateLibrary", "FormatDateLibrary\FormatDateLibrary.csproj", "{7E2309B9-277A-4225-9007-14AAEE5395FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{872A101B-03FB-4413-873C-60CE36E1D460}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{872A101B-03FB-4413-873C-60CE36E1D460}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{872A101B-03FB-4413-873C-60CE36E1D460}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E2309B9-277A-4225-9007-14AAEE5395FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E2309B9-277A-4225-9007-14AAEE5395FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E2309B9-277A-4225-9007-14AAEE5395FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E2309B9-277A-4225-9007-14AAEE5395FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

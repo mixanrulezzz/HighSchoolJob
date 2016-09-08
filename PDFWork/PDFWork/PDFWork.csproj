@@ -30,14 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FormatDateLibrary">
+      <HintPath>..\..\kursov_rabota\FormatDateLibrary\bin\Debug\FormatDateLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="itextsharp">
       <HintPath>..\..\OtherLibrary\itextsharp.dll</HintPath>
-    </Reference>
-    <Reference Include="PurchaseHistoryLibrary">
-      <HintPath>..\..\PurchaseHistoryLibrary\PurchaseHistoryLibrary\bin\Debug\PurchaseHistoryLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="ShipmentLibrary">
-      <HintPath>..\..\ShipmentLibrary\ShipmentLibrary\bin\Debug\ShipmentLibrary.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

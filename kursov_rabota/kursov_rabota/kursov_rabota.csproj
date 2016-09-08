@@ -170,6 +170,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FormatDateLibrary\FormatDateLibrary.csproj">
+      <Project>{7e2309b9-277a-4225-9007-14aaee5395fb}</Project>
+      <Name>FormatDateLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ReportLibrary\ReportLibrary.csproj">
       <Project>{872a101b-03fb-4413-873c-60ce36e1d460}</Project>
       <Name>ReportLibrary</Name>

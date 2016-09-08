@@ -20,6 +20,7 @@ using InputList;
 using DeleteFromSQLTables;
 using BackupClass;
 using ReportLibrary;
+using FormatDateLibrary;
 
 namespace kursov_rabota
 {
@@ -171,7 +172,7 @@ namespace kursov_rabota
         {
             SFD.Filter = "XML файл|*.xml";
             SFD.Title = "Сохранить резервную копию";
-            SFD.FileName = "Backup" + DateTime.Now.Hour.ToString() + "-" + DateTime.Now.Minute.ToString() + "-" + DateTime.Now.Second.ToString() + DateTime.Now.Day.ToString() + "." + DateTime.Now.Month.ToString() + "." + DateTime.Now.Year.ToString();
+            SFD.FileName = "Backup" + FormatDate.GetNowDate();
             SavingFile = "Backup";
             SFD.ShowDialog();
         }
@@ -196,8 +197,6 @@ namespace kursov_rabota
                 default: MessageBox.Show("");
                     break;
             }
-            OutputList.OutputList.OutputIntoXML(file, Shipments, Clients, Providers, ProvidersShipments, PurchaseHistoryL);
-            MessageBox.Show("Резевная копия создана успешно");
         }
 
         private void LoadBackupToolStripMenuItem_Click(object sender, EventArgs e)
@@ -231,7 +230,7 @@ namespace kursov_rabota
         {
             SFD.Filter = "PDF файл|*.pdf";
             SFD.Title = "Сохранить отчет по клиентам";
-            SFD.FileName = "Отчет по клиентам на " + DateTime.Now.Day.ToString() + "." + DateTime.Now.Month.ToString() + "." + DateTime.Now.Month.ToString();
+            SFD.FileName = "Отчет по клиентам на " + FormatDate.GetNowDate();
             SavingFile = "ClientReport";
             SFD.ShowDialog();
         }

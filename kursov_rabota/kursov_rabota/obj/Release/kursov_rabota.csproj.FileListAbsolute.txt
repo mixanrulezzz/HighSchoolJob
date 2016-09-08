@@ -39,3 +39,5 @@ C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\itextsharp.dll
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\PDFWork.pdb
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\ReportLibrary.dll
 C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\ReportLibrary.pdb
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\FormatDateLibrary.dll
+C:\GitRep\HighSchoolJob\kursov_rabota\kursov_rabota\bin\Release\FormatDateLibrary.pdb
