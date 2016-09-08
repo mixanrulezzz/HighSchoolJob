@@ -19,6 +19,7 @@ using PurchaseHistoryLibrary;
 using InputList;
 using DeleteFromSQLTables;
 using BackupClass;
+using ReportLibrary;
 
 namespace kursov_rabota
 {
@@ -35,6 +36,7 @@ namespace kursov_rabota
         public ProviderShipmentList ProvidersShipments;
         public PurchaseHistoryList PurchaseHistoryL;
         public CreateUpdateDeleteScreen CrUpdDelScr;
+        private string SavingFile;
 
         public StartScreen()
         {
@@ -165,22 +167,35 @@ namespace kursov_rabota
             PLS.ShowDialog();
         }
 
-        private void report_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void CreateBackupToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SFD.Filter = "XML файл|*.xml";
             SFD.Title = "Сохранить резервную копию";
             SFD.FileName = "Backup" + DateTime.Now.Hour.ToString() + "-" + DateTime.Now.Minute.ToString() + "-" + DateTime.Now.Second.ToString() + DateTime.Now.Day.ToString() + "." + DateTime.Now.Month.ToString() + "." + DateTime.Now.Year.ToString();
+            SavingFile = "Backup";
             SFD.ShowDialog();
         }
 
         private void SFD_FileOk(object sender, CancelEventArgs e)
         {
             string file = SFD.FileName;
+            switch (SavingFile)
+            {
+                case "Backup": OutputList.OutputList.OutputIntoXML(file, Shipments, Clients, Providers, ProvidersShipments, PurchaseHistoryL);
+                    MessageBox.Show("Резевная копия создана успешно");
+                    break;
+                case "ClientReport": if (Report.ClientReport(file, Clients, Shipments, PurchaseHistoryL))
+                    {
+                        MessageBox.Show("Отчет по клиентам создан успешно");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ошибка создания");
+                    }
+                    break;
+                default: MessageBox.Show("");
+                    break;
+            }
             OutputList.OutputList.OutputIntoXML(file, Shipments, Clients, Providers, ProvidersShipments, PurchaseHistoryL);
             MessageBox.Show("Резевная копия создана успешно");
         }
@@ -212,6 +227,13 @@ namespace kursov_rabota
             OutputList.OutputList.OutputIntoSQL(DataFile, Shipments, Clients, Providers, ProvidersShipments, PurchaseHistoryL);
         }
 
-
+        private void ClientReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SFD.Filter = "PDF файл|*.pdf";
+            SFD.Title = "Сохранить отчет по клиентам";
+            SFD.FileName = "Отчет по клиентам на " + DateTime.Now.Day.ToString() + "." + DateTime.Now.Month.ToString() + "." + DateTime.Now.Month.ToString();
+            SavingFile = "ClientReport";
+            SFD.ShowDialog();
+        }
     }
 }

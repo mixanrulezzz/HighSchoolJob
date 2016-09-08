@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.report = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.работаСБДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.WorkOnDataBaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CreateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ShipmentCreateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ClientCreateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,23 +56,16 @@
             this.LoadBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SFD = new System.Windows.Forms.SaveFileDialog();
             this.OFD = new System.Windows.Forms.OpenFileDialog();
+            this.ClientReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShipmentReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PurchaseHistoryReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // report
-            // 
-            this.report.Location = new System.Drawing.Point(185, 216);
-            this.report.Name = "report";
-            this.report.Size = new System.Drawing.Size(103, 23);
-            this.report.TabIndex = 1;
-            this.report.Text = "Получить отчет";
-            this.report.UseVisualStyleBackColor = true;
-            this.report.Click += new System.EventHandler(this.report_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.работаСБДToolStripMenuItem,
+            this.WorkOnDataBaseToolStripMenuItem,
             this.OptToolStripMenuItem,
             this.ReportToolStripMenuItem,
             this.BackupToolStripMenuItem});
@@ -83,15 +75,15 @@
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // работаСБДToolStripMenuItem
+            // WorkOnDataBaseToolStripMenuItem
             // 
-            this.работаСБДToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.WorkOnDataBaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.CreateToolStripMenuItem,
             this.UpdateToolStripMenuItem,
             this.DeleteToolStripMenuItem});
-            this.работаСБДToolStripMenuItem.Name = "работаСБДToolStripMenuItem";
-            this.работаСБДToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
-            this.работаСБДToolStripMenuItem.Text = "Работа с БД";
+            this.WorkOnDataBaseToolStripMenuItem.Name = "WorkOnDataBaseToolStripMenuItem";
+            this.WorkOnDataBaseToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.WorkOnDataBaseToolStripMenuItem.Text = "Работа с БД";
             // 
             // CreateToolStripMenuItem
             // 
@@ -251,6 +243,10 @@
             // 
             // ReportToolStripMenuItem
             // 
+            this.ReportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ClientReportToolStripMenuItem,
+            this.ShipmentReportToolStripMenuItem,
+            this.PurchaseHistoryReportToolStripMenuItem});
             this.ReportToolStripMenuItem.Name = "ReportToolStripMenuItem";
             this.ReportToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.ReportToolStripMenuItem.Text = "Отчеты";
@@ -267,14 +263,14 @@
             // CreateBackupToolStripMenuItem
             // 
             this.CreateBackupToolStripMenuItem.Name = "CreateBackupToolStripMenuItem";
-            this.CreateBackupToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.CreateBackupToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.CreateBackupToolStripMenuItem.Text = "Создать";
             this.CreateBackupToolStripMenuItem.Click += new System.EventHandler(this.CreateBackupToolStripMenuItem_Click);
             // 
             // LoadBackupToolStripMenuItem
             // 
             this.LoadBackupToolStripMenuItem.Name = "LoadBackupToolStripMenuItem";
-            this.LoadBackupToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.LoadBackupToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.LoadBackupToolStripMenuItem.Text = "Загрузить";
             this.LoadBackupToolStripMenuItem.Click += new System.EventHandler(this.LoadBackupToolStripMenuItem_Click);
             // 
@@ -287,12 +283,30 @@
             this.OFD.FileName = "openFileDialog1";
             this.OFD.FileOk += new System.ComponentModel.CancelEventHandler(this.OFD_FileOk);
             // 
+            // ClientReportToolStripMenuItem
+            // 
+            this.ClientReportToolStripMenuItem.Name = "ClientReportToolStripMenuItem";
+            this.ClientReportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ClientReportToolStripMenuItem.Text = "По клиентам";
+            this.ClientReportToolStripMenuItem.Click += new System.EventHandler(this.ClientReportToolStripMenuItem_Click);
+            // 
+            // ShipmentReportToolStripMenuItem
+            // 
+            this.ShipmentReportToolStripMenuItem.Name = "ShipmentReportToolStripMenuItem";
+            this.ShipmentReportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ShipmentReportToolStripMenuItem.Text = "По товарам";
+            // 
+            // PurchaseHistoryReportToolStripMenuItem
+            // 
+            this.PurchaseHistoryReportToolStripMenuItem.Name = "PurchaseHistoryReportToolStripMenuItem";
+            this.PurchaseHistoryReportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.PurchaseHistoryReportToolStripMenuItem.Text = "По покупкам";
+            // 
             // StartScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 297);
-            this.Controls.Add(this.report);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "StartScreen";
@@ -307,9 +321,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button report;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem работаСБДToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem WorkOnDataBaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CreateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ShipmentCreateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ClientCreateToolStripMenuItem;
@@ -336,6 +349,9 @@
         private System.Windows.Forms.ToolStripMenuItem LoadBackupToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog SFD;
         private System.Windows.Forms.OpenFileDialog OFD;
+        private System.Windows.Forms.ToolStripMenuItem ClientReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ShipmentReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem PurchaseHistoryReportToolStripMenuItem;
     }
 }
 

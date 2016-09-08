@@ -118,7 +118,7 @@ namespace PDFWork
             return;
         }
 
-        public static bool CreateCheck(string file, List<int> Data, List<int> Prices, List<string> ShipmentNames)
+        public static void CreateCheck(string file, List<int> Data, List<int> Prices, List<string> ShipmentNames)
         {
             int sum = 0;
 
@@ -198,7 +198,11 @@ namespace PDFWork
 
             doc.Close();
             writer.Close();
-            return true;
+        }
+
+        public static void CreateClientReport(string file, List<string> Names, List<int> Counts, List<int> Costs)
+        {
+
         }
     }
 }
