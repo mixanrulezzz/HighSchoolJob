@@ -269,7 +269,8 @@
             // 
             this.PurchaseHistoryReportToolStripMenuItem.Name = "PurchaseHistoryReportToolStripMenuItem";
             this.PurchaseHistoryReportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.PurchaseHistoryReportToolStripMenuItem.Text = "По покупкам";
+            this.PurchaseHistoryReportToolStripMenuItem.Text = "По продажам";
+            this.PurchaseHistoryReportToolStripMenuItem.Click += new System.EventHandler(this.PurchaseHistoryReportToolStripMenuItem_Click);
             // 
             // BackupToolStripMenuItem
             // 

@@ -7,6 +7,7 @@ using ClientLibrary;
 using ShipmentLibrary;
 using PurchaseHistoryLibrary;
 using PDFWork;
+using FormatDateLibrary;
 
 namespace ReportLibrary
 {
@@ -67,6 +68,70 @@ namespace ReportLibrary
             }
 
             PDF.CreateShipmentReport(file, Titles, Prices, Counts, Costs);
+            return true;
+        }
+
+        public static bool PurchaseHistoryReport(string file, ShipmentList Shipments, PurchaseHistoryList PurHisList)
+        {
+            List<string> Dates = new List<string>();
+            List<int> Counts = new List<int>();
+            List<int> Costs = new List<int>();
+
+            for (int i = 0; i < PurHisList.Count; i++)
+            {
+                if (Dates.Count == 0)
+                {
+                    Dates.Add(FormatDate.GetDate(PurHisList[i].Day, PurHisList[i].Month, PurHisList[i].Year));
+                    Counts.Add(PurHisList[i].Count);
+                    foreach (Shipment SH in Shipments.Shipments)
+                    {
+                        if (SH.ShipmentID == PurHisList[i].ShipmentID)
+                        {
+                            Costs.Add(PurHisList[i].Count * SH.Price);
+                            break;
+                        }
+                    }                    
+                }
+                else
+                {
+                    int numberOfDate = -1;
+                    for (int j = 0; j < Dates.Count; j++)
+                    {
+                        if (FormatDate.GetDate(PurHisList[i].Day, PurHisList[i].Month, PurHisList[i].Year) == Dates[j])
+                        {
+                            numberOfDate = j;
+                            break;
+                        }                        
+                    }
+                    if (numberOfDate != -1)
+                    {
+                        Counts[numberOfDate] += PurHisList[i].Count;
+                        foreach (Shipment SH in Shipments.Shipments)
+                        {
+                            if (SH.ShipmentID == PurHisList[i].ShipmentID)
+                            {
+                                Costs[numberOfDate] += PurHisList[i].Count * SH.Price;
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        Dates.Add(FormatDate.GetDate(PurHisList[i].Day, PurHisList[i].Month, PurHisList[i].Year));
+                        Counts.Add(PurHisList[i].Count);
+                        foreach (Shipment SH in Shipments.Shipments)
+                        {
+                            if (SH.ShipmentID == PurHisList[i].ShipmentID)
+                            {
+                                Costs.Add(PurHisList[i].Count * SH.Price);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            PDF.CreatePurchaseHistoryReport(file, Dates, Counts, Costs);
             return true;
         }
     }

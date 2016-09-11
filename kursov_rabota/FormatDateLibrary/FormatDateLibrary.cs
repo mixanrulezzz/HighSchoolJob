@@ -20,5 +20,18 @@ namespace FormatDateLibrary
 
             return dd + '.' + mm + '.' + yy;
         }
+
+        public static string GetDate(int Day, int Month, int Year)
+        {
+            var dd = Day.ToString();
+            if (dd.Length == 1) dd = '0' + dd;
+
+            var mm = Month.ToString();
+            if (mm.Length == 1) mm = '0' + mm;
+
+            var yy = Year.ToString();
+
+            return dd + '.' + mm + '.' + yy;
+        }
     }
 }

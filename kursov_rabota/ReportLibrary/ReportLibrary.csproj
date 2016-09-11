@@ -55,6 +55,12 @@
     <Compile Include="ReportLibrary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FormatDateLibrary\FormatDateLibrary.csproj">
+      <Project>{7e2309b9-277a-4225-9007-14aaee5395fb}</Project>
+      <Name>FormatDateLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

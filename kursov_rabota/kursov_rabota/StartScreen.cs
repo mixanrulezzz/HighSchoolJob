@@ -191,6 +191,9 @@ namespace kursov_rabota
                 case "ShipmentReport": Report.ShipmentReport(file, Shipments, PurchaseHistoryL);
                     MessageBox.Show("Отчет по товарам создан успешно");
                     break;
+                case "PurchaseHistoryReport": Report.PurchaseHistoryReport(file, Shipments, PurchaseHistoryL);
+                    MessageBox.Show("Отчет по продажам создан успешно");
+                    break;
                 default: MessageBox.Show("");
                     break;
             }
@@ -238,6 +241,15 @@ namespace kursov_rabota
             SFD.Title = "Сохранить отчет по товарам";
             SFD.FileName = "Отчет по товарам на " + FormatDate.GetNowDate();
             SavingFile = "ShipmentReport";
+            SFD.ShowDialog();
+        }
+
+        private void PurchaseHistoryReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SFD.Filter = "PDF файл|*.pdf";
+            SFD.Title = "Сохранить отчет по продажам";
+            SFD.FileName = "Отчет по продажам на " + FormatDate.GetNowDate();
+            SavingFile = "PurchaseHistoryReport";
             SFD.ShowDialog();
         }
     }
