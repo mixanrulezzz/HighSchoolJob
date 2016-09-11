@@ -280,5 +280,94 @@ namespace PDFWork
             doc.Close();
             writer.Close();
         }
+
+        public static void CreateShipmentReport(string file, List<string> Titles, List<int> Prices, List<int> Counts, List<int> Costs)
+        {
+            var doc = new Document();
+            PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream(file, FileMode.Create));
+
+            string fg = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "Tahoma.TTF");
+            BaseFont fgBaseFont = BaseFont.CreateFont(fg, BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+            Font Font = new Font(fgBaseFont, 12, Font.BOLD, BaseColor.BLACK);
+            Font mainFont = new Font(fgBaseFont, 10, Font.NORMAL, BaseColor.BLACK);
+
+            doc.Open();
+
+            Paragraph p = new Paragraph();
+            Phrase phr = new Phrase("Отчет по товарам за " + FormatDate.GetNowDate(), Font);
+            p.Alignment = 1;
+            p.Add(phr);
+            doc.Add(p);
+
+            p = new Paragraph();
+            phr = new Phrase(" ", Font);
+            p.Alignment = 1;
+            p.Add(phr);
+            doc.Add(p);
+
+            PdfPTable Table = new PdfPTable(7);
+
+            PdfPCell cell = new PdfPCell(new Phrase("№", mainFont));
+            cell.BorderWidth = 1;
+            Table.AddCell(cell);
+
+            cell = new PdfPCell(new Phrase("Название товара", mainFont));
+            cell.BorderWidth = 1;
+            cell.Colspan = 3;
+            Table.AddCell(cell);
+
+            cell = new PdfPCell(new Phrase("Цена", mainFont));
+            cell.BorderWidth = 1;
+            Table.AddCell(cell);
+
+            cell = new PdfPCell(new Phrase("Количество купленного товара", mainFont));
+            cell.BorderWidth = 1;
+            Table.AddCell(cell);
+
+            cell = new PdfPCell(new Phrase("Сумма", mainFont));
+            cell.BorderWidth = 1;
+            Table.AddCell(cell);
+
+            for (int i = 0; i < Titles.Count; i++)
+            {
+                cell = new PdfPCell(new Phrase((i + 1).ToString(), mainFont));
+                cell.BorderWidth = 1;
+                Table.AddCell(cell);
+
+                cell = new PdfPCell(new Phrase(Titles[i], mainFont));
+                cell.BorderWidth = 1;
+                cell.Colspan = 3;
+                Table.AddCell(cell);
+
+                cell = new PdfPCell(new Phrase(Prices[i].ToString(), mainFont));
+                cell.BorderWidth = 1;
+                Table.AddCell(cell);
+
+                cell = new PdfPCell(new Phrase(Counts[i].ToString(), mainFont));
+                cell.BorderWidth = 1;
+                Table.AddCell(cell);
+
+                cell = new PdfPCell(new Phrase(Costs[i].ToString(), mainFont));
+                cell.BorderWidth = 1;
+                Table.AddCell(cell);
+            }
+
+            doc.Add(Table);
+
+            p = new Paragraph();
+            phr = new Phrase(" ", Font);
+            p.Alignment = 1;
+            p.Add(phr);
+            doc.Add(p);
+
+            p = new Paragraph();
+            phr = new Phrase("Подпись   _______________", Font);
+            p.Alignment = 2;
+            p.Add(phr);
+            doc.Add(p);
+
+            doc.Close();
+            writer.Close();
+        }
     }
 }

@@ -43,5 +43,31 @@ namespace ReportLibrary
             PDF.CreateClientReport(file, Names, Counts, Costs);
             return true;
         }
+
+        public static bool ShipmentReport(string file, ShipmentList Shipments, PurchaseHistoryList PurHisList)
+        {
+            List<string> Titles = new List<string>();
+            List<int> Prices = new List<int>();
+            List<int> Counts = new List<int>();
+            List<int> Costs = new List<int>();
+
+            for (int i = 0; i < Shipments.Count; i++)
+            {
+                Titles.Add(Shipments[i].ShipmentName);
+                Prices.Add(Shipments[i].Price);
+                Counts.Add(0);
+                foreach (PurchaseHistory PH in PurHisList.ListOfHistory)
+                {
+                    if (Shipments[i].ShipmentID == PH.ShipmentID)
+                    {
+                        Counts[i] += PH.Count;
+                    }
+                }
+                Costs.Add(Shipments[i].Price * Counts[i]);
+            }
+
+            PDF.CreateShipmentReport(file, Titles, Prices, Counts, Costs);
+            return true;
+        }
     }
 }

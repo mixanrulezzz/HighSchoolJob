@@ -51,14 +51,14 @@
             this.OptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PackingListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ClientReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShipmentReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PurchaseHistoryReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CreateBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LoadBackupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SFD = new System.Windows.Forms.SaveFileDialog();
             this.OFD = new System.Windows.Forms.OpenFileDialog();
-            this.ClientReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ShipmentReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.PurchaseHistoryReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -251,38 +251,6 @@
             this.ReportToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.ReportToolStripMenuItem.Text = "Отчеты";
             // 
-            // BackupToolStripMenuItem
-            // 
-            this.BackupToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CreateBackupToolStripMenuItem,
-            this.LoadBackupToolStripMenuItem});
-            this.BackupToolStripMenuItem.Name = "BackupToolStripMenuItem";
-            this.BackupToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
-            this.BackupToolStripMenuItem.Text = "Резервная копия";
-            // 
-            // CreateBackupToolStripMenuItem
-            // 
-            this.CreateBackupToolStripMenuItem.Name = "CreateBackupToolStripMenuItem";
-            this.CreateBackupToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.CreateBackupToolStripMenuItem.Text = "Создать";
-            this.CreateBackupToolStripMenuItem.Click += new System.EventHandler(this.CreateBackupToolStripMenuItem_Click);
-            // 
-            // LoadBackupToolStripMenuItem
-            // 
-            this.LoadBackupToolStripMenuItem.Name = "LoadBackupToolStripMenuItem";
-            this.LoadBackupToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.LoadBackupToolStripMenuItem.Text = "Загрузить";
-            this.LoadBackupToolStripMenuItem.Click += new System.EventHandler(this.LoadBackupToolStripMenuItem_Click);
-            // 
-            // SFD
-            // 
-            this.SFD.FileOk += new System.ComponentModel.CancelEventHandler(this.SFD_FileOk);
-            // 
-            // OFD
-            // 
-            this.OFD.FileName = "openFileDialog1";
-            this.OFD.FileOk += new System.ComponentModel.CancelEventHandler(this.OFD_FileOk);
-            // 
             // ClientReportToolStripMenuItem
             // 
             this.ClientReportToolStripMenuItem.Name = "ClientReportToolStripMenuItem";
@@ -295,12 +263,45 @@
             this.ShipmentReportToolStripMenuItem.Name = "ShipmentReportToolStripMenuItem";
             this.ShipmentReportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ShipmentReportToolStripMenuItem.Text = "По товарам";
+            this.ShipmentReportToolStripMenuItem.Click += new System.EventHandler(this.ShipmentReportToolStripMenuItem_Click);
             // 
             // PurchaseHistoryReportToolStripMenuItem
             // 
             this.PurchaseHistoryReportToolStripMenuItem.Name = "PurchaseHistoryReportToolStripMenuItem";
             this.PurchaseHistoryReportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.PurchaseHistoryReportToolStripMenuItem.Text = "По покупкам";
+            // 
+            // BackupToolStripMenuItem
+            // 
+            this.BackupToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CreateBackupToolStripMenuItem,
+            this.LoadBackupToolStripMenuItem});
+            this.BackupToolStripMenuItem.Name = "BackupToolStripMenuItem";
+            this.BackupToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
+            this.BackupToolStripMenuItem.Text = "Резервная копия";
+            // 
+            // CreateBackupToolStripMenuItem
+            // 
+            this.CreateBackupToolStripMenuItem.Name = "CreateBackupToolStripMenuItem";
+            this.CreateBackupToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.CreateBackupToolStripMenuItem.Text = "Создать";
+            this.CreateBackupToolStripMenuItem.Click += new System.EventHandler(this.CreateBackupToolStripMenuItem_Click);
+            // 
+            // LoadBackupToolStripMenuItem
+            // 
+            this.LoadBackupToolStripMenuItem.Name = "LoadBackupToolStripMenuItem";
+            this.LoadBackupToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.LoadBackupToolStripMenuItem.Text = "Загрузить";
+            this.LoadBackupToolStripMenuItem.Click += new System.EventHandler(this.LoadBackupToolStripMenuItem_Click);
+            // 
+            // SFD
+            // 
+            this.SFD.FileOk += new System.ComponentModel.CancelEventHandler(this.SFD_FileOk);
+            // 
+            // OFD
+            // 
+            this.OFD.FileName = "openFileDialog1";
+            this.OFD.FileOk += new System.ComponentModel.CancelEventHandler(this.OFD_FileOk);
             // 
             // StartScreen
             // 

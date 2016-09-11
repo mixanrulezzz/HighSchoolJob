@@ -185,14 +185,11 @@ namespace kursov_rabota
                 case "Backup": OutputList.OutputList.OutputIntoXML(file, Shipments, Clients, Providers, ProvidersShipments, PurchaseHistoryL);
                     MessageBox.Show("Резевная копия создана успешно");
                     break;
-                case "ClientReport": if (Report.ClientReport(file, Clients, Shipments, PurchaseHistoryL))
-                    {
-                        MessageBox.Show("Отчет по клиентам создан успешно");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ошибка создания");
-                    }
+                case "ClientReport": Report.ClientReport(file, Clients, Shipments, PurchaseHistoryL);
+                    MessageBox.Show("Отчет по клиентам создан успешно");                                   
+                    break;
+                case "ShipmentReport": Report.ShipmentReport(file, Shipments, PurchaseHistoryL);
+                    MessageBox.Show("Отчет по товарам создан успешно");
                     break;
                 default: MessageBox.Show("");
                     break;
@@ -232,6 +229,15 @@ namespace kursov_rabota
             SFD.Title = "Сохранить отчет по клиентам";
             SFD.FileName = "Отчет по клиентам на " + FormatDate.GetNowDate();
             SavingFile = "ClientReport";
+            SFD.ShowDialog();
+        }
+
+        private void ShipmentReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SFD.Filter = "PDF файл|*.pdf";
+            SFD.Title = "Сохранить отчет по товарам";
+            SFD.FileName = "Отчет по товарам на " + FormatDate.GetNowDate();
+            SavingFile = "ShipmentReport";
             SFD.ShowDialog();
         }
     }
